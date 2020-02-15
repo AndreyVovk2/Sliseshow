@@ -1,0 +1,50 @@
+@import "~variables.scss";
+
+.screen-preview {
+    width: auto;
+    height: 117px;
+    max-width: 208px;
+    min-width: 98px;
+    border: 1px solid #180a21;
+    margin: 0 auto 15px auto;
+    position: relative;
+    opacity: 1;
+    cursor: pointer;
+    .counter {
+        background: #000;
+        height: 43px;
+        width: 43px;
+        border-top-left-radius: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 18px;
+        color: #ffca5f;
+        text-align: center;
+        padding-top: 15px;
+    }
+    .checked {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.2);
+        .icon {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 55px;
+            height: 51px;
+        }
+    }
+}
+.active{
+    border: 2px solid $red;
+}
+.rendering{
+    opacity: 0.5;
+    cursor: default;
+}

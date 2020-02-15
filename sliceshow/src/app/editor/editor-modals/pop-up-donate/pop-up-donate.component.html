@@ -1,0 +1,46 @@
+<div class="pop-up">
+    <div class="header">
+        <img src="assets/img/pop-up/two lines and a circle.svg">
+        <span>{{'Modal.WeAreAlmostDone' | translate | uppercase}}</span>
+    </div>
+    <!--<div class="content">-->
+        <!--<div class="content_select">-->
+            <!--<input type="radio" name="donate" checked (click)="changeQuality(0, 720)">-->
+            <!--<span class="price">{{'Modal.Default' | translate}}</span>-->
+            <!--<span class="quality">{{'Modal.At720p' | translate | uppercase}}</span>-->
+        <!--</div>-->
+        <!--<div class="content_select">-->
+            <!--<input type="radio" name="donate" (click)="changeQuality(15, 1080)">-->
+            <!--<span class="price">+15$</span>-->
+            <!--<span class="quality">{{'Modal.At1080p' | translate | uppercase}}</span>-->
+        <!--</div>-->
+        <!--<div class="content_select">-->
+            <!--<input type="radio" name="donate" (click)="changeQuality(15, 2)">-->
+            <!--<span class="price">+15$</span>-->
+            <!--<span class="quality">{{'Modal.At2k' | translate | uppercase}}</span>-->
+        <!--</div>-->
+        <!--<div class="content_select">-->
+            <!--<input type="radio" name="donate" (click)="changeQuality(15, 4)">-->
+            <!--<span class="price">+15$</span>-->
+            <!--<span class="quality">{{'Modal.At4k' | translate | uppercase}}</span>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="content">
+        <div class="content_select" *ngFor="let item of projectQualities">
+            <!--<input type="radio" name="donate" (click)="changePrice(item)"  >-->
+            <input type="radio" name="donate" (change)="addExtraPrice(item)" [checked] = "checkPrice(item.price) == 'Default'">
+            <span class="price">{{checkPrice(item.price)}}</span>
+            <!--<span class="price">{{checkPrice(item.price)}}</span>-->
+            <span class="quality">{{'Modal.PurchaseAt' | translate}} <span class="quality-value">&nbsp; {{item.quality}}</span> </span>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <div class="buttons--wrapper">
+            <button class="submit" (click)="createInvoice()">{{'Modal.Purchase' | translate | uppercase}}</button>
+            <button class="cancel" (click)="onClose()">{{'Modal.Cancel' | translate | uppercase}}</button>
+        </div>
+    </div>
+</div>

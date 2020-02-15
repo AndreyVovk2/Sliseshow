@@ -1,0 +1,26 @@
+.vertical-carousel {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-height: 520px;
+    // .slides-container {
+    //     height: 500%;
+    // }
+}
+.arrow-down {
+    width: 66px;
+    height: 19px;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    //transform: rotate(180deg);
+}
+
+.rotate-arrow {
+    transform: rotate(180deg);
+    transition-duration: 0.8s;
+}
+
+.another-rotate {
+    transition-duration: 0.8s;
+}
+

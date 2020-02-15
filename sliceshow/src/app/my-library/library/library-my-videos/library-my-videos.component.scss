@@ -1,0 +1,98 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+.library-my-videos {
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .main-part {
+    margin: 12px 0 0 0;
+    .image-box {
+      padding: 0 5px;
+      margin-top: 45px;
+      .file-name {
+        height: 36px;
+        max-width: 214px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        span {
+          font-size: 24px;
+        }
+      }
+      .image-wrapper {
+        position: relative;
+        height: 114px;
+        .image {
+          width: 100%;
+          height: 100%;
+        }
+        .garbage-wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.0);
+          z-index: 50;
+          text-align: center;
+
+          .video-play, .corner, .basket {
+            position: absolute;
+          }
+          .video-play {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            cursor: pointer;
+            outline: 0;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .corner {
+            right: 0;
+            bottom: 0;
+          }
+          .basket {
+            right: 5px;
+            bottom: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+.upload {
+  height: 48px;
+  width: 320px;
+  border: 2px solid $red;
+  border-radius: 24px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  margin: 48px auto 0 auto;
+  color: $red;
+  background-color: $white;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  line-height: 3;
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
+}
+
+
+

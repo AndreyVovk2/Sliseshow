@@ -1,0 +1,31 @@
+<div class="container"
+[ngStyle]="{'width.px': track.size}">
+
+  <!--<span class="timer1">{{(slideMark.firstMarkPosition - slideMark.halfWidth) * this.length / this.track.size | toTime }}</span>-->
+  <span class="timer1">{{startTime() | toTime}}</span>
+
+  <div id="firstMark" 
+  (mousedown)="changePos1($event)" 
+  [ngStyle]="{'left.px': slideMark.firstMarkPosition, 'width.px': slideMark.width, 'height.px': slideMark.height}"></div>
+
+  <!--<div id="selectTrack"-->
+  <!--[ngStyle]="{'left.px': track.startPos, 'width.px': range * track.resizeK}"></div>-->
+  <div id="selectTrack"
+       [ngStyle]="{'left.px': track.startPos, 'width.px': selectTrackWidth()}"></div>
+
+
+  <div id="secondMark" 
+  [ngStyle]="{'left.px': slideMark.secondMarkPosition, 'width.px': slideMark.width, 'height.px': slideMark.height}"></div>
+
+  <!--<span class="timer2">{{(slideMark.secondMarkPosition - slideMark.halfWidth) * this.length / this.track.size | toTime }}</span>-->
+  <!--<span class="timer2">{{(slideMark.secondMarkPosition - slideMark.halfWidth) * this.length / this.track.size | toTime }}</span>-->
+  <span class="timer2">{{ endTime() | toTime}}</span>
+
+</div>
+<!-- <span>Pix position: {{slideMark.firstMarkPosition - slideMark.halfWidth}}</span>
+<span>Total time: {{this.length | toTime}}</span>
+<span>Range time: {{this.range | toTime}}</span>
+<span>Current start time: {{(slideMark.firstMarkPosition - slideMark.halfWidth) * this.length / this.track.size | toTime }}</span>
+<button (click)="showing()">show cut track</button>
+<span>start time track: {{this.cutTrack.startTime}}</span>
+<span>start time track: {{this.cutTrack.endTime}}</span> -->

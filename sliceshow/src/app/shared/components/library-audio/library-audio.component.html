@@ -1,0 +1,40 @@
+<div class="library-audio">
+  <div class="row row-start">
+    <img
+      (click)="switchPlayStopControl(trackData.id)"
+      *ngIf="playStopSwitcher"
+      src="../../../assets/images/library/Puse.png"
+      alt="stop"
+      class="stop"
+    >
+    <img
+      (click)="switchPlayStopControl(trackData.id)"
+      *ngIf="!playStopSwitcher"
+      src="../../../assets/images/library/Play.png"
+      alt="play"
+      class="play"
+    >
+    <div class="song-name">{{trackData.name}}</div>
+  </div>
+  <div class="row">
+    <div class="track-wraper" *ngIf="isTouched">
+      <div class="progress-bar" [ngStyle]="{ width: playedProgress + '%' }"></div>
+      <div class="loader-bar" [ngStyle]="{ right: loadedProgress + '%' }"></div>
+      <input
+        [ngModel]="currentPosition"
+        (ngModelChange)="handleSliderChange($event)"
+        class="track-slider"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+      >
+    </div>
+  </div>
+  <div class="row row-end">
+    <div class="time" *ngIf="audio.currentTime === 0 || isTouched === false">{{this.formatTime(trackData.duration)}}</div>
+    <div class="time" *ngIf="audio.currentTime !== 0 && isTouched === true">{{this.formatTime(audio.currentTime)}}</div>
+
+    <img (click)="handleDelete(trackData.id)" src="/assets/images/library/RedGarbageBasket.png" alt="delete" class="trash">
+  </div>
+</div>

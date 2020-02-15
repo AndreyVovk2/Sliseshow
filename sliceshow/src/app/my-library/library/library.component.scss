@@ -1,0 +1,39 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+.library {
+
+  .wrapper {
+    background-color: #c2bbc7;
+    height: 48px;
+    .library-menu {
+      margin: 10px auto;
+      text-align: center;
+
+      button {
+        color: $white;
+        text-decoration: none;
+        background-color: #c2bbc7;
+        height: 48px;
+        padding: 3px 0 0 0;
+        border: none;
+        width: 150px;
+        cursor: pointer;
+        outline: 0;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: "Josefin Sans", sans-serif;
+        text-transform: uppercase;
+        line-height: 3;
+      }
+      .library-active {
+        background-color: $white;
+        color: $red;
+
+      }
+    }
+  }
+}
+
+

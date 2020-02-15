@@ -1,0 +1,54 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+$gray: #c2bbc7;
+
+.library-my-music {
+  .audio-wrapper {
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+    height: 52px;
+    margin-top: 15px;
+    border-bottom: 10px solid #f6f4f7;
+
+    .trackName {
+      font-size: 24px;
+      display: block;
+      margin: 10px 0 0 20px;
+    }
+
+    .garbage {
+      float: right;
+      cursor: pointer;
+    }
+
+    .duration {
+      font-size: 24px;
+      display: block;
+      margin-top: 10px;
+      font-weight: 100;
+    }
+  }
+}
+.upload {
+  height: 48px;
+  width: 320px;
+  border: 2px solid $red;
+  border-radius: 24px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  margin: 48px auto 0 auto;
+  color: $red;
+  background-color: $white;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  line-height: 3;
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
+}
+

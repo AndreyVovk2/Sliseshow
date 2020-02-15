@@ -1,0 +1,76 @@
+@import "~variables.scss";
+
+.img_button{
+    img{
+        height: 25px;
+    }
+    :hover{
+        cursor: pointer;
+    }
+}
+
+.sub_button{
+    text-align: center;
+    img{
+        height: 35px;
+    }
+    :hover{
+        cursor: pointer;
+    }
+}
+.title{
+    border-top: 2px solid #000;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Josefin Sans";
+    font-weight: 600;
+    width: 100%;
+    font-size: 25px;
+    position: relative;
+    .sendMail{
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        border-radius: 20px;
+        width: 140px;
+        height: 28px;
+        font-size: 18px;
+        padding: 2px;
+        border: 1px solid $black;
+        display: flex;
+        justify-content: center;
+    }
+    .toogle{
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        // padding: 2px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.font{
+    font-family: "Josefin Sans";
+    font-weight: 600;
+}
+.tableHead{
+    position: relative;
+    .addUser {
+        cursor: pointer;
+        position: absolute;
+        margin-top: 10px;
+        right: 20px;
+        border-radius: 20px;
+        width: 140px;
+        height: 28px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+    .addSub{
+        width: 200px;
+    }
+}

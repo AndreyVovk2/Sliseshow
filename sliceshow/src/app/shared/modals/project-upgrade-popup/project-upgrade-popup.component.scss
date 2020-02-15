@@ -1,0 +1,73 @@
+.upgrade_popup{
+    margin: -24px;
+    width: 830px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Josefin Sans";
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(237, 242, 250);
+    border-style: solid;
+    border-width: 1px;
+}
+.upgrade_text{
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
+    align-items: center;
+    flex-direction: column;
+    font-size: 32px;
+    color: rgb(24, 10, 33);
+    line-height: 1.125;
+    -moz-transform: matrix( 1,0,0,1.00824042656326,0,0);
+    -webkit-transform: matrix( 1,0,0,1.00824042656326,0,0);
+    -ms-transform: matrix( 1,0,0,1.00824042656326,0,0);  
+      
+}
+button:focus {
+    outline:0;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    user-select: none;
+}
+.upgrade_button{
+    margin-top: 40px;
+}
+#second_button{
+        background-color: rgb(204, 0, 51);
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        line-height: 1.2;
+        -moz-transform: scale(1.115, 1);
+        -webkit-transform: scale(1.115, 1);
+        -ms-transform: scale(1.115, 1);
+        border-radius: 30px;
+        border: 0px solid #fff;
+        width: 300px;
+        height: 45px;
+        font-weight: 200;
+}
+#first_button{
+    background-color: rgb(237, 242, 250);
+    border-color: rgb(204, 0, 51);
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px;
+    color: rgb(204, 0, 51);
+    text-transform: uppercase;
+    line-height: 1.2;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+    border-radius: 30px;
+    width: 300px;
+    height: 45px;
+    font-weight: 200;
+    margin-right: 45px;
+}

@@ -1,0 +1,8 @@
+<div class="search">
+  <img class="search-icon" src="/assets/images/gallery/gallery-search.png" alt="">
+  <input
+    [ngModel]="searchValue"
+    (ngModelChange)="valueChanged($event)"
+    type="text"
+  />
+</div>

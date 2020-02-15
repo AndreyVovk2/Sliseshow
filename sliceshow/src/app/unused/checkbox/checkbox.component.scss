@@ -1,0 +1,39 @@
+@import "~variables.scss";
+
+.box{
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    .check{
+        width: 20px;
+        user-select: none;
+        height: 20px;
+        position: relative;
+        top: 0px;
+        margin-right: 5px;
+        margin-left: 0px;
+        border: 2px solid #000;
+        img{
+            position: relative;
+            height: 23px;
+            top: -5px;
+            left: -1px;
+            display: none;
+        }
+        .visiable{
+            display: block !important;
+        }
+    }
+    .label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Josefin Sans';
+        font-size: 16px;
+        line-height: 1;
+    }
+    .warn{
+        color: $red;
+    }
+}

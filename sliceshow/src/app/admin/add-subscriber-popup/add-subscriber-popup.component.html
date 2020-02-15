@@ -1,0 +1,17 @@
+<div class="forgotPass">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate}}</p>
+    </div>
+    <div class="rightContent">
+
+        <form [formGroup]="newSubscriberForm" (submit)="onSubmit()">
+            <span class="label">add new subscriber's email</span>
+            <input id="repass" placeholder="EMAIL" type="email" required formControlName="email">
+            <button id="sendBtn" type="submit">ADD</button>
+        </form>
+
+    </div>
+</div>

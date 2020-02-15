@@ -1,0 +1,12 @@
+<div class="tag-list" (clickOutside)="close($event)">
+  <div class="img_button" (click)="tagListToggle()">
+    <img class="label" src="/assets/images/gallery/gallery-label.png" alt="">
+  </div>
+  <div class="tags-container" *ngIf="status" >
+    <div class="tags-wrapper">
+      <p class="tag-container">
+        <span class="tag-text" (click)="handleSelectTag(tag)" *ngFor="let tag of tags">{{tag.name | uppercase}}</span>
+      </p>
+    </div>
+  </div>
+</div>

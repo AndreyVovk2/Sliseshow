@@ -1,0 +1,311 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+.how-it-works-page {
+  font-family: "Josefin Sans", sans-serif;
+  overflow-x: hidden;
+
+  .header-banner {
+    // background: url("/assets/images/how_it_works/header_how.png") center no-repeat;
+    height: 325px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    #header-arrow-left, #header-arrow-right {
+      position: absolute;
+      height: 9px;
+      width: 100%;
+      text-align: center;
+    }
+    #header-arrow-left {
+      top: -1px;
+      background: url("/assets/images/main-page.images/header-arrow-left.png") center no-repeat;
+    }
+    #header-arrow-right {
+      bottom: -1px;
+      background: url("/assets/images/main-page.images/header-arrow-right.png") center no-repeat;
+    }
+    .text-wrapper {
+      text-align: left;
+      h2 {
+        color: #2A3956;
+        font-weight: 700;
+        margin-top: 250px;
+        font-size: 36px;
+      }
+    }
+  }
+
+  .squares {
+    margin-bottom: 50px;
+    margin-top: 5%;
+    .temp--t{
+      display: flex;
+      .col-2 {
+        padding: 0 5px;
+        display: flex;
+        justify-content: flex-end;
+      }
+       .col-10{
+        padding: 0;
+        margin: 0;
+        flex: none;
+      }
+  
+      .square-container {
+        width: 359px;
+        height: 211px;
+        position: relative;
+      }
+      .square-number {
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 700;
+        font-size: 2em;
+        margin-top: 10px;
+      }
+      .square-black-transparent {
+        position: absolute;
+        text-align: center;
+        padding-top: 30px;
+        left: 0;
+        bottom: 2px;
+        width: 254px;
+        height: 190px;
+        background-color: rgba(0, 0, 0, 0);
+        color: rgba(255, 255, 255, 0);
+        span {
+          // font-variant: small-caps;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+      .square-black-transparent:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    .temp--b{
+      .square-sign {
+        // margin-top: 1.5%;
+        // position: absolute;
+        // bottom: -50px;
+        // left: 0;
+        // text-align: center;
+        // width: 256px;
+        font-size: 1.8em;
+        color: rgb(24, 10, 33);
+        font-family: "Josefin Sans", sans-serif;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-right: 10px;
+  
+      }
+      .blog_text {
+        width: 91%;
+        // margin-top: 16%;
+        margin-top: 15px;
+        margin-left: 2%;
+        p {
+          font-size: 20px;
+          font-family: "Josefin Sans", sans-serif;
+          color: #180a21;
+          line-height: 1.25;
+          text-align: justify;
+          text-indent: 19px;
+          font-weight: 300;
+  
+        }
+      }
+    }
+    
+    //#square1 {
+    //  background: url("/assets/images/how_it_works/square1.png") bottom left no-repeat;
+    //}
+    //#square2 {
+    //  background: url("/assets/images/how_it_works/square2.png") bottom left no-repeat;
+    //}
+    //#square3 {
+    //  background: url("/assets/images/how_it_works/square3.png") bottom left no-repeat;
+    //}
+ 
+
+    
+
+  }
+  .easy-steps {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $red;
+    text-align: center;
+    margin: 60px 0 25px 0;
+    // img {
+    //   position: absolute;
+    //   width: 8%;
+    //   left: 29%;
+    //   margin-top: -2%;
+    // }
+
+    h2 {
+      font-weight: 400;
+      font-size: 2em;
+      font-variant: small-caps;
+      span {
+        font-weight: 600;
+        font-size: 0.8em;
+        margin-right: 10px;
+      }
+    }
+  }
+  // @media screen and (max-width: 1720px) {
+  //   .easy-steps {
+  //     img {
+  //       left: 25%;
+  //     }
+  //   }
+  // }
+  // @media screen and (max-width: 1380px) {
+  //   .easy-steps {
+  //     img {
+  //       left: 25%;
+  //     }
+  //   }
+  // }
+  // @media screen and (max-width: 1200px) {
+  //   .easy-steps {
+  //     img {
+  //       left: 22%;
+  //     }
+  //   }
+  // }
+  // @media screen and (max-width: 1020px) {
+  //   .easy-steps {
+  //     img {
+  //       left: 19%;
+  //     }
+  //   }
+  // }
+  @media only screen and (min-width: 1920px) {
+    .header-banner, .footer-banner {
+      background-position: center center;
+      -webkit-background-size: 100% auto !important;
+      background-size: 100% auto !important;
+      #header-arrow-left, #header-arrow-right {
+        background-position: center center;
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+      }
+      #header-arrow-left {
+        top: -2px;
+      }
+      #header-arrow-right {
+        bottom: -2px;
+      }
+    }
+  }
+  @media only screen and (max-width: 1280px) {
+    .container{
+      .squares{
+        .col-4{
+          max-width: 100%;
+          flex: 0 0 100%;
+          .row{
+            flex-wrap: nowrap;
+            height: 250px;
+            border-bottom: 1px solid grey;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .header-banner, .footer-banner {
+      -webkit-background-size: cover !important;
+      background-size: cover !important;
+      height: 200px;
+      .text-wrapper{
+        h2{
+          margin-top: 140px;
+          font-size: 30px;
+        }
+      }
+    }
+    .container{
+      .squares{
+        .col-4{
+          .row{
+            height: 100%;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .header-banner, .footer-banner {
+      .text-wrapper{
+        text-align: center;
+      }
+    }
+    .easy-steps{
+      h2{
+        font-size: 25px;
+      }
+      div{
+        img{
+          height: 60px;
+        }
+      }
+    }
+    .container{
+      .squares{
+        .col-4{
+          .row{
+            .temp--t{
+              .col-2{
+                padding: 0;
+                justify-content: flex-start;
+              }
+              .col-10{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .header-banner, .footer-banner {
+      height: 110px;
+      .text-wrapper{
+        h2{
+          margin-top: 40px;
+          font-size: 30px;
+        }
+      }
+      #header-arrow-left {
+        top: -2px;
+      }
+      #header-arrow-right {
+        bottom: -2px;
+      }
+    }
+    .easy-steps{
+
+      div{
+        img{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,122 @@
+<div class="basket" (click)="showHideModal($event)" [class.fixed]="fixed">
+  <div class="basketButton">
+    <img src="assets/images/create-project-steps/basket.png">
+    <p>{{'Cart.Slices' | translate}}</p>
+    <p *ngIf="store.state.basket">{{store.state.basket.length}}/{{store.state.selectSlice.slices}}</p>
+    <div class="zig_zag">
+      <img src="assets/images/create-project-steps/zigzag.png">
+    </div>
+    <p>{{'Cart.Pics' | translate}}</p>
+    <p>{{store.state.basketPics}}</p>
+    <img src="assets/images/create-project-steps/time.png">
+    <p>{{store.state.basketDuration || 0 | toMinutes}}</p>
+  </div>
+
+  <div class="basketModal" [ngStyle]="{'display': toggleBasket ? 'block' : 'none'}">
+
+    <div class="modal-top">
+      <div>
+        <img src="../../../assets/images/step-modal/basket.png">
+      </div>
+      <div class="top-cart">{{'Cart.Cart' | translate}}</div>
+      <div class="closePop">
+        <img src="../../../assets/images/step-modal/back.png">
+      </div>
+    </div>
+    <div class="modal-main">
+      <div class="main-line">
+        <img src="../../../assets/images/step-modal/line.png">
+      </div>
+      <div class="main-top">
+        <div class="main-top-left">
+          <div class="left-icon">
+            <img src="../../../assets/images/step-modal/large-pizza.png">
+          </div>
+          <div class="left-content">
+            <span class="left-content-pizza"
+                  *ngIf="this.store.state.selectSlice && this.store.state.selectSlice.id === 1">{{'StepOne.OneSlice' | translate}}</span>
+            <span class="left-content-pizza"
+                  *ngIf="this.store.state.selectSlice && this.store.state.selectSlice.id === 2">{{'StepOne.HalfTray' | translate}}</span>
+            <span class="left-content-pizza"
+                  *ngIf="this.store.state.selectSlice && this.store.state.selectSlice.id > 2">{{'StepOne.LargeTray' | translate}}</span>
+            <span
+              class="left-content-slice">{{this.store.state.selectSlice.slices}} {{'StepOne.Slice' | translate}}</span>
+            <img src="../../../assets/images/step-modal/zigzag.png">
+          </div>
+        </div>
+        <div class="main-top-right">
+          <span>{{this.store.state.selectSlice.price}}$</span>
+        </div>
+      </div>
+      <div class="card-scroll">
+        <div class="card-component" *ngFor="let card of store.state.basket; let i = index">
+          <div class="card-extra" *ngIf="i === this.store.state.selectSlice.slices">
+            <img src="../../../assets/images/step-modal/zigzag.png">{{'Cart.Extra' | translate}}
+          </div>
+          <div class="card-wrapper">
+            <div class="card-left">
+              <div class="card-pic">
+                <img [src]="card.preview_image">
+              </div>
+              <div class="card-content">
+                <div class="top-content">
+                  <span class="top-content-style">{{card.name}}</span>
+                  <span class="top-content-time">{{card.select_duration | toMinutes}}</span>
+                </div>
+                <div class="bot-content">
+                  <button *ngFor="let template of card.templates"
+                          [ngClass]="{'active': template.pics === card.select_pic}"
+                          class="card-button">{{template.pics}} pic
+                  </button>
+                  <!-- <button [ngClass]="{'active': card.pics === 10}" class="card-button">10 pic</button>
+                  <button [ngClass]="{'active': card.pics === 12}" class="card-button">12 pic</button> -->
+                </div>
+              </div>
+            </div>
+            <div class="card-right" class="deleteCard">
+              <img src="../../../assets/images/step-modal/trash.png" (click)="removeStyle(card)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-line">
+        <img src="../../../assets/images/step-modal/line.png">
+      </div>
+    </div>
+    <div class="modal-bot">
+      <div class="bot-content">
+        <div class="bot-options">
+          <span>{{'Cart.NumberOfPictures' | translate}}</span>
+          <span>{{store.state.basketPics}} {{'Cart.Pics' | translate}}</span>
+        </div>
+        <div class="bot-options">
+          <span>{{'Cart.TotalSlices' | translate}}</span>
+          <span>{{this.store.state.basket.length}}/{{this.store.state.selectSlice.slices}}</span>
+        </div>
+        <div class="bot-options">
+          <span>{{'Cart.VideoLength' | translate}}</span>
+          <span>
+        <img src="../../../assets/images/step-modal/time.png">
+            {{store.state.basketDuration | toMinutes}} {{'Cart.M' | translate}}
+      </span>
+        </div>
+        <div class="bot-options price">
+          <span>{{'Cart.TotalPrice' | translate}}</span>
+          <span class="total-price" *ngIf="this.store.state.basketTotalPrice">{{this.store.state.basketTotalPrice}}
+            $</span>
+          <!--<span class="total-price" *ngIf="this.store.state.selectSlice.slices  < this.store.state.basket.length">-->
+          <!--{{this.store.state.selectSlice.price + ((this.store.state.basket.length - this.store.state.selectSlice.slices) * (this.store.state.allTariffs[0].price))}}$-->
+          <!--</span>-->
+        </div>
+      </div>
+      <div class="bot-button" (click)="noPaid()">
+        <button>{{'Cart.StartCreating'  | translate}}</button>
+      </div>
+
+      <!--<div>-->
+      <!--<button (click)="showAll()">SHOW ALL</button>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>

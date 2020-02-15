@@ -1,0 +1,39 @@
+@import '~variables.scss';
+.audio-editor-page {
+  .audio-editor__header {
+    padding: 10px;
+    border-top: 1px solid $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: Josefin sans;
+  }
+  .audio-ctn {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .upload {
+    height: 48px;
+    width: 320px;
+    border: 2px solid $red;
+    border-radius: 24px;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    margin: 48px auto 0 auto;
+    color: $red;
+    background-color: $white;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    line-height: 3;
+    &:hover {
+      color: $white;
+      background-color: $red;
+    }
+  }
+
+}

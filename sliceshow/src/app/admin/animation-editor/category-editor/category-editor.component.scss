@@ -1,0 +1,88 @@
+@import '~variables.scss'; 
+.main{
+    border-top: 2px solid $black;
+    display: flex;
+    flex-direction: column;
+    .head{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        span{
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding-top: 10px;
+        }
+        mat-slide-toggle{
+            position: absolute;
+            left: 20px;
+        }
+        button{
+            position: absolute;
+            right: 20px;
+            top: 5px;
+        }
+    }
+    mat-divider {
+        margin-bottom: 4px;
+    }
+    .category{
+        display: flex;
+        .wrap{
+            margin: 10px;
+            display: flex;
+            font-family: $font;
+            position: relative;
+            .addStyle{
+                position: absolute;
+                right: 15px;
+                top: 7px;
+            }
+            .addSubcat{
+                position: absolute;
+                right: 80px;
+                top: 7px;
+            }
+            .img_button{
+                .inner{
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    text-align: right;
+                    img{
+                        height: 25px;
+                    }
+                }
+                .table td{
+                    vertical-align: middle;
+                }
+            }
+            .editor{
+                margin: 10px;
+                width: 50%;
+                mat-form-field{
+                    width: 100%;
+                }
+                .herbewName{
+                    text-align: right;
+                }
+                .ed_item{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 22px;
+                    align-items: center;
+                }
+                .submit{
+                    width: 100%;
+                    margin-top: 22px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+    }
+}

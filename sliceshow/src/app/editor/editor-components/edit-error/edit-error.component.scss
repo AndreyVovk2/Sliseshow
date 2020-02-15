@@ -1,0 +1,69 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+  
+.header {
+  font-family: "Josefin Sans", sans-serif;
+  overflow-x: hidden;
+  .header-banner {
+    background: url("/assets/images/blog/back.png") center no-repeat;
+    height: 325px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    .text-wrapper {
+      text-align: right;
+      h2 {
+        color: $white;
+        font-weight: bold;
+        margin-top: 250px;
+        font-size: 36px;
+      }
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .header-banner,
+    .footer-banner {
+      background-position: center center;
+      -webkit-background-size: 100% auto !important;
+      background-size: 100% auto !important;
+    }
+}
+
+.textbox {
+  display: flex;
+  font-family: 'Josefin Sans';
+  font-weight: 400;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.title {
+  font-size: 30px;
+  color: rgb(24, 10, 33);
+  text-transform: uppercase;
+  line-height: 2.667;
+  display: flex;
+  font-weight: 100;
+  div {
+    text-transform: none;
+    padding-left: 10px;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgb(24, 10, 33);
+  line-height: 1.111;
+}
+
+.action-text {
+    font-size: 17px;
+    color: #776f7c;
+    line-height: 1.111;
+    font-weight: 100;
+    margin-top: 30px;
+}
+}

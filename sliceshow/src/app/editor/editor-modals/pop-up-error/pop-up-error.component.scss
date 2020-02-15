@@ -1,0 +1,50 @@
+.pop-up {
+  margin: -24px;
+  padding: 10px 0 0 0px;
+  width: 690px;
+  height: 400px;
+  font-size: 32px;
+  line-height: 1.2;
+  background-color: #F7F4F7;
+
+  .header {
+    color: #EE0031;
+    .pop-up-img {
+      float: left;
+      margin-left: 30px;
+    }
+    .pop-up-header {
+      float: left;
+      padding: 55px 10px 40px 15px;
+      span {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .content {
+    margin: 40px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 100;
+  }
+
+  .footer {
+    font-size: 16px;
+    margin-top: 50px;
+    button {
+      background-color: #EE0031;
+      color: #ffffff;
+      width: 200px;
+      height: 48px;
+      margin-left: 210px;
+      border: 1px solid #EE0031;
+      border-radius: 24px;
+      cursor: pointer;
+      outline: 0 !important;
+    }
+  }
+
+}
+
+

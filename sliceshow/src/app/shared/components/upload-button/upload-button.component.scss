@@ -1,0 +1,26 @@
+.upload-button{
+    input {
+      display: block;
+      opacity: 0;
+      position: absolute;
+    }
+    label {
+      font-size: 16px;
+      cursor: pointer;
+      font-family: "Josefin Sans";
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      line-height: 1.2;
+      -webkit-transform: scale(1.115, 1);
+      transform: scale(1.115, 1);
+      background-color: rgb(204, 0, 51);
+      width: 320px;
+      height: 48px;
+      border: 1px solid rgb(204, 0, 51);
+      border-radius: 24px;
+      outline: 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}

@@ -1,0 +1,19 @@
+<div class="pop-up">
+  <div class="content" >
+    <div>
+      <span appAdminChange="Modal.PlanAllowsToCreateUp">{{'Modal.PlanAllowsToCreateUp' | translate}} </span>
+      <span> {{store.state.selectSlice.slices}} </span>
+      <span appAdminChange="Modal.Slices"  *ngIf="store.state.selectSlice.slices > 1"> {{'Modal.Slices' | translate}}.</span>
+      <span appAdminChange="Modal.Slice" *ngIf="store.state.selectSlice.slices === 1"> {{'Modal.Slice' | translate}}.</span>
+    </div>
+
+    <span appAdminChange="Modal.PleaseUpgradePlan">{{'Modal.PleaseUpgradePlan' | translate}}</span>
+  </div>
+
+
+
+  <div class="footer">
+    <button class="button-yes" (click)="onClose(false)" appAdminChange="Modal.TakeMeBack">{{'Modal.TakeMeBack' | translate}}</button>
+    <button class="button-no" (click)="onClose(true)" appAdminChange="Modal.Upgrade">{{'Modal.Upgrade' | translate | uppercase}}</button>
+  </div>
+</div>

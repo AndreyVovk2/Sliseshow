@@ -1,0 +1,15 @@
+<div class="pop-up">
+  <div class="content">
+    <div>
+      <span appAdminChange="Modal.PopUpLeft-text1">{{'Modal.PopUpLeft-text1' | translate}}</span>
+    </div>
+    <div>
+      <span>{{data.usedSlices}}/{{data.totalSlices}}</span>
+      <span> {{'Modal.Left' | translate }}</span>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="button-yes" (click)="onClose(false)">{{'Modal.TakeMeBack' | translate | uppercase}}</button>
+    <button class="button-no" (click)="onClose(true)">{{'Modal.Continue' | translate | uppercase}}</button>
+  </div>
+</div>

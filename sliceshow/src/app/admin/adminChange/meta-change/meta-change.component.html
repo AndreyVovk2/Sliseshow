@@ -1,0 +1,41 @@
+<div class="adminChange">
+  <div class="content">
+    <div class="tableScroll">
+      <table class="table table-hover font">
+        <thead>
+        <tr class="tableHead">
+          <th>Meta Name</th>
+          <th>Meta Content</th>
+          <th></th>
+          <th></th>
+          <th class="img_button">
+            <div class="addMetaButton" (click)="openEditor()">
+              <i class="fas fa-plus-circle"></i>
+              <span>Add New Meta</span>
+            </div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let meta of sendMetas">
+          <td>{{meta.name}}</td>
+          <td>{{meta.content}}</td>
+          <td></td>
+          <td class="img_button"><img (click)="editMeta(meta)" src="../../../../assets/images/profile/edit.png"></td>
+          <td class="img_button"><img (click)="deleteMeta(meta.name)"
+                                      src="../../../../assets/images/profile/delete.png"></td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="metaEditor" *ngIf="showEditor">
+      <input type="text" [(ngModel)]="newMeta.name" placeholder="Meta Name">
+      <textarea [(ngModel)]="newMeta.content" placeholder="Meta Content"></textarea>
+      <span *ngIf="this.editState" class="addButton" (click)="updateMeta()">update meta</span>
+      <span *ngIf="!this.editState" class="addButton" (click)="addMeta()">add meta</span>
+    </div>
+    <div class="metaEditor"><span class="addButton" (click)="updateChanges()">update changes</span></div>
+  </div>
+
+</div>

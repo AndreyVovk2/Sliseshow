@@ -1,0 +1,96 @@
+<app-header></app-header>
+<app-profile-header></app-profile-header>
+<div class="body">
+  <div class="project">
+    <div class="wrap" *ngFor="let project of projects">
+
+      <div *ngIf="project && project.animation" [class]="project.deleting ? 'deleting some_project' : 'some_project'">
+        <div class="proj_photo">
+          <!-- [style.backgroundImage]="'url(' + project.animation[0].preview_image + ')'" -->
+
+
+          <div
+            class="proj_photo_placeholder"
+            *ngIf="!!project.animation && isArray(project.animation) && !!project.animation[0].preview_image"
+            [style.backgroundImage]="'url(' + project.animation[0].preview_image + ')'"
+            [style.backgroundSize]="'cover'"
+            [style.backgroundPosition]="'center'"
+            [style.backgroundRepeat]="'no-repeat'"
+          > <div *ngIf="project.paid === true" ><img src="../../../../assets/images/Paid.png" alt="iamge" class="size_image"></div></div>
+          <!-- delete this div by prod -->
+          <!--<div-->
+          <!--class="proj_photo_placeholder"-->
+          <!--*ngIf="!!project.animation && !isArray(project.animation)"-->
+          <!--[style.backgroundImage]="'url(' + project.animation.preview_image + ')'"-->
+          <!--[style.backgroundSize]="'cover'"-->
+          <!--[style.backgroundPosition]="'center'"-->
+          <!--[style.backgroundRepeat]="'no-repeat'"-->
+          <!--&gt;</div>-->
+        </div>
+        <div class="proj_content">
+          <div class="proj_content_left" (mouseleave)="closeAllShared()">
+            <div class="cont_left_top">
+              <div class="proj_name">{{project.name}}</div>
+              <div class="proj_subt">{{getPicture(project)}} {{'Projects.Pictures' | translate}}
+                / {{getSlice(project)}} {{'Projects.Slices' | translate}} /
+                {{+project.total_video_duration | number : '1.0-0' | minuteSeconds}} {{'Projects.Minutes' | translate}}</div>
+              <div><img src="../../../assets/images/profile/zigzag1.png"></div>
+            </div>
+            <div class="cont_left_bott">
+              <div [ngClass]="{'disable': checkProjectPaid(project)}">
+                <!--<div (click)="editProject(project.id)">-->
+                <div (click)="!checkProjectPaid(project) ? editProject(project.id): ''">
+                  <img src="../../../assets/images/profile/edit.png"></div>
+                <div class="proj_bott">{{'Projects.Edit' | translate}}</div>
+              </div>
+              <div (click)="openLink(project.complete_url)" [ngClass]="{'disable': !project.complete_url}">
+                <div><img src="../../../assets/images/profile/preview.png"></div>
+                <div class="proj_bott">{{'Projects.Preview' | translate}}</div>
+              </div>
+              <div [ngClass]="{'disable': !project.complete_url}">
+                <div class="polygon" *ngIf="showVar && (showId == project.id)">
+                  <a [href]="getLinkedLink(project.complete_url)" target="_blank">
+                    <img src="../../../assets/images/main-page.images/icon6.png" alt="">
+                  </a>
+                  <a [href]="getFacebookLink(project.complete_url)" target="_blank">
+                    <img src="../../../assets/images/main-page.images/icon1.png" alt="">
+                  </a>
+                  <a [href]="getTwitterLink(project.complete_url)" target="_blank">
+                    <img src="../../../assets/images/main-page.images/icon2.png" alt="">
+                  </a>
+                  <!-- </div> -->
+                </div>
+                <div (click)="toogleShare(project)"><img src="../../../assets/images/profile/share.png"></div>
+                <div class="proj_bott">{{'Projects.Share' | translate}}</div>
+              </div>
+              <a class="download" [href]="downloadLink(project.name,project.complete_url)" target="_self"
+                 [ngClass]="{'disable': !project.complete_url}">
+                <div><img src="../../../assets/images/profile/download.png"></div>
+                <div class="proj_bott">{{'Projects.Download' | translate}}</div>
+              </a>
+            </div>
+          </div>
+          <div class="proj_content_right">
+            <div class="cont_right_top">
+              <div
+                class="expires">{{'Projects.ExpiresIn' | translate}} {{calculateExtendedTime(project.expired_at)}} {{'Projects.Days' | translate}}</div>
+              <div class="extended" (click)="nulifyExtendedTime(project.id)">{{'Projects.Extended' | translate}}</div>
+            </div>
+            <div class="cont_right_bott">
+              <a>
+                <img *ngIf="!project.deleting" (click)="openDelete(project.id)"
+                     src="../../../assets/images/profile/delete.png">
+                <img class="delete-pending-icon" *ngIf="project.deleting" src="../../../assets/images/spinner.gif">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preloader" *ngIf="!this.isProjectsFetched">
+      <app-spinner></app-spinner>
+      <div class="projects-loading-title">Projects loading</div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

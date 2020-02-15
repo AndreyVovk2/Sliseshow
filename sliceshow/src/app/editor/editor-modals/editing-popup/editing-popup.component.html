@@ -1,0 +1,66 @@
+<div class="media-container">
+  <div class="adminChange">
+    <div class="content" *ngIf="this.editingStore.state.activeMediaParam.button === 1">
+      <div class="content_header">
+        <div class="header-item sm">
+          <img src="../../../assets/images/how_it_works//lines.png">
+        </div>
+        <div class="header-item">
+          <div class="popup-title">Media library / {{this.editingStore.state.activeMediaParam.type}}</div>
+        </div>
+        <div class="header-item sm"></div>
+      </div>
+      <div class="row" *ngIf="this.editingStore.state.activeMediaParam.type === 'image' && libStore.state.myPhoto">
+        <div class="image-box" *ngFor="let image of libStore.state.myPhoto" (click)="selectPic(image)">
+          <div class="file-name">
+            <span>{{image.name}}</span>
+          </div>
+          <div class="image-wrapper" *ngIf="this.selectImg.id !== image.id">
+            <div class="image" [ngStyle]="{'background-image': 'url(' + image.file + ')'}"></div>
+          </div>
+          <div class="image-wrapper" *ngIf="this.selectImg.id === image.id">
+            <div class="image" [ngStyle]="{'background-image': 'url(' + image.file + ')'}"></div>
+            <div class="selected">
+              <img src="/assets/images/create-project-steps/done-icon.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="this.editingStore.state.activeMediaParam.type === 'video' && libStore.state.myVideo.length">
+        <div class="video-box" *ngFor="let video of libStore.state.myVideo" (click)="selectVid(video)">
+          <div class="file-name">
+            <span>{{ video.name}}</span>
+          </div>
+          <div class="video-wrapper">
+            <video class="video">
+              <source [src]="video.file"></video>
+            <div class="selected" *ngIf="this.selectVideo.id === video.id">
+              <img src="/assets/images/create-project-steps/done-icon.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <app-spinner *ngIf="spinerState"></app-spinner>
+        <!-- <app-spinner *ngIf="!libStore.state.myVideo.length && !libStore.state.videoLoaded"></app-spinner> -->
+
+        <div class="empty-lib"
+        *ngIf="(!libStore.state.myVideo.length && libStore.state.videoLoaded)
+        || (!libStore.state.myPhoto.length && libStore.state.photoLoaded)">
+          Your media library is empty
+        </div>
+      </div>
+
+      <div class="butWrap">
+        <button *ngIf="this.editingStore.state.activeMediaParam.type === 'image'" class="continue_button" (click)="choosePic()">Select</button>
+        <button *ngIf="this.editingStore.state.activeMediaParam.type === 'video'" class="continue_button" (click)="chooseVideo()">Select</button>
+      </div>
+    </div>
+
+    <div class="upload" *ngIf="this.editingStore.state.activeMediaParam.button === 2">
+      <span>Upload your {{this.editingStore.state.activeMediaParam.type}} file here</span>
+      <app-upload-button (change)="show($event)"></app-upload-button>
+    </div>
+
+  </div>
+</div>

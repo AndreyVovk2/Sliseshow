@@ -1,0 +1,26 @@
+<div class="library-my-videos">
+  <div class="main-part">
+    <div class="container">
+      <div class="row">
+        <div class="image-box col-lg-2 col-md-3 col-sm-6"
+             *ngFor="let video of store.state.myVideo">
+          <div class="file-name">
+            <span>{{video.name}}</span>
+          </div>
+          <div class="image-wrapper">
+            <div class="garbage-wrapper">
+              <img class="video-play" src="../../../assets/images/library/video-play.png" alt="" (click)="openVideo(video)">
+              <img class="corner" src="../../../assets/images/library/GarbageCorner.png" alt="">
+              <img class="basket" src="../../../assets/images/library/GarbageBasket.png" (click)="removeVideo(video.id)" alt="">
+            </div>
+            <video class="image" alt="">
+                <source [src]="video.file">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="upload" (click)="openDialogUploadFiles()">{{'Library.UploadFiles' | translate}}</button>
+

@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="header">
+  <div class="header-banner"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 appAdminChange="Blog.SliceshowBlog">{{'Blog.SliceshowBlog' | translate | uppercase}}</h2>
+    </div>
+  </div>
+
+  <!-- <div class="header_line">-->
+  <!--<img src="../../../assets/images/about-us/top.png">-->
+  <!--</div>-->
+  <!--<div class="header_text">Sliceshow Blog</div>-->
+  <!--<div class="main_pic">-->
+  <!--<img src="../../../assets/images/blog/back.png">-->
+  <!--</div>-->
+  <!--<div class="header_line">-->
+  <!--<img src="../../../assets/images/about-us/bott.png">-->
+  <!--</div> -->
+</div>
+<!-- blog$ | async as blog -->
+<div class="contt" *ngIf="selectBlog">
+  <div class="main">
+    <div class="pic"><img [src]="selectBlog.full_image"></div>
+    <div class="title">
+      <div class="date">{{selectBlog.creationDate}}</div>
+      <div class="mainTitle">
+        {{selectBlog.title}}
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="text">
+      <div [innerHTML]="selectBlog.text_blog.p1"></div>
+      <div [innerHTML]="selectBlog.text_blog.p2"></div>
+      <div *ngIf="!selectBlog.text_blog.p3" class="author_left">{{selectBlog.creator}}<img
+        src="../../../assets/images/blog/ziga.png"></div>
+    </div>
+    <div class="text second" *ngIf="selectBlog.text_blog.p3">
+      <div>
+        <div [innerHTML]="selectBlog.text_blog.p3"></div>
+        <div [innerHTML]="selectBlog.text_blog.p4"></div>
+      </div>
+      <div *ngIf="selectBlog.text_blog.p3" class="author">{{selectBlog.creator}}<img
+        src="../../../assets/images/blog/ziga.png"></div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

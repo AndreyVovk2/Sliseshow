@@ -1,0 +1,19 @@
+<div class="library">
+  <app-header></app-header>
+  <app-profile-header></app-profile-header>
+
+  <div class="wrapper">
+    <div class="container">
+      <nav class="library-menu">
+          <button [routerLink]="['/library', 'my-photos']" routerLinkActive="library-active">{{'Library.MyPhotos' | translate}}</button>
+          <button [routerLink]="['/library', 'my-videos']" routerLinkActive="library-active">{{'Library.MyVideos' | translate}}</button>
+          <button [routerLink]="['/library', 'my-music']" routerLinkActive="library-active">{{'Library.MyMusic' | translate}}</button>
+      </nav>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+
+  <app-footer></app-footer>
+</div>

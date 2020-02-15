@@ -1,0 +1,57 @@
+.wrap--sci{
+    width: 80px;
+    height: 370px;
+    .topCouner{
+        font-size: 16px;
+        font-family: "Josefin Sans";
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        text-align: center;
+        padding-top: 5px;
+        -moz-transform: scale(1.115, 1);
+        -webkit-transform: scale(1.115, 1);
+        -ms-transform: scale(1.115, 1);
+        color: white;
+        height: 40px;
+        background-image: url('../../../../assets/images/editing-system/PolygonTop.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .buttonSci{
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        .sciWrap{
+            width: 36px;
+            height: 54px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('../../../../assets/images/editing-system/Polygon.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            img{
+                margin-bottom: 10px;
+            }
+        }
+        
+        
+        
+    }
+    .emptyTopLine{
+        width: 41px;
+        height: 143px;
+        border-right: 2px solid rgb(24, 10, 33);
+        margin-top: -1px;
+    }
+    .emptyBotLine{
+        width: 41px;
+        height: 125px;
+        border-right: 2px solid #cc0033;
+        margin-top: -1px;
+    }
+      
+   
+}

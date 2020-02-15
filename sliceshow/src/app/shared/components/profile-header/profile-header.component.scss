@@ -1,0 +1,197 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+@font-face {
+  font-family: Bellerose; /* Имя шрифта */
+  src: url('../../../../assets/fonts/Bellerose.ttf');
+}
+
+::placeholder {
+  color: rgb(24, 10, 33);
+  opacity: 1;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  user-select: none;
+}
+
+/*-------------*/
+.profile {
+  font-family: "Josefin Sans";
+}
+
+.main {
+  .header-banner {
+    background: url("/assets/images/profile/profile-header.png") center no-repeat;
+    height: 208px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    #header-arrow-left {
+      position: absolute;
+      height: 9px;
+      width: 100%;
+      text-align: center;
+      top: -3px;
+      background: url("/assets/images/main-page.images/header-arrow-left.png") center no-repeat;
+    }
+    .store {
+      padding-top: 40px;
+      font-size: 24px;
+      color: rgb(255, 255, 255);
+      font-weight: 600;
+      line-height: 1.2;
+      -moz-transform: scale(1.115, 1);
+      -webkit-transform: scale(1.115, 1);
+      -ms-transform: scale(1.115, 1);
+    }
+  }
+  .percent {
+    font-weight: 100;
+    position: relative;
+    .wrapper {
+      width: 0;
+      position: relative;
+      margin: auto;
+      #percentage-left, #percentage-right, #using-left, #using-right {
+        line-height: 1.2;
+        color: rgb(24, 10, 33);
+        position: absolute;
+      }
+      .percentage {
+        font-family: "Bellerose";
+        font-size: 45px;
+        text-transform: uppercase;
+        -moz-transform: matrix(0.71532732018453, 0, 0, 0.64154916608478, 0, 0);
+        -webkit-transform: matrix(0.71532732018453, 0, 0, 0.64154916608478, 0, 0);
+        -ms-transform: matrix(0.71532732018453, 0, 0, 0.64154916608478, 0, 0);
+      }
+      .using {
+        text-transform: none;
+        font-family: "Krinkes-Regular";
+        color: rgb(24, 10, 33);
+        font-size: 14px;
+        -moz-transform: matrix(3.84600854822538, 0, 0, 3.44933502082994, 0, 0);
+        -webkit-transform: matrix(3.84600854822538, 0, 0, 3.44933502082994, 0, 0);
+        -ms-transform: matrix(3.84600854822538, 0, 0, 3.44933502082994, 0, 0);
+
+      }
+      #pizza {
+
+        position: absolute;
+        top: -116px;
+        left: -91px;
+      }
+      #percentage-left {
+        top: -60px;
+        left: -180px;
+      }
+      #percentage-right {
+        top: -60px;
+        left: 90px;
+      }
+      #using-left {
+        top: 9px;
+        left: -150px;
+
+      }
+      #using-right {
+        top: 9px;
+        left: 120px;
+      }
+      .perLeft {
+        position: absolute;
+      }
+    }
+  }
+  .yellow-line {
+    background-color: $yellow;
+    height: 32px;
+  }
+  @media only screen and (min-width: 1920px) {
+    .header-banner, .footer-banner {
+      background-position: center center;
+      -webkit-background-size: 100% auto;
+      background-size: 100% auto;
+      #header-arrow-left, #header-arrow-right {
+        background-position: center center;
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+      }
+      #header-arrow-left {
+        top: -2px;
+      }
+      #header-arrow-right {
+        bottom: -2px;
+      }
+    }
+  }
+  .menu {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    height: 76px;
+    padding-top: 50px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  .menu a {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    border-right: 1px solid black;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(24, 10, 33);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    padding: 0 15px;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+
+  }
+  #lastMenu {
+    border: none;
+  }
+  .active div {
+    background-color: rgb(255, 202, 95);
+    height: 10px !important;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    z-index: -1;
+    left: 0;
+  }
+  .pizza-bar img {
+    height: 188px;
+  }
+  .canvas-wrapper  {
+    position: absolute;
+    top: -101px;
+    left: -76px;
+  }
+  .image-border {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: absolute;
+    top: -97px;
+    left: -72px;
+  }
+}

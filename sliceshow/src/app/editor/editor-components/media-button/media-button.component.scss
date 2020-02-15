@@ -1,0 +1,57 @@
+.media-button {
+    border: 1px solid #180a21;
+    //height: 64px;
+    height: 72px;
+    margin: 16px auto;
+    .button-icon {
+        width: 83px;
+        height: 100%;
+        border-right: 1px solid #180a21;
+        float: left;
+        &.video {
+            background: url('../../../../assets/images/editing-system/video-camera-icon.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50px 44px;
+        }
+        &.photo {
+            background: url('../../../../assets/images/editing-system/photo-camera-icon.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50px 40px;
+        }
+        // &.text {
+
+        // }
+    }
+    .button-container {
+        padding-top: 19px;
+        padding-bottom: 19px;
+        padding-right: 43px;
+        text-align: right;
+        span {
+            transition: all .3s;
+            font-size: 16px;
+            color: #180a21;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    .file-error {
+        //color: red;
+        //padding-bottom: 10px;
+    }
+
+
+}
+.disabled {
+    cursor: auto !important;
+    &:hover {
+        text-decoration: none !important;
+    }
+}

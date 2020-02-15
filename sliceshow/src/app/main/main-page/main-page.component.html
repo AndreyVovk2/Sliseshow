@@ -1,0 +1,174 @@
+<app-header></app-header>
+
+<div class="main-page">
+
+  <div class="header-banner"
+       *ngIf="localData"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + localData.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <h2 class="title"
+        appAdminChange="Main.CreateYourOwnSlideshows">{{'Main.CreateYourOwnSlideshows' | translate |uppercase}}</h2>
+    <h4 class="description" id="custom"
+        appAdminChange="Main.MakeCustomVideo">{{'Main.MakeCustomVideo' | translate}}</h4>
+    <h4 class="description" appAdminChange="Main.NoDesignSkills">{{'Main.NoDesignSkills' | translate}}</h4>
+    <div class="button-wrapper">
+      <button id="creating" appAdminChange="Main.StartCreating"
+              (click)="startCreating()">{{'Main.StartCreating' | translate}}</button>
+    </div>
+    <button id="learn" appAdminChange="Main.LearnMore"
+            [routerLink]="'/how-it-works'">{{'Main.LearnMore' | translate}}</button>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="row player-wrapper">
+        <div class="col-md-12 col-lg-6 video-content">
+          <div class="video-player" *ngIf="localData">
+            <video id="myVideo" width="100%" height="auto" controls (loadedmetadata)="onMetadata($event, video)">
+              <source [src]="localData.video_body1" type="video/mp4">
+            </video>Ф
+          </div>
+          <div class="loadButtons"
+               *ngIf="this.store.state.authCredentials && this.store.state.authCredentials.admin === 1">
+            <div class="upload-button">
+              <label for="select1"><i class="fas fa-file-upload"></i></label>
+              <input type="file" (change)="show($event)" id="select1" accept="video/*" hidden multiple/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6 reviews">
+          <span class="what-words"
+                appAdminChange="'Main.WhatCustomersAreSaying">{{'Main.WhatCustomersAreSaying' | translate}}</span>
+          <img src="../../../assets/images/main-page.images/Tripple-arrow.png" alt="Arrow">
+          <div class="single-review">
+            <p class="review-text" appAdminChange="Main.Main-p1">"{{'Main.Main-p1' | translate}}"</p>
+            <span class="review-author"
+                  appAdminChange="Main.ReviewAuthor1">- {{'Main.ReviewAuthor1' | translate}}</span>
+          </div>
+          <div class="single-review">
+            <p class="review-text" appAdminChange="Main.Main-p2">"{{'Main.Main-p2' | translate}}"</p>
+            <span class="review-author"
+                  appAdminChange="Main.ReviewAuthor2">- {{'Main.ReviewAuthor2' | translate}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="easy-steps">
+        <h2 appAdminChange="Main.EasySteps"><span>3</span>{{'Main.EasySteps' | translate}}</h2>
+      </div>
+      <div class="row squares">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-2">
+              <span class="square-number">1</span>
+            </div>
+            <div class="col-10 square-container "
+                 id="square1"
+                 appAdminChange="img_body1"
+            >
+              <div class="square-black-transparent">
+                <span appAdminChange="HowItWorks.Step-text1">{{'HowItWorks.Step-text1' | translate}}</span>
+              </div>
+            </div>
+            <div class="square-sign"
+                 appAdminChange="HowItWorks.ChooseYourShow">{{'HowItWorks.ChooseYourShow' | translate}}</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-2"><span class="square-number">2</span></div>
+            <div class="col-10 square-container"
+                 id="square2"
+                 appAdminChange="img_body2"
+            >
+              <div class="square-black-transparent">
+                <span appAdminChange="HowItWorks.Step-text2">{{'HowItWorks.Step-text2' | translate}}</span>
+              </div>
+            </div>
+            <div class="square-sign"
+                 appAdminChange="HowItWorks.AddYourMedia">{{'HowItWorks.AddYourMedia' | translate}}</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-2"><span class="square-number">3</span></div>
+            <div class="col-10 square-container"
+                 id="square3"
+                 appAdminChange="img_body3"
+            >
+              <div class="square-black-transparent">
+                <span appAdminChange="HowItWorks.Step-text3">{{'HowItWorks.Step-text3' | translate}}</span>
+              </div>
+            </div>
+            <div class="square-sign"
+                 appAdminChange="HowItWorks.PlayYourVideo">{{'HowItWorks.PlayYourVideo' | translate}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yellow-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 justify-content-end">
+            <img src="../../../assets/images/how_it_works/lines.png" alt="">
+          </div>
+          <div class="col-9">
+            <h1 appAdminChange="Main.ChooseYourCategory">{{'Main.ChooseYourCategory' | translate}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="attract">
+      <div class="container">
+        <ngx-carousel [inputs]="carouselConfig">
+          <ngx-item
+            *ngFor="let category of categories | orderBy: sortParam: false"
+            NgxCarouselItem>
+            <!-- [height]="'100%'"  by default-->
+            <!-- [width]="'auto'" by default-->
+            <a [routerLink]="'/gallery'" [queryParams]="{ id: category.id }">
+              <app-category-wrapper-block
+                [category]="category"
+                [width]="carouselWidth * widthCof + 'px'"
+                [height]="carouselHeight * widthCof + 'px'"
+                [border]="'false'"
+                [canBeSelected]="false"
+              ></app-category-wrapper-block>
+            </a>
+
+          </ngx-item>
+          <div NgxCarouselPrev class="left-arrow">
+            <img src="../../../assets/images/main-page.images/arrow-left.png" alt="">
+          </div>
+          <div NgxCarouselNext class="right-arrow">
+            <img src="../../../assets/images/main-page.images/arrow-right.png" alt="">
+          </div>
+        </ngx-carousel>
+        <button [routerLink]="'/gallery'" appAdminChange="Main.ViewAll">{{'Main.ViewAll' | translate}}</button>
+      </div>
+    </div>
+
+    <div class="footer-banner"
+         *ngIf="localData"
+         appAdminChange="img_body1"
+         [ngStyle]="{'background':'url(' + localData.img_body1 + ') center no-repeat', 'flex-direction': this.adminStore.state.currentLang === 'he' ? 'row-reverse' : 'row'}">
+      <div class="hidden"></div>
+      <div class="visiable">
+        <h1 appAdminChange="Main.ReadOurBlog">{{'Main.ReadOurBlog' | translate}}</h1>
+        <button [routerLink]="'/blog'"
+                appAdminChange="Main.ContinueReading">{{'Main.ContinueReading' | translate }}</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<app-footer>
+
+</app-footer>

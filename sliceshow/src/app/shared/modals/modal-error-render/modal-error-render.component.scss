@@ -1,0 +1,45 @@
+.body_modal {
+  width: 690px;
+  height: 350px;
+  font-family: "Josefin Sans";
+}
+
+.title_modal {
+  padding-top: 28px;
+  font-size: 35px;
+  text-align: center;
+  color: red;
+  font-family: "Josefin Sans";
+}
+.image_modal{
+  position: absolute;
+  height: 80px;
+}
+.button_modal {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+.image{
+  width: 210px;
+  height: 265px;
+  color: #ffffff;
+  font-family: "Krinkes Decor PERSONALUSE";
+  font-size: 78px;
+  font-weight: 400;
+}
+
+.button {
+  width: 225px;
+  height: 45px;
+  border-radius: 20px;
+  background-color: #cc0033;
+  color: white;
+
+}
+
+.text_modal {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 40px;
+}

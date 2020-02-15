@@ -1,0 +1,12 @@
+@import '~variables.scss';
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font;
+    canvas{
+        font-family: $font;
+        z-index: 500;
+    }
+}

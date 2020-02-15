@@ -1,0 +1,78 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+.terms-and-conditions {
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+
+  .header-banner {
+    // background: url("http://slice-show.grassbusinesslabs.tk/storage/images/img_head1532506037.png") center no-repeat;
+    height: 323px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    #header-arrow-left, #header-arrow-right {
+      position: absolute;
+      height: 9px;
+      width: 100%;
+      text-align: center;
+    }
+    #header-arrow-left {
+      top: -3px;
+      background: url("/assets/images/main-page.images/header-arrow-left.png") center no-repeat;
+    }
+    #header-arrow-right {
+      bottom: -3px;
+      background: url("/assets/images/main-page.images/header-arrow-right.png") center no-repeat;
+    }
+    .text-wrapper {
+      text-align: left;
+      h2 {
+        color: #2A3956;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 250px;
+        font-size: 36px;
+      }
+    }
+  }
+
+  .container {
+    .line {
+      // background: url("/assets/images/privacy-policy/line.png") left no-repeat;
+      height: 10px;
+      margin-top: 48px;
+      margin-bottom: 30px;
+    }
+    .text {
+      font-size: 24px;
+      font-family: 'Josefin Sans', sans-serif;
+      overflow-x: hidden;
+      color: rgb(24, 10, 33);
+      line-height: 1.25;
+      text-align: justifyLeft;
+      text-indent: 25px;
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    .header-banner {
+      background-position: center center;
+      -webkit-background-size: 100% auto !important;
+      background-size: 100% auto !important;
+      #header-arrow-left, #header-arrow-right {
+        background-position: center center;
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+      }
+      #header-arrow-left {
+        top: -2px;
+      }
+      #header-arrow-right {
+        bottom: -2px;
+      }
+    }
+  }
+
+}

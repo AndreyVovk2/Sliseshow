@@ -1,0 +1,180 @@
+<div class="adminChange" *ngIf="this.adminStore.state.userState !== 5">
+    <div class="leftContent" >
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate}}</p>
+    </div>
+
+    <div class="content">
+        <div *ngIf="this.adminStore.state.userState === 0" class="edit">
+
+          <div class="user_block">
+            <div class="key_user">User Name:</div>
+            <input class="value_user" type="text" [(ngModel)]="this.adminStore.state.editUser.name">
+          </div>
+
+          <div class="user_block">
+            <div class="key_user">User Last Name:</div>
+            <input class="value_user" type="text" [(ngModel)]="this.adminStore.state.editUser.last_name">
+          </div>
+
+          <div class="user_block">
+            <div class="key_user">User Email:</div>
+            <input class="value_user" type="text" [(ngModel)]="this.adminStore.state.editUser.email">
+          </div>
+
+          <!--<div class="user_block">-->
+            <!--<div class="key_user">User Gender:</div>-->
+            <!--<input class="value_user" type="text" [(ngModel)]="this.adminStore.state.editUser.gender">-->
+          <!--</div>-->
+
+            <div class="user_block">
+                <div class="key_user">User Gender:</div>
+                <select class="value_user" [(ngModel)]="this.adminStore.state.editUser.gender">
+                    <option [selected]="this.adminStore.state.editUser.gender == 'male'">male</option>
+                    <option [selected]="this.adminStore.state.editUser.gender == 'female'">female</option>
+                </select>
+            </div>
+
+          <!-- <div class="user_block">
+            <div class="key_user">User Confirmed:</div>
+            <div class="check_value">
+                <input type="checkbox" [(ngModel)]="this.adminStore.state.editUser.confirmed">
+            </div>
+          </div> -->
+
+          <!-- <div class="user_block">
+            <div class="key_user">User Admin:</div>
+            <div class="check_value">
+              <input type="checkbox" [(ngModel)]="this.adminStore.state.editUser.admin">
+            </div>
+          </div> -->
+
+          <div class="user_block">
+            <div class="key_user">User Tariiff Id:</div>
+            <input class="value_user" type="text" [(ngModel)]="this.adminStore.state.editUser.tariff_id">
+          </div>
+
+          <!-- <div class="confirm">
+            <app-rounded-button (click)="updateUser()"
+              [label]="'Update User'"
+              [primary]="true"
+            ></app-rounded-button>
+          </div> -->
+          <div class="buttons_group">
+              <div class="user_button okey" (click)="updateUser()">Update User</div>
+          </div>
+
+        </div>
+
+        <div *ngIf="this.adminStore.state.userState === 1" class="delete">
+          <div class="warn_text">
+            <span >Are you sure you want to delete this user?</span>
+          </div>
+          <div class="buttons_group">
+              <div class="user_button cancel" (click)="closeModal()">Cancel</div>
+              <div class="user_button okey" (click)="deleteUser()">Delete</div>
+            </div>
+          <!-- <div class="buttons_group">
+            <app-rounded-button (click)="closeModal()"
+              [label]="'Cancel'"
+              [secondary]="true"
+            ></app-rounded-button>
+            <app-rounded-button (click)="deleteUser()"
+              [label]="'Delete'"
+              [primary]="true"
+            ></app-rounded-button>
+          </div> -->
+        </div>
+
+
+        <div *ngIf="this.adminStore.state.userState === 2" class="edit">
+
+          <div class="user_block">
+            <div class="key_user">User Name:</div>
+            <input class="value_user" type="text" [(ngModel)]="newUser.name">
+          </div>
+
+          <div class="user_block">
+            <div class="key_user">User Last Name:</div>
+            <input class="value_user" type="text" [(ngModel)]="newUser.last_name">
+          </div>
+
+          <div class="user_block">
+            <div class="key_user">User Email:</div>
+            <input class="value_user" type="text" [(ngModel)]="newUser.email">
+          </div>
+
+          <div class="user_block">
+              <div class="key_user">User Password:</div>
+              <input class="value_user" type="text" [(ngModel)]="newUser.password">
+            </div>
+
+          <!--<div class="user_block">-->
+            <!--<div class="key_user">User Gender:</div>-->
+            <!--<input class="value_user" type="text" [(ngModel)]="newUser.gender">-->
+          <!--</div>-->
+
+            <div class="user_block">
+                <div class="key_user">User Gender:</div>
+                <select class="value_user" [(ngModel)]="newUser.gender">
+                    <option>male</option>
+                    <option>female</option>
+                </select>
+            </div>
+
+          <!-- <div class="user_block">
+            <div class="key_user">User Confirmed:</div>
+            <div class="check_value">
+              <input type="checkbox" [(ngModel)]="newUser.confirmed">
+            </div>
+          </div> -->
+
+          <div class="user_block">
+            <div class="key_user">User Tariiff Id:</div>
+            <input class="value_user" type="text" [(ngModel)]="newUser.tariff_id">
+          </div>
+
+          <!-- <div class="confirm">
+            <app-rounded-button (click)="createUser()"
+              [label]="'Create User'"
+              [primary]="true"
+            ></app-rounded-button>
+          </div> -->
+          <div class="buttons_group">
+              <div class="user_button okey" (click)="createUser()">Create User</div>
+          </div>
+
+
+        </div>
+
+        <div *ngIf="this.adminStore.state.userState === 3" class="delete">
+            <div class="warn_text">
+              <span>Are you sure you want to give admin rights to this user?</span>
+            </div>
+            <div class="buttons_group">
+              <div class="user_button cancel" (click)="closeModal()">Cancel</div>
+              <div class="user_button okey" (click)="changeAdminRights()">Give admin rights</div>
+            </div>
+        </div>
+
+        <div *ngIf="this.adminStore.state.userState === 4" class="delete">
+            <div class="warn_text">
+              <span>Are you sure you want to delete admin rights to this user?</span>
+            </div>
+            <div class="buttons_group">
+              <div class="user_button cancel" (click)="closeModal()">Cancel</div>
+              <div class="user_button okey" (click)="changeAdminRights()">Delete admin rights</div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="mailEditor" *ngIf="this.adminStore.state.userState === 5">
+  <angular-editor [(ngModel)]="sendBody.message" [config]="config"></angular-editor>
+  <input type="text" placeholder="EMAIL TITLE" [(ngModel)]="sendBody.title">
+  <span class="sendMail" (click)="sendMail()">Send Email</span>
+</div>

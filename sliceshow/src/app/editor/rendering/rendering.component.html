@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="tt">
+  <!--  <div class="hero-bkg-animated">-->
+  <!--    <img src='../../../assets/images/rendering/gif.gif'>-->
+  <!-- <img src='../../../assets/images/rendering/MotoMove2.png'> -->
+  <!-- <img src='../../../assets/images/rendering/MotoMove3.png'>
+  <img src='../../../assets/images/rendering/MotoMove4.png'>     -->
+  <!--  </div>-->
+  <!--</div>-->
+  <!--  <div class="title">{{'Render.text1' | translate}}-->
+  <!--    <div *ngFor="let progres of progress">-->
+  <!--      <span>&#8194;{{progres}}</span></div>-->
+  <!--    &lt;!&ndash;<div>{{'Render.Min' | translate}}</div>&ndash;&gt;-->
+  <!--    <div><span>%</span></div>-->
+  <!--  </div>-->
+  <!--  <mat-progress-bar class="example-margin"-->
+  <!--                    [color]="color"-->
+  <!--                    [mode]="mode"-->
+  <!--                    [value]="value"-->
+  <!--                    [bufferValue]="bufferVlue">Loading-->
+  <!--  </mat-progress-bar>-->
+  <div class="title_name">
+    <span *ngIf="editingStore.state.project" class="name_project">{{editingStore.state.project.name}}</span>
+  </div>
+  <div class="videoScreen">
+    <app-video-player id='video1' #video class="videoScreen">
+    </app-video-player>
+    <div class="button_download" *ngFor="let project of projects">
+      <div *ngIf="project.complete_url && project.expired_at.substr(15,4) === project.created_at.substr(15,4)">
+<button class="button_load" >
+        <a [href]="downloadLink(project.name,project.complete_url)" target="_self">DOWNLOAD</a></button>
+        <!--      <button class="button_load" [href]="downloadLink(project.name,project.complete_url)" target="_self">DOWNLOAD-->
+        <!--      </button>-->
+      </div>
+    </div>
+    <!--  <div class="subtitle">{{'Render.text2' | translate}}. fdasfdf</div>-->
+    <!--  <div class="subtitle">{{'Rendeblock-label with-marginr.text3' | translate}} asdasd</div>-->
+  </div>
+</div>
+<!--<a href="https://slice.grassbusinesslabs.ml/storage/animation/image/compression/KAzmSBGVtie8gYBMU371n5QwfwmlCFr0g.PNG" title="priv" download="priv">load</a>-->
+<!--<button (click)="loadFile($event)" >eqeqe</button>-->
+<!--<button (click)="Fd()"></button>-->
+<!--"text1": "Thanks for your order. Your sliceshow is coming after",-->
+<!--"text1": "",             Єврит-->
+<app-footer></app-footer>
+

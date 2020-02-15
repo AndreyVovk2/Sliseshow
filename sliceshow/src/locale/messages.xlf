@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ourteam" datatype="html">
+        <source>Our team</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fc830f553d463b4dada3a9daa91e58f806639e72" datatype="html">
+        <source>Surprise your family and friends with a high-quality video slideshow about your
+          vacation or any special event.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aa78bf309c5f58446ff13d62950d31516baa47bf" datatype="html">
+        <source>There are many variations of passages of Lorem Ipsum
+          available, but the majority have suffered alteration in some form, by injected humour,
+          or randomised words which don&apos;t look even slightly believable. If you are going to use 
+          a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden 
+          in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat 
+          predefined chunks as necessary</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="about_us" datatype="html">
+        <source>About us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4cef2ab0afdf8ca0f5a6f04bdde9b3f129494cd6" datatype="html">
+        <source>Our mission <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="62c827fea7f477bcfcb93a530d184d1358e6dc0d" datatype="html">
+        <source>Surprise your family and friends with a high-quality video slideshow about your vacation or any special event.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a2c5e81b1f74376221d0b0b8713a37a701cab319" datatype="html">
+        <source>There are many variations of passages of Lorem Ipsum
+          available, but the majority have suffered alteration in some form, by injected humour,
+          or randomised words which don&apos;t look even slightly believable. If you are going to use 
+          a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden 
+          in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat 
+          predefined chunks as necessary making this the first true generator on the Internet. 
+          It uses a dictionary of over 200 Latin words, combined with a handful of model sentence 
+          structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is 
+          therefore always free from repetition, injected humour, or non-characteristic words etc.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/about-us.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+                               <trans-unit id="@@sliceshow1" datatype="html">
+                                      <source>Create your video </source>
+                                              <context-group purpose="location">
+                                                <context context-type="sourcefile">src/app/modules/create-project-step-one/create-project-step-one.component.ts</context>
+                                                <context context-type="linenumber">10</context>
+                                              </context-group>
+                                    </trans-unit>
+    </body>
+  </file>
+</xliff>

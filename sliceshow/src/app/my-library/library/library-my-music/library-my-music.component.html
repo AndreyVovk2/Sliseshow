@@ -1,0 +1,12 @@
+<div class="library-my-music">
+  <div class="container">
+    <app-library-audio
+      [trackData]="track"
+      *ngFor="let track of store.state.myMusic"
+      (delete)="removeSong($event)"
+    ></app-library-audio>
+    <app-pending-song [full]="true" [name]="track.name" *ngFor="let track of store.state.pendingSongs"></app-pending-song>
+    <app-spinner *ngIf="!store.state.musicLoaded"></app-spinner>
+  </div>
+</div>
+<button class="upload" (click)="openDialogUploadFiles()">{{'Library.UploadFiles' | translate}}</button>

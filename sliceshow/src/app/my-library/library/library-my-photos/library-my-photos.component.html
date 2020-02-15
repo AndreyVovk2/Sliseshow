@@ -1,0 +1,36 @@
+<div class="library-my-photos">
+  <div class="main-part">
+    <div class="container">
+      <!--<app-spinner *ngIf="!store.state.photoLoaded"></app-spinner>-->
+      <div class="row">
+        <div class="image-box col-lg-2 col-md-3 col-sm-6"
+             *ngFor="let image of store.state.myPhoto" (click)="openImage(image)">
+          <div class="file-name">
+            <span>{{image.name}}</span>
+          </div>
+          <div class="image-wrapper">
+            <div class="garbage-wrapper">
+              <img class="corner" src="../../../assets/images/library/GarbageCorner.png" alt="">
+              <img class="basket" src="../../../assets/images/library/GarbageBasket.png" alt="" (click)="removeImg(image.id)">
+            </div>
+            <div class="image" [ngStyle]="{'background-image': 'url(' + image.file + ')'}"></div>
+            <!-- <img class="image" [src]="image.file" alt=""> -->
+          </div>
+        </div>
+        <div
+          class="image-box col-lg-2 col-md-3 col-sm-6"
+          *ngFor="let image of store.state.pendingPhotos"
+        >
+          <div class="file-name">
+            <span>{{image.id}}</span>
+          </div>
+          <div class="image-wrapper pending">
+            <app-spinner></app-spinner>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="upload" (click)="openDialogUploadFiles()">{{'Library.UploadFiles' | translate}}</button>

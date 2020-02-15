@@ -1,0 +1,46 @@
+<div class="media-container">
+    <div class="adminChange">
+      <div class="content" *ngIf="data.param">
+        <div class="content_header">
+          <div class="header-item sm">
+            <img src="../../../assets/images/how_it_works//lines.png">
+          </div>
+          <div class="header-item">
+            <div class="popup-title">Media library / Video</div>
+          </div>
+          <div class="header-item sm"></div>
+        </div>
+        <div class="row" >
+          <div class="video-box" *ngFor="let video of allVideos" (click)="selectVid(video)">
+            <div class="file-name">
+              <span>{{ video.name}}</span>
+            </div>
+            <div class="video-wrapper">
+              <video class="video">
+                <source [src]="video.file">
+              </video>
+              <div class="selected" *ngIf="this.selectVideo.id === video.id">
+                <img src="/assets/images/create-project-steps/done-icon.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <app-spinner *ngIf="!allVideos.length && !videoLoaded"></app-spinner>
+          <div class="empty-lib" *ngIf="!allVideos.length && videoLoaded">
+            Your media library is empty
+          </div>
+        </div>
+        <div class="butWrap">
+          <button class="continue_button" (click)="chooseVideo()">Select</button>
+        </div>
+      </div>
+  
+      <div class="upload" *ngIf="!data.param">
+        <span>Upload your video file here</span>
+        <app-upload-button (change)="show($event)"></app-upload-button>
+      </div>
+  
+    </div>
+  </div>
+  

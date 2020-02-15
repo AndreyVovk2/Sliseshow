@@ -1,0 +1,179 @@
+@font-face {
+    font-family: midnight; /* Имя шрифта */
+    src: url('../../../../assets/fonts/Midnight_Bangkok.ttf');
+}
+::placeholder {
+    color: rgb(24, 10, 33);
+    opacity: 1;
+    text-transform: uppercase;
+}
+button:focus {
+    outline:0;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    user-select: none;
+}
+form{
+    width: 430px;
+}
+
+angular-editor{
+    .angular-editor{
+        .angular-editor-wrapper{
+            background-color: gray !important;
+        } 
+    }
+}
+
+.adminChange{
+    width: 800px;
+    height: 600px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(254, 252, 237);
+    box-shadow: 0px 0px 15.96px 5.04px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../../../assets/images/sign-up/backgroung.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: -24px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+// .leftContent {
+//   display: flex;
+//   width: 320px;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: rgba(24, 10, 33, 0.5);
+// }
+
+// #cook {
+//     width: 100px;
+//     padding-top: 20px;
+//     font-size: 16px;
+//     color: rgb(255, 255, 255);
+//     text-transform: uppercase;
+//     line-height: 1.2;
+//     text-align: center;
+//   -moz-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+//   -webkit-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+//   -ms-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+//     opacity: 1;
+//     font-weight: 300;
+   
+// }
+// #yourOwn {
+//     text-align: center;
+//     font-family: 'Amatic SC', cursive;
+//     font-weight: 400;
+//     font-size: 35px;
+//     text-transform: uppercase;
+//     color: white;
+//     opacity: 1;
+// }
+// #sliceShow {
+//     width: 100px;
+//     text-align: center;
+//     font-family: 'midnight';
+//     font-weight: 200;
+//     font-size: 16px;
+//     color: rgb(255, 255, 255);
+//     opacity: 1;
+//     -moz-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+//     -webkit-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+//     -ms-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+// }
+
+// #withUs {
+//     text-align: center;
+//     font-weight: 600;
+//     font-size: 25px;
+//     color: white;
+//     text-transform: uppercase;
+// }
+
+.content{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .top_input{
+        display: flex;
+        justify-content: space-between;
+    }
+    .area_blog{
+        display: flex;
+        flex-direction: column;
+        .area{
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            span{
+                background-color: gray;
+                margin-right: 5px;
+            }
+            textarea{
+                height: 110px;
+                width: 650px;
+                resize: none;
+            }
+        }
+    }
+    .group-button{
+        display: flex;
+        .upload{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            justify-content: center;
+            span{
+                color:#fff;
+            }
+        }
+        .edit-block{
+            display: flex;
+            align-items: center;
+            .butn{
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 5px;
+                margin-right: 20px;
+                width: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                :hover{
+                    cursor: pointer;
+                }
+            }
+            .update{
+                background-color: rgb(204, 0, 51);
+                :hover{
+                    cursor: pointer;
+                }
+            }
+            .delete{
+                background-color: rgb(255, 202, 95);
+                :hover{
+                    cursor: pointer;
+                }
+            }
+            .cancel{
+               background-color: rgb(246, 244, 247);
+               :hover{
+                cursor: pointer;
+            }
+            }
+        }
+    }
+
+
+}
+
+
+

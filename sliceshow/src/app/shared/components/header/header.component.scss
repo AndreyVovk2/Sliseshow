@@ -1,0 +1,284 @@
+@import "~variables.scss";
+
+.header {
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+  .top-left-image, .top-right-image {
+    position: absolute;
+    z-index: 2;
+  }
+  .top-left-image {
+    left: 0;
+    height: 100px;
+  }
+  .top-right-image {
+    right: 0;
+    height: 390px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 128px 1fr 250px;
+    .logo {
+      img {
+        height: 93px;
+        width: 128px;
+        cursor: pointer;
+        outline: 0;
+      }
+    }
+    .header-menu {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      a {
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #000000;
+        text-decoration: none;
+        margin: 0 20px;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+
+    .user-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      .dropdown, .pseudo-dropdown {
+        z-index: 3;
+        display: inline-block;
+        p {
+          font-size: 16px;
+          display: inline-block;
+          font-weight: 700;
+          margin: 0 0 0 15px;
+          cursor: pointer;
+        }
+        p:hover {
+          color: $red;
+        }
+        .thin {
+          font-weight: 700;
+        }
+      }
+      .dropdown-toggle::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: -0.2em;
+        vertical-align: -0.03em;
+        content: "";
+        border-top: 0.75em solid;
+        border-right: 0.4em solid transparent;
+        border-bottom: 0;
+        border-left: 0.4em solid transparent;
+      }
+      .dropdown-menu {
+        left: unset;
+        right: -20px;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #000000;
+        a {
+          font-size: 16px;
+          padding: 10px 15px 5px 15px;
+          text-transform: uppercase;
+        }
+        a:hover {
+          background-color: $yellow;
+        }
+        .logout:hover {
+          background-color: $red;
+          color: $white;
+        }
+      }
+    }
+    .mobile-menu {
+      display: none;
+      position: relative;
+      .burger {
+        position: absolute;
+        right: 0;
+        bottom: 8px;
+        height: 24px;
+        width: 30px;
+        z-index: 2;
+        cursor: pointer;
+        outline: 0;
+        &:hover {
+          color: $red;
+        }
+        .line {
+          position: absolute;
+          width: 30px;
+          height: 4px;
+          border-radius: 2px;
+          background-color: #000000;
+        }
+        .second, .third {
+          position: absolute;
+          top: 10px;
+          -webkit-transition: transform .5s;
+          -moz-transition: transform .5s;
+          -ms-transition: transform .5s;
+          -o-transition: transform .5s;
+          transition: transform .5s;
+        }
+        .forth {
+          position: absolute;
+          top: 20px;
+        }
+      }
+      .burger-active {
+        .first, .forth {
+          display: none;
+        }
+        .second {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        .third {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+  .adminGrid{
+    grid-template-columns: 128px 1fr 320px;
+  }
+
+  @media only screen and (max-width: 1440px) {
+    .adminGrid {
+      max-width: 1180px;
+    }
+  }
+
+  //@media only screen and (max-width: 1300px) {
+  //  .adminGrid {
+  //    max-width: 1080px !important;
+  //  }
+  //}
+
+  //@media only screen and (min-width: 1250px) {
+  //  .adminGrid {
+  //    max-width: 1085px;
+  //  }
+  //}
+
+  @media only screen and (max-width: 1295px) {
+    //.adminGrid {
+    //  max-width: 1000px;
+    //}
+    .grid-container {
+      display: grid;
+      grid-template-columns: 128px 1fr 50px;
+      grid-template-rows: 93px 1fr;
+      position: relative;
+      .logo {
+        img {
+          width: 128px;
+          height: 93px;
+        }
+      }
+      .header-menu {
+        order: 1;
+        flex-direction: column;
+        grid-area: 2 / 1 / 2 / 4;
+        a {
+          font-size: 16px;
+          height: 0px;
+          overflow: hidden;
+          -webkit-transition: height .5s;
+          -moz-transition: height .5s;
+          -ms-transition: height .5s;
+          -o-transition: height .5s;
+          transition: height .5s;
+          display: block;
+          margin: auto;
+        }
+      }
+      .header-menu-active {
+        order: 1;
+        flex-direction: column;
+        grid-area: 2 / 1 / 2 / 4;
+        a {
+          height: 24px;
+          font-size: 16px;
+          display: block;
+          margin: auto;
+        }
+      }
+      .mobile-menu {
+        display: block;
+
+        //&:hover {
+        //  color: $red;
+        //}
+      }
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 106px 1fr 50px;
+      grid-template-rows: 77px 1fr;
+      position: relative;
+      .logo {
+        img {
+          width: 106px;
+          height: 77px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 66px 1fr 50px;
+      grid-template-rows: 60px 1fr;
+      position: relative;
+      .logo {
+        img {
+          width: 72px;
+          height: 52px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: 27px 1fr 36px;
+      .user-menu{
+        .dropdown{
+          p{
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1590px) {
+    .top-left-image, .top-right-image {
+      display: none;
+    }
+  }
+}
+
+
+

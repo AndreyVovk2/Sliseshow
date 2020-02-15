@@ -1,0 +1,198 @@
+
+// @import '~variables.scss';
+// //  ----checkbox---------
+// #check1{
+//     margin: 50px;
+//     background-color: gray;
+//     -webkit-appearance: none;
+// }
+// #lab1{
+//     position: relative;
+//     width: 90px;
+//     height: 35px;
+//     user-select: none;
+//     img{
+//         width: 27px;
+//         display: none;
+//     }
+// }
+// #lab1::before{
+//     content: '';
+//     width: 20px;
+//     height: 20px;
+//     background-color: transparent;
+//     display: inline-block;
+//     border: 2px solid $black;
+//     position: relative;
+//     top: 27px;
+//     right: 25px;
+// }
+// .visiable{
+//     display: block !important;
+//     position: relative;
+//     top: -31px;
+//     left: -25px;
+// }
+
+
+// //  -----------radio---------
+// div{
+//     display: flex;
+//     flex-direction: row;
+//     margin: 40px;
+// }
+// #rad1{
+//     margin-top: 40px;
+//     margin-left: 40px;
+//     background-color: grey;
+//     -webkit-appearance: none;
+// }
+// #labr1{
+//     position: relative;
+//     padding: 30px;
+//     img{
+//         width: 10px;
+//         display: none;
+//     }
+// }
+// #labr1::before{
+//     content: '';
+//     width: 20px;
+//     height: 20px;
+//     border-radius: 50%;
+//     background-color: transparent;
+//     display: inline-block;
+//     border: 1px solid #000;
+//     position: relative;
+//     top: 4px;
+//     right: 0px;
+// }
+// #rad2{
+//     margin-top: 40px;
+//     margin-left: 40px;
+//     background-color: grey;
+//     -webkit-appearance: none;
+// }
+// #labr2{
+//     position: relative;
+//     padding: 30px;
+//     img{
+//         width: 10px;
+//         display: none;
+//     }
+// }
+// #labr2::before{
+//     content: '';
+//     width: 20px;
+//     height: 20px;
+//     border-radius: 50%;
+//     background-color: transparent;
+//     display: inline-block;
+//     border: 1px solid #000;
+//     position: relative;
+//     top: 4px;
+//     right: 0px;
+// }
+// .visiable1{
+//     display: block !important;
+//     position: relative;
+//     top: -17px;
+//     left: 5px;
+// }
+// button{
+//     background-color: $red;
+// }
+
+// .Rectangle_2 {
+//     border-width: 2px;
+//     border-color: rgb(24, 10, 33);
+//     border-style: solid;
+//     position: absolute;
+//     left: 1184px;
+//     top: 712px;
+//     width: 12px;
+//     height: 12px;
+//     z-index: 26;
+//   }
+//   p{
+//     font-size: 36px;
+//     font-family: "Josefin Sans";
+//     color: rgb(24, 10, 33);
+//     font-weight: 600;
+//     text-transform: uppercase;
+//     line-height: 1.43;
+//   }
+
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+  
+.header {
+  font-family: "Josefin Sans", sans-serif;
+  overflow-x: hidden;
+  .header-banner {
+    background: url("/assets/images/blog/back.png") center no-repeat;
+    height: 325px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    .text-wrapper {
+      text-align: right;
+      h2 {
+        color: $white;
+        font-weight: bold;
+        margin-top: 250px;
+        font-size: 36px;
+      }
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .header-banner,
+    .footer-banner {
+      background-position: center center;
+      -webkit-background-size: 100% auto !important;
+      background-size: 100% auto !important;
+    }
+  } //img {
+  //  width: 100%;
+  //}
+  //z-index: -2;
+  //position: relative;
+}
+
+.textbox {
+  display: flex;
+  font-family: 'Josefin Sans';
+  font-weight: 400;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.title {
+  font-size: 30px;
+  color: rgb(24, 10, 33);
+  text-transform: uppercase;
+  line-height: 2.667;
+  display: flex;
+  font-weight: 100;
+  div {
+    text-transform: none;
+    padding-left: 10px;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgb(24, 10, 33);
+  line-height: 1.111;
+}
+
+.action-text {
+    font-size: 17px;
+    color: #776f7c;
+    line-height: 1.111;
+    font-weight: 100;
+    margin-top: 30px;
+}

@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-profile-header></app-profile-header>
+<div class="profile"> 
+    <form class="input" [formGroup]="profileForm" (submit)="onSubmit()">
+        <div class="lines">
+            <div class="line">
+                <input placeholder="{{'Profile.Name' | translate}}" type="text" [(ngModel)]="store.state.authCredentials.name" formControlName="name" maxlength="20">
+                <input placeholder="{{'Profile.LastName' | translate}}" type="text" [(ngModel)]="store.state.authCredentials.last_name" formControlName="last_name" maxlength="20">
+                <input placeholder="{{'Profile.Email' | translate}}" type="email" [(ngModel)]="store.state.authCredentials.email" formControlName="email">
+                <!-- <div id="radio">
+                    <mat-radio-button class="first_radio" type="radio" name="sex"><p>{{'Profile.Male' | translate}}</p></mat-radio-button>
+                    <mat-radio-button type="radio" checked name="sex"><p>{{'Profile.Female' | translate}}</p></mat-radio-button>
+                </div> -->
+                <div class="radioButtons">
+                    <div class="radioCheck num1">
+                        <div class="cusRadio" (click)="changeGender('male')"><div *ngIf="gender === 'male'" class="selected"></div></div>
+                        <span class="label">{{'Profile.Male' | translate}}</span>
+                    </div>
+                    <div class="radioCheck">
+                        <div class="cusRadio" (click)="changeGender('female')"><div *ngIf="gender === 'female'" class="selected"></div></div>
+                        <span class="label">{{'Profile.Female' | translate}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <input id="imInput" type="password" placeholder="{{'Profile.OldPassword' | translate}}" formControlName="old_password">
+                <div class="warn">{{'Profile.PasswordMustContainEigCharacters' | translate}}</div>
+                <input placeholder="{{'Profile.NewPassword' | translate}}" type="password" formControlName="new_password">
+                <input placeholder="{{'Profile.RePass' | translate}}" type="password" formControlName="confirm_password">
+            </div>
+        </div>
+        <div class="saveBtn">
+            <div><button type="submit">{{'Profile.SaveChanges' | translate}}</button></div>
+        </div>
+
+        
+
+        
+        
+
+</form>
+</div>
+<app-footer></app-footer>

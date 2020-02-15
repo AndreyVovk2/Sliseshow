@@ -1,0 +1,52 @@
+.tags-container {
+  z-index: 1111;
+  position: absolute;
+  right: 12px;
+  top: 45px;
+
+}
+.tags-wrapper {
+  flex-direction: row;
+  display: flex;
+  width: 470px;
+  max-height: 325px;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-break: break-all;
+}
+.tag-container {
+  //white-space: nowrap;
+  text-align: start;
+  word-break: break-word;
+}
+.tag-text {
+  width: 100%;
+  margin-right: 2px;
+}
+
+.img_button img {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tag-text:hover {
+  color: red;
+}
+.tags-wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+.tags-wrapper::-webkit-scrollbar-track{
+  display: none;
+}
+.tags-wrapper::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: #aaa;
+  border: 1px solid #aaa;
+}
+.tags-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}

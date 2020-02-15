@@ -1,0 +1,43 @@
+<div class="signUp">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate}}</p>
+        <p id="haveAcc">{{'Modal.AlreadyHaveAnAccount' | translate}}?</p>
+        <button id="signIn" mat-dialog-close (click)='openSignIn()'>{{'Modal.SignIn' | translate}}</button>
+        <button mat-dialog-close (click)='logFB()' id="fb"><img src="../../../assets/images/sign-up/fb.png">{{'Modal.JoinWithFacebook' | translate}}</button>
+    </div>
+    <div class="rightContent">
+        <form [formGroup]="signUpForm" (submit)="onSubmit()" [ngClass]="{'invalidus': this.errorVar}">
+            <div class="error" *ngIf="errorVar">{{show}}</div>
+            <input id="nameInput"  placeholder="{{'Modal.Name' | translate}}" type="text" required formControlName="name">
+            <input placeholder="{{'Modal.LastName' | translate}}" type="text" required formControlName="last_name">
+            <input id="email" placeholder="{{'Modal.E-mail' | translate | uppercase}}" type="email" required formControlName="email">
+            <input id="password" placeholder="{{'Modal.Password' | translate}}" type="password" required formControlName="password">
+            <div id="passmust">{{'Modal.PasswordMustContainEigCharacters' | translate}}</div>
+            <input id="repassword" placeholder="{{'Modal.RePass' | translate}}" type="password" required formControlName="retype_password">
+            <div class="containerR">
+                <label for="checkbox1">
+                    <input id="checkbox1" type="checkbox" name="checkbox" formControlName="subscribe">
+                    <span class="label-text">{{'Modal.WantToReseiveNewsLetters' | translate}}</span>
+                </label>
+            </div>
+            <div class="containerR">
+                    <label for="checkbox">
+                        <input id="checkbox" type="checkbox" name="checkbox" required formControlName="check">
+                        <span id="labla" class="label-text">{{'Modal.AgreeToThe' | translate}} <a id="labelLink" (click)="onNoClick()" routerLink="/terms-and-conditions">{{'Modal.TermsAndConditions' | translate}}</a>
+                        </span>
+                    </label>
+                </div>
+            <button 
+                [disabled]="signUpForm.invalid"
+                [style.font-weight]="signUpForm.valid ? 400 : 200" 
+                id="createBtn" 
+                type="submit"
+                >{{'Modal.CreateAccount' | translate}}
+            </button>
+        </form>
+    </div>
+</div>
+

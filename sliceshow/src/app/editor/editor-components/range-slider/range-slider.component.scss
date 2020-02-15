@@ -1,0 +1,49 @@
+@import '~variables.scss';
+
+.container{
+  margin-top: 30px;
+  height: 7px;
+  background-color: $black;
+  border: 1px solid white;
+  position: relative;
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  display: flex;
+  // -webkit-box-align: center;
+  // -ms-flex-align: center;
+  align-items: center;
+    #firstMark{
+        border-radius: 50%;
+        border: 1px solid white;
+        position: absolute;
+        background-color: white;
+        cursor: move;
+        z-index: 100;
+        // box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    #secondMark{
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid white;
+        z-index: 100;
+        // box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    #selectTrack{
+      min-width: 20px;
+      height: 7px;
+      position: absolute;
+      background-color: $yellow;
+      z-index: 50;
+    }
+    .timer1{
+      position: absolute;
+      top: -30px;
+      left: 0;
+    }
+    .timer2{
+      position: absolute;
+      top: -30px;
+      right: 0;
+    }
+}

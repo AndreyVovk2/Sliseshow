@@ -1,0 +1,57 @@
+.pop-up {
+  margin: -24px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(237, 242, 250);
+  width: 804px;
+  height: 271px;
+  font-size: 16px;
+  font-family: "JosefinSans";
+
+  .header {
+    color: rgb(28, 12, 37);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    -moz-transform: matrix( 1.60468357231883,0,0,1.43967017865323,0,0);
+    -webkit-transform: matrix( 1.60468357231883,0,0,1.43967017865323,0,0);
+    -ms-transform: matrix( 1.60468357231883,0,0,1.43967017865323,0,0);
+    margin-top: 55px;
+  }
+
+  button {
+    display: block;
+    margin: 40px auto;
+    background-color: rgb(204, 0, 51);
+    width: 320px;
+    height: 48px;
+    border: 1px solid rgb(204, 0, 51);
+    border-radius: 24px;
+    cursor: pointer;
+    outline: 0 !important;
+
+    span {
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: right;
+      -webkit-transform: scale(1.115, 1);
+    }
+  }
+
+  a {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    color: rgb(204, 0, 51);
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 1.2;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+    cursor: pointer;
+    outline: 0 !important;
+  }
+
+}

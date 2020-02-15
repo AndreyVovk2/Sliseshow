@@ -1,0 +1,19 @@
+<div class="categories" (click)="selectCat(category.id)" [ngStyle]="{'width': width, 'height': height}">
+  <div class="category-container"
+       [ngClass]="{'active': border}"
+
+  >
+  <div class="selected" *ngIf="checked && this.canBeSelected" [ngStyle]="{'width': width, 'height': height}"></div>
+  <img *ngIf="checked && this.canBeSelected" src="../../../assets/images/create-project-steps/done-icon.png" alt="">
+    {{ category.name | translate }}
+  </div>
+  <div
+    class="image-placeholder"
+    [ngStyle]="{'width': width, 'height': height}"
+    [style.backgroundImage]="'url(' + category.image + ')'"
+    [style.backgroundSize]="'cover'"
+    [style.backgroundPosition]="'center'"
+    [style.backgroundRepeat]="'no-repeat'"
+  ></div>
+  <!-- <img class="image" [ngStyle]="{'width': width, 'height': height}" [src]="category.image"> -->
+</div>

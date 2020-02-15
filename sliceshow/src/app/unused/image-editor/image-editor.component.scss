@@ -1,0 +1,15 @@
+.image-editor {
+    width: 50vw;
+    border: 1px solid #edf2fa;
+    .editor {
+        height: 55vh;
+    }
+    .controls {
+        height: 20vh;
+        background: #edf2fa;
+        .save-btn {
+            width: 350px;
+            margin: auto;
+        }
+    }
+}

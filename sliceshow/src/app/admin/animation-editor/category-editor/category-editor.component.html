@@ -1,0 +1,173 @@
+<div class="main">
+    <div class="head">
+        <mat-slide-toggle
+            (change)="slide($event)"
+            class="example-margin"
+            [checked]="toggleState.checked"
+            [labelPosition]="toggleState.labelPosition">
+          {{toggleState.label}}
+        </mat-slide-toggle>
+        <span *ngIf="!toggleState.checked">category editor</span>
+        <span *ngIf="toggleState.checked">subcategory editor</span>
+        <button *ngIf="halfState" mat-stroked-button (click)="closeEditor()">Close editor</button>
+    </div>
+    <div class="category" *ngIf="!toggleState.checked">
+            <div class="wrap" [ngStyle]="{'width': halfState ? '50%' : '100%'}">
+                    <table class="table table-hover font">
+                      <thead >
+                          <tr class="tableHead">
+                              <th>Name</th>
+                              <th>Id</th>
+                              <th></th>
+                              <th>
+                                <div class="addStyle">
+                                  <button mat-stroked-button (click)="openNewCategory()">
+                                      <i class="fas fa-plus-circle"></i>
+                                      <span>Add New Category</span>
+                                  </button>
+                                </div>
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let category of allCategories">
+                              <td>{{category.name}}</td>
+                              <td>{{category.id}}</td>
+                              <td class="img_button">
+                                  <span class="inner" (click)="changeCategory(category, $event);">
+                                      <img src="../../../../assets/images/profile/edit.png">
+                                      <span>edit category</span>
+                                  </span>
+                              </td>
+                              <td class="img_button">
+                                  <span class="inner" (click)="deleteCategory(category , $event);">
+                                      <img src="../../../../assets/images/profile/delete.png">
+                                      <span>delete category</span>
+                                  </span>
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="editor" *ngIf="halfState">
+                    <mat-divider></mat-divider>
+                    <mat-form-field class="example-full-width">
+                      <input id="name" name="name" matInput placeholder="Category english name" type="text" [(ngModel)]="editingCategory.nameEng"
+                             required minlength="4" #name = "ngModel">
+                    </mat-form-field>
+                      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                           class="alert alert-danger">
+                          <div *ngIf="name.errors.required">
+                              Name is required.
+                          </div>
+                          <div *ngIf="name.errors.minlength">
+                              Name must be at least 4 characters long.
+                          </div>
+                      </div>
+                    <mat-form-field class="example-full-width herbewName">
+                      <input class="herbewName" dir="rtl" matInput placeholder="Category herbew name" type="text" [(ngModel)]="editingCategory.name_hreb">
+                    </mat-form-field>
+                    <div class="ed_item">
+                      <span class="ed_name">Image</span>
+                      <a *ngIf="editingCategory.image && showingLink" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          href="{{editingCategory.image}}">Preview image link
+                      </a>
+                      <div class="middle">
+                        <button class="selButton" mat-stroked-button (click)="fileInput1.click()">
+                          <span>Select Image</span>
+                          <input #fileInput1 type="file" (change)="show($event, 1)" style="display:none;" />
+                        </button>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="ed_item">
+                      <span class="ed_name">Subcategories</span>
+                      <div class="middle"><button mat-stroked-button (click)="openSubCatPopup()">Change subcategories list</button></div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="submit">
+                        <button *ngIf="!selectedId" mat-stroked-button color="primary" (click)="createNewCategory()" [disabled] = "editingCategoryValidation()">Create category</button>
+                        <button *ngIf="selectedId" mat-stroked-button color="primary" (click)="updateCategory()" [disabled] = "editingCategoryValidation()">Update category</button>
+                    </div>
+                  </div>
+    </div>
+
+      <!-- PART FOR SUBCATEGORY -->
+
+      <div class="category" *ngIf="toggleState.checked">
+            <div class="wrap" [ngStyle]="{'width': halfState ? '50%' : '100%'}">
+                    <table class="table table-hover font">
+                      <thead >
+                          <tr class="tableHead">
+                              <th>Name</th>
+                              <th>Id</th>
+                              <th></th>
+                              <th>
+                                <div class="addStyle">
+                                  <button mat-stroked-button (click)="openNewSubcategory()">
+                                      <i class="fas fa-plus-circle"></i>
+                                      <span>Add New Subcategory</span>
+                                  </button>
+                                </div>
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let subcategory of allSubCategories">
+                              <td>{{subcategory.name}}</td>
+                              <td>{{subcategory.id}}</td>
+                              <td class="img_button">
+                                  <span class="inner" (click)="changeSubCategory(subcategory, $event);">
+                                      <img src="../../../../assets/images/profile/edit.png">
+                                      <span>edit subcategory</span>
+                                  </span>
+                              </td>
+                              <td class="img_button">
+                                  <span class="inner" (click)="deleteSubCategory(subcategory , $event);">
+                                      <img src="../../../../assets/images/profile/delete.png">
+                                      <span>delete subcategory</span>
+                                  </span>
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+        
+                  <div class="editor" *ngIf="halfState">
+                        <mat-divider></mat-divider>
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Subcategory name" type="text" [(ngModel)]="editingSubcategory.name">
+                        </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Subcategory herbew name" type="text" [(ngModel)]="editingSubcategory.name_hreb">
+                      </mat-form-field>
+
+
+                      <div class="ed_item">
+                          <span class="ed_name">Image</span>
+                          <a *ngIf="editingSubcategory.image && showingLink"
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             href="{{editingSubcategory.image}}">Preview image link
+                          </a>
+                          <div class="middle">
+                              <button class="selButton" mat-stroked-button (click)="subCatFile.click()">
+                                  <span>Select Image</span>
+                                  <input #subCatFile type="file" (change)="addSubCatFile($event)" style="display:none;" />
+                              </button>
+                          </div>
+                      </div>
+
+                        <mat-divider></mat-divider>
+                        <div class="submit">
+                            <button *ngIf="!selectedId" mat-stroked-button color="primary" (click)="createNewSubcategory()" [disabled]="editingSubCategoryValidation()">Create Subcategory</button>
+                            <button *ngIf="selectedId" mat-stroked-button color="primary" (click)="updateSubcategory()" [disabled]="editingSubCategoryValidation()">Update Subcategory</button>
+                        </div>
+                    </div>
+    </div>
+
+      
+</div>

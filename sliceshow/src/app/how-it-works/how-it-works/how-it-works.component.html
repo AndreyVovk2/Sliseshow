@@ -1,0 +1,96 @@
+<app-header></app-header>
+<div class="how-it-works-page">
+  <div class="header-banner" appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 class="title" appAdminChange="HowItWorks.HowItWorks">{{'HowItWorks.HowItWorks' | translate |uppercase}}</h2>
+    </div>
+  </div>
+  <div class="easy-steps">
+    <div><img appAdminChange="img_body4" src="{{images.img_body4}}"></div>
+    <h2 appAdminChange="HowItWorks.EasySteps"><span>3</span>{{'HowItWorks.EasySteps' | translate}}</h2>
+  </div>
+  <div class="container">
+    <div class="row squares">
+      <div class="col-4">
+        <div class="row">
+          <div class="temp--t">
+              <div class="col-2">
+                  <span class="square-number">1</span>
+                </div>
+                <div class="col-10 square-container "
+                     id="square1"
+                     appAdminChange="img_body1"
+                     [ngStyle]="{'background':'url(' + images.img_body1 + ') bottom left no-repeat'}">
+                  <div class="square-black-transparent">
+                      <span appAdminChange="HowItWorks.Step-text1">{{'HowItWorks.Step-text1' | translate}}</span>
+                  </div>
+                  <!-- <span class="square-number">1</span> -->
+                  <!-- <div class="square-sign" appAdminChange="HowItWorks.ChooseYourShow">{{'HowItWorks.ChooseYourShow' | translate}}</div> -->
+                </div>
+          </div>
+          <div class="temp--b">
+              <div class="square-sign" appAdminChange="HowItWorks.ChooseYourShow">{{'HowItWorks.ChooseYourShow' | translate}}</div>
+              <div class="blog_text">
+                <p style="margin-bottom:0rem;" appAdminChange="HowItWorks.ChooseYourShow-p1">{{'HowItWorks.ChooseYourShow-p1' | translate}}</p>
+                <p appAdminChange="HowItWorks.ChooseYourShow-p2">{{'HowItWorks.ChooseYourShow-p2' | translate}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <div class="temp--t">
+              <div class="col-2"><span class="square-number">2</span></div>
+              <div class="col-10 square-container"
+                   id="square2"
+                   appAdminChange="img_body2"
+                   [ngStyle]="{'background':'url(' + images.img_body2 + ') bottom left no-repeat'}">
+                <div class="square-black-transparent">
+                    <span appAdminChange="HowItWorks.Step-text2">{{'HowItWorks.Step-text2' | translate}}</span>
+                </div>
+                <!-- <span class="square-number">2</span> -->
+                <!-- <div class="square-sign" appAdminChange="HowItWorks.AddYourMedia">{{'HowItWorks.AddYourMedia' | translate}}</div> -->
+              </div>
+          </div>
+
+          <div class="temp--b">
+              <div class="square-sign" appAdminChange="HowItWorks.AddYourMedia">{{'HowItWorks.AddYourMedia' | translate}}</div>
+              <div class="blog_text">
+                <p style="margin-bottom:0rem;" appAdminChange="HowItWorks.AddYourMedia-p1">{{'HowItWorks.AddYourMedia-p1' | translate}}</p>
+                <p appAdminChange="HowItWorks.AddYourMedia-p2">{{'HowItWorks.AddYourMedia-p2' | translate}}</p>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <div class="temp--t">
+              <div class="col-2"><span class="square-number">3</span></div>
+              <div class="col-10 square-container"
+                   id="square3"
+                   appAdminChange="img_body3"
+                   [ngStyle]="{'background':'url(' + images.img_body3 + ') bottom left no-repeat'}">
+                <div class="square-black-transparent">
+                    <span appAdminChange="HowItWorks.Step-text3">{{'HowItWorks.Step-text3' | translate}}</span>
+                </div>
+                <!-- <span class="square-number">3</span> -->
+                <!-- <div class="square-sign" appAdminChange="HowItWorks.PlayYourVideo">{{'HowItWorks.PlayYourVideo' | translate}}</div> -->
+              </div>
+          </div>
+          <div class="temp--b">
+              <div class="square-sign" appAdminChange="HowItWorks.PlayYourVideo">{{'HowItWorks.PlayYourVideo' | translate}}</div>
+              <div class="blog_text">
+                <p style="margin-bottom:0rem;" appAdminChange="HowItWorks.PlayYorVideo-p1">{{'HowItWorks.PlayYorVideo-p1' | translate}}</p>
+                <p appAdminChange="HowItWorks.PlayYorVideo-p2">{{'HowItWorks.PlayYorVideo-p2' | translate}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

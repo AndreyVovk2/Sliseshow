@@ -1,0 +1,71 @@
+<div class="library-section" [ngClass]="{ 'opened': store.state.isMediaOpened }">
+  <div class="library-header">
+      <!-- <app-button-sm
+      [label]="'Test'"
+      [width]="'176px'"
+      [mr]="'11px'"
+      (click)="renderTracks()"
+    ></app-button-sm> -->
+    <app-button-sm
+      [label]="'Modal.MyMusicLibrary' | translate"
+      [default]="store.state.musicLibraryFilters.libraryType === 2"
+      [secondary]="store.state.musicLibraryFilters.libraryType === 1"
+      [width]="'176px'"
+      [mr]="'11px'"
+      (click)="store.updateLibraryFilters({
+        libraryType: 1
+      })"
+    ></app-button-sm>
+    <app-button-sm
+      [label]="'Modal.OurSuggestion' | translate"
+      [default]="store.state.musicLibraryFilters.libraryType === 1"
+      [secondary]="store.state.musicLibraryFilters.libraryType === 2"
+      [width]="'176px'"
+      [mr]="'11px'"
+      (click)="store.updateLibraryFilters({
+        libraryType: 2
+      })"
+    ></app-button-sm>
+    <app-search
+      [searchValue]="store.state.musicLibraryFilters.search"
+      (inputChange)="store.updateLibraryFilters($event)"
+    ></app-search>
+    <app-dropdown-button
+      *ngIf="store.state.musicLibraryFilters.libraryType === 2"
+      [label]="'Style' | translate | uppercase"
+      [list]="['Categories.Pop' | translate | uppercase, 'Categories.Jazz' | translate | uppercase, 'Categories.HardRock' | translate | uppercase, 'Categories.Classic' | translate | uppercase]"
+      [ml]="'0px'"
+      (itemClick)="handleStyleFilter($event)"
+    >
+    </app-dropdown-button>
+    <app-dropdown-button
+      *ngIf="store.state.musicLibraryFilters.libraryType === 2"
+      [label]="'Duration' | translate | uppercase"
+      [list]="['0-1 min', '1-3 min', '3-5 min']"
+      [ml]="'43px'"
+      (itemClick)="handleDurationFilter($event)"
+    >
+    </app-dropdown-button>
+  </div>
+  <div class="library-body">
+    <div class="content">
+      <app-library-audio-sm
+              (use)="handleUse($event)"
+              [trackData]="track"
+              *ngFor="let track of store.getSongs()">
+      </app-library-audio-sm>
+      <app-pending-song [name]="track.name" *ngFor="let track of store.state.pendingSongs"></app-pending-song>
+    </div>
+    <div
+      class="sidebar"
+      (drop)="handleDropMusic($event)"
+      (dragover)="preventDrag($event)"
+      (dragenter)="preventDrag($event)"
+      (dragleave)="handleDragLeave()"
+      [ngClass]="{'dragover': borderOnDrag}"
+    >
+      <img src="/assets/images/editing-system/add-music.png">
+      <div class="description">{{'Modal.DragYourMusicHere' | translate}}</div>
+    </div>
+  </div>
+</div>

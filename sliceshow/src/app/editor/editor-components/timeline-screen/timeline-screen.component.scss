@@ -1,0 +1,87 @@
+.video-sector {
+    //cursor: -webkit-grab;
+    // position: absolute;
+    display: inline-block;
+    border-right: 1px solid #c6bfca;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    height: 100%;
+    min-width: 235px;
+    padding: 8px 14px;
+    position: relative;
+    .thumbnail {
+        width: 208px;
+        height: 117px;
+        border: 1px solid #000;
+    }
+    .timecode {
+        font-size: 16px;
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      &--value {
+        margin-left: 90px;
+        display: flex;
+        align-items: center;
+      }
+      &--buttons {
+        display: flex;
+        align-items: center;
+        .arrows-ctn {
+          margin-right: 15px;
+          img {
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+          }
+        }
+        .delete-btn {
+          &--template {
+            width: 26px;
+            height: 26px;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .name {
+        font-size: 16px;
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        margin-top: 5px;
+    }
+    &.active {
+        background:#BFB7C3;
+        border-color: #95979a;
+    }
+
+  .delete-btn {
+    &--template {
+      width: 32px;
+      height: 32px;
+      //margin-top: 10px;
+      //position: absolute;
+      //top: 40px;
+      //right: 20px;
+    }
+  }
+}
+
+.oven-wrap{
+    position: absolute;
+    padding: 8px 14px;
+    min-width: 235px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+

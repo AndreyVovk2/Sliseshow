@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="he" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ourteam" datatype="html">
+        <source>Our team</source>
+        <target>נו</target>
+      </trans-unit>
+           <trans-unit id="about_us" datatype="html">
+              <source>About us</source>
+                <target>ננננ נ</target>
+            </trans-unit>
+       <trans-unit id="fc830f553d463b4dada3a9daa91e58f806639e72" datatype="html">
+              <source>Surprise your family and friends with a high-quality video slideshow about your
+                vacation or any special event.</source>
+                <target>הצוותהצוות שלנוהצוות שלנוהצוות שלנוהצוות שלנוהצוות שלנוהצוותהצוותהצוותהצוותהצוותהצוות שלנוהצוות שלנוהצוות שלנוהצ111הצוותהצוות שלנוהצוות שלנוהצוות שלנוהצוות שלנוהצוות שלנוהצוותהצוותהצוותהצוותהצוותהצוות שלנוהצוות שלנוהצוות שלנוהצוות שלנוהצוות שלנוות שלנוהצוות שלנו</target>
+            </trans-unit>
+            <trans-unit id="aa78bf309c5f58446ff13d62950d31516baa47bf" datatype="html">
+                    <source>There are many variations of passages of Lorem Ipsum
+                      available, but the majority have suffered alteration in some form, by injected humour,
+                      or randomised words which don&apos;t look even slightly believable. If you are going to use
+                      a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden
+                      in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
+                      predefined chunks as necessary</source>
+                      <target>נוות שלנוהצוות שלננוות שלנוהצוות שלננוות שלנוהצוות שלנ</target>
+                  </trans-unit>
+      <trans-unit id="sliceshow1" datatype="html">
+        <source>Create your video <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/></source>
+<target>שלנוהצוות ש</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

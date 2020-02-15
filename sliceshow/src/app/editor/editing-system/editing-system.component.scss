@@ -1,0 +1,92 @@
+.editing-system {
+    overflow-x: hidden;
+    .block-label {
+        font-family: 'Josefin Sans';
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 16px;
+        color: #180a21;
+        &.with-margin {
+            margin-bottom: 15px;
+        }
+        span {
+            font-weight: bold;
+        }
+    }
+    .main-content {
+        padding-top: 40px;
+        .col-md-3{
+            position: relative;
+            z-index: 200;
+            .blur{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index:  500;
+            }
+        }
+        .col-md-6{
+            z-index: 100;
+        }
+    }
+    .edit-icon {
+        height: 24px;
+        width: 24px;
+        margin-top: -13px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    .textField{
+        border: 1px solid #180a21;
+        height: 64px;
+        margin: 16px auto;
+        display: flex;
+        position: relative;
+        span{
+            width: 103px;
+            border-right: 1px solid #180a21;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: grey;
+        }
+        input{
+            border: none;
+            width: 100%;
+            padding-left: 15px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #180a21;
+        }
+        .color{
+            position: absolute;
+            // position: relative;
+            right: 0;
+            height: 100%;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // color-picker{
+            //     position: absolute;
+            // }
+            #colorInput{
+                width: 0;
+                padding: 0;
+            }
+            height: 100%;
+            width: 30px;
+            i{
+                font-size: 23px;
+                cursor: pointer;
+            }
+
+        }
+
+    }
+  .loader-container{
+
+    padding-top: 50% !important;
+  }
+}

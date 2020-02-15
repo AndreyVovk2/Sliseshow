@@ -1,0 +1,68 @@
+<div class="audio-popup-component">
+  <div class="audio-ctn">
+    <div class="audio-popup-header">Select files for form generation</div>
+    <div class="form-container">
+
+      <div class="select-button">
+        <button type="button" mat-raised-button (click)="fileInput.click()">Choose Files</button>
+        <input hidden (change)="onFileSelected($event)" accept="audio/*" #fileInput multiple type="file" id="file" >
+      </div>
+
+      <form *ngIf="uploadedFiles.length > 0" class="audio-form" [formGroup]="audioPopupForm" (ngSubmit)="uploadAudio()">
+        <div class="array-items"  formArrayName="items" *ngFor="let item of audioPopupForm.controls['items'].controls; let i = index">
+          <div [formGroupName]="i" class="audio-form__item">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Song" class="example-full-width" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Select audio style</mat-label>
+              <mat-select formControlName="style">
+                <mat-option *ngFor="let style of audioStyles" [value]="style">{{style}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="delete-form-btn" (click)="deleteFormControl(i)">
+              <img src="../../../../assets/images/profile/delete.png" alt="delete">
+            </div>
+
+          </div>
+        </div>
+        <!--<mat-form-field class="example-full-width">-->
+        <!--<input matInput placeholder="Song name" class="example-full-width" formControlName="name">-->
+        <!--</mat-form-field>-->
+
+        <!--<mat-form-field>-->
+        <!--<mat-label>Select audio style</mat-label>-->
+        <!--<mat-select formControlName="style">-->
+        <!--<mat-option *ngFor="let style of audioStyles" [value]="style">{{style}}</mat-option>-->
+        <!--</mat-select>-->
+        <!--</mat-form-field>-->
+
+
+        <!--<input  placeholder="Select your file" type="file" formControlName="file">-->
+
+
+        <div class="audio-form__submit">
+          <button class="submit-btn" mat-raised-button type="submit" [disabled]="!checkFormValid()">Upload</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+
+  <div class="upload-progress-ctn" *ngIf="audioService.uploadStart">
+  <!--<div class="upload-progress-ctn">-->
+    <div class="progress_value">
+      <span>{{audioService.requestStatus}}%</span>
+    </div>
+    <mat-progress-bar mode="determinate" [value]="audioService.requestStatus"></mat-progress-bar>
+  </div>
+</div>
+
+
+
+<!--[list]="['Categories.Pop' | translate | uppercase, 'Categories.Jazz' | translate | uppercase, 'Categories.HardRock' | translate | uppercase, 'Categories.Classic' | translate | uppercase]"-->
+

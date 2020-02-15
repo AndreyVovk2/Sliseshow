@@ -1,0 +1,19 @@
+<div class="forgotPass">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs﻿' | translate}}</p>
+    </div>
+    <div class="rightContent">
+        <form [formGroup]="forgotPassForm" (submit)="onSubmit()">
+            <div id="error" *ngIf="showError">{{messageError}}</div>
+            <input [ngClass]="{'error': showError}" placeholder="{{'Email' | translate}}"  formControlName="email">
+            <div id="verify">{{'Modal.ForgotPass' | translate}}</div>
+            <button 
+            [disabled]="forgotPassForm.invalid || pending"
+            [style.font-weight]="forgotPassForm.valid ? 400 : 200" 
+            id="sendBtn" type="submit">{{'Modal.Send' | translate}}</button>
+        </form>
+    </div>
+</div>

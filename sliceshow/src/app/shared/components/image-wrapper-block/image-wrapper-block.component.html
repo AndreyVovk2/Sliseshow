@@ -1,0 +1,66 @@
+<div class="image-wrapper">
+  <div class="dark-favorite" *ngIf="!image.clicked" (mouseenter)="returnThis(image, $event)" (mouseleave)="returnThis(image, $event)">
+    <div class="upper-block">
+      <div class="video-block">
+        <img *ngIf="image.including_video" class="camera" src="/assets/images/favorites/FavoritesCamera.png" alt="">
+        <span *ngIf="image.including_video" class="includes-video">{{'IncludingVideo' | translate}}</span>
+      </div>
+      <div class="likes-block">
+        <img *ngIf="image.favorites" class="heart" src="/assets/images/favorites/FavoritesHeart.png" (click)="putFavorites(image.id, false)" alt="">
+        <img *ngIf="!image.favorites" class="heart" src="/assets/images/favorites/like.png" (click)="putFavorites(image.id, true)" alt="">
+      </div>
+    </div>
+    <div class="name-block">
+      <span class="anim-style">{{image.name}}</span>
+    </div>
+    <div *ngIf="image.id === hoveredTileId" class="button-block" >
+
+
+        <div class="time-block" (click)="getPickInfo(template.id, template.duration, template.pics, template)" *ngFor="let template of image.templates">
+            <!--<span class="duration">{{ template.duration | toMinutes }} {{'M' | translate}}</span>-->
+            <span class="duration">{{ template.duration | toMinutes }} {{'M' | translate}}</span>
+            <!--<span class="duration">{{ templateDuration(template) }} {{'M' | translate}}</span>-->
+            <button class="button">{{ template.pics }} {{'Pics' | translate}}</button>
+          </div>
+
+
+      <!-- <div class="time-block" (click)="getPickInfo( 90, 7)">
+        <span class="duration">{{ 90 | toMinutes }} {{'M' | translate}}</span>
+        <button class="button">7 {{'Pics' | translate}}</button>
+      </div>
+      <div class="time-block" (click)="getPickInfo(120, 10)">
+        <span class="duration">{{ 120 | toMinutes }} {{'M' | translate}}</span>
+        <button class="button">10 {{'Pics' | translate}}</button>
+      </div>
+      <div class="time-block" (click)="getPickInfo(180, 12)">
+        <span class="duration">{{ 180 | toMinutes }} {{'M' | translate}}</span>
+        <button class="button">12 {{'Pics' | translate}}</button>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="chosen" *ngIf="image.clicked">
+    <div class="close-block">
+      <img src="/assets/images/create-project-steps/close-button.png" alt="" (click)="dontClicked(image.id)">
+    </div>
+    <div class="title-block">
+      {{image.name}}
+    </div>
+    <div class="mark-block">
+      <img src="/assets/images/create-project-steps/done-icon.png" alt="">
+    </div>
+    <div class="button-block">
+        <div class="time-block">
+            <button class="select_button">{{ image.select_pic }} {{'Pics' | translate}}</button>
+          </div>
+    </div>
+  </div>
+  <div
+    class="image-placeholder"
+    [style.backgroundImage]="'url(' + image.preview_image + ')'"
+    [style.backgroundSize]="'cover'"
+    [style.backgroundPosition]="'center'"
+    [style.backgroundRepeat]="'no-repeat'"
+  ></div>
+  <!-- <img class="image" [src]="image.image" alt=""> -->
+</div>

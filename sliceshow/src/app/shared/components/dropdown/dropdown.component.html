@@ -1,0 +1,16 @@
+<div class="app-dropdown">
+  <div class="dropdown">
+    <p class="dropdown-toggle"
+       data-toggle="dropdown"
+       aria-haspopup="true"
+       aria-expanded="false">
+      {{name}}
+    </p>
+    <div class="yellow-line"></div>
+    <div class="dropdown-menu"
+         [ngClass]="{'show': status, 'invisible': invisibility}"
+         aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" *ngFor="let item of list">{{item}}</a>
+    </div>
+  </div>
+</div>

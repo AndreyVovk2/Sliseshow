@@ -1,0 +1,13 @@
+<div class="media-button">
+  <div
+    [ngStyle]="isPhoto && isUploaded && { 'background': 'url(' + image + ')', 'background-size': 'cover' }"
+    class="button-icon {{isPhoto && 'photo'}} {{isVideo && 'video'}}"
+  ></div>
+  <div class="button-container">
+    <span class="left-button" translate (click)= "mediaButtonsValid() ? '': buttState(1)" [ngClass]="{'disabled': mediaButtonsValid()}">{{isUploaded ? "Edit.Crop" : "Edit.MediaLibrary"}}</span>
+    <span class="divider">|</span>
+    <span class="right-button" translate (click)="mediaButtonsValid() ? '':  buttState(2)" [ngClass]="{'disabled': mediaButtonsValid()}">{{isUploaded ? "Edit.Remove" : "Edit.Browse"}}</span>
+  </div>
+
+
+</div>

@@ -1,0 +1,68 @@
+<div class="adminChange" [ngStyle]="{'width': this.videoWidth ? this.videoWidth : '960px'}">
+  <div class="content">
+
+    <div class="main-frame"><span></span>
+      <img (click)="closeModal()" class="circleButton" src="../../../assets/images/step-modal/close.png" alt="">
+      <div class="video-player">
+        <video id="myVideo" controls (timeupdate)="listener($event)" (loadedmetadata)="onMetadata($event)">
+          <!--<source [src]="this.editingStore.state.activeMediaParam.link" type="video/mp4">-->
+          <source [src]="data.link" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="subContent">
+      <div></div>
+      <app-range-slider
+        *ngIf="playerOnLoad"
+        [length]="duration"
+        [range]="rangeDuration"
+        (getData)="getCutTrack($event)"
+      ></app-range-slider>
+
+      <span class="short_error" *ngIf="!playerOnLoad && duration < rangeDuration">your video more shortly then frame length</span>
+
+      <div class="radioWrap">
+        <div class="radioButtons">
+          <div class="coll">
+            <div class="radioCheck">
+              <div class="cusRadio" (click)="changeGender($event, 1)">
+                <div *ngIf="prop.muteVideo" class="selected"></div>
+              </div>
+              <span class="label">Mute this video</span>
+            </div>
+            <div class="radioCheck">
+              <div class="cusRadio" (click)="changeGender($event, 3)">
+                <div *ngIf="prop.lowerMusic" class="selected"></div>
+              </div>
+              <span class="label">Lower the music</span>
+            </div>
+          </div>
+          <div class="coll">
+            <div class="radioCheck">
+              <div class="cusRadio" (click)="changeGender($event, 2)">
+                <div *ngIf="prop.muteMusic" class="selected"></div>
+              </div>
+              <span class="label">Mute music on this slice</span>
+            </div>
+            <div class="radioCheck">
+              <div class="cusRadio" (click)="changeGender($event, 4)">
+                <div *ngIf="prop.sameMusic" class="selected"></div>
+              </div>
+              <span class="label">Same volume level</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <app-rounded-button
+        (click)="saveAndUpload()"
+        [label]="'Save and upload'"
+        [primary]="true"
+      ></app-rounded-button>
+    </div>
+
+  </div>
+
+</div>

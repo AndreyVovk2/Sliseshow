@@ -1,0 +1,93 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+.library-my-photos {
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .main-part {
+    margin: 12px 0 0 0;
+    .image-box {
+      padding: 0 5px;
+      margin-top: 25px;
+
+      .file-name {
+        padding-right: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 34px;
+        white-space: nowrap;
+        span {
+          font-size: 24px;
+        }
+      }
+      .image-wrapper {
+        position: relative;
+        &.pending {
+          margin: 45px 0px;
+        }
+        .image {
+          width: 200px;
+          height: 140px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+
+        }
+        .garbage-wrapper {
+          position: absolute;
+          top: 0;
+          right: 3px;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.0);
+          z-index: 50;
+          text-align: center;
+          &:hover {
+            cursor: pointer;
+          }
+
+          .corner, .basket {
+            position: absolute;
+            cursor: pointer;
+          }
+          .corner {
+            right: -2px;
+            bottom: 0;
+          }
+          .basket {
+            right: 5px;
+            bottom: 5px;
+          }
+        }
+      }
+    }
+
+  }
+}
+.upload {
+  height: 48px;
+  width: 320px;
+  border: 2px solid $red;
+  border-radius: 24px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  margin: 48px auto 0 auto;
+  color: $red;
+  background-color: $white;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  line-height: 3;
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
+}
+
+
+

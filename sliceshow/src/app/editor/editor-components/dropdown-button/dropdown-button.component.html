@@ -1,0 +1,17 @@
+<div
+  class="dropdown-button"
+  (click)="toggleDropdown($event)"
+  [ngStyle]="{ marginLeft: ml }"
+>
+  <div class="label">{{label}}</div>
+  <div
+    [ngStyle]="{ opacity: isOpened ? 1 : 0, display: isOpened ? 'block' : 'none' }"
+    class="dropdown"
+  >
+    <div
+      class="item"
+      *ngFor="let item of list; let i = index"
+      (click)="handleItemClick(item)"
+    >{{item}}</div>
+  </div>
+</div>

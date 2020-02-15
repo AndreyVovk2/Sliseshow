@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="header">
+  <div class="header-banner"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 appAdminChange="Blog.SliceshowBlog">{{'Blog.SliceshowBlog' | translate | uppercase}}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="all">
+    <div class="content" *ngIf="this.adminStore.state.blogList" (scroll)="onScroll($event)" #content>
+        <div appBlogChange="createNewBlog" class="addBlog" [ngClass]="{'fixed': this.fixed}" *ngIf="this.store.state.authCredentials && this.store.state.authCredentials.admin === 1">
+            <i class="fas fa-plus-circle fa-2x"></i>
+            <span>add blog</span>
+        </div>
+        <div appBlogChange="{{blog.id}}" class="blog" *ngFor="let blog of this.adminStore.state.blogList | slice:0:blogsCount"
+        [class.selected]="blog.id === selectedId">
+            <div class="pic"> <img src="{{blog.image}}"></div>
+            <div class="main">
+                <div class="title">
+                    <div >{{blog.title}}</div>
+                    <div id="date">{{blog.creationDate}}</div>
+                </div>
+                <div class="long" *ngIf="blog.text_blog" [innerHTML]="blog.text_blog.p1"></div>
+                <div class="but"><button (click)='toSelectBlog(blog.id)'>{{'Blog.ReadMore' | translate}}</button></div>
+                <!-- [routerLink]="['/blog', blog.id]" -->
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

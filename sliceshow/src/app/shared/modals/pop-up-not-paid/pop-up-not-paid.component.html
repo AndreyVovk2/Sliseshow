@@ -1,0 +1,13 @@
+<div class="body_modal">
+  <div class="title_modal"><b>NEW CREATION IS UNAVAILABLE</b></div>
+  <div class="text_body">
+  <div class="text_modal"><span>You have already 3 unpaired projects</span></div>
+  <div class="text_modal"><span>Please, finish one of your projects before you create a new one</span></div></div>
+
+  <div class="continue_button">
+    <button class="continue__button"
+      (click)="Add(false)">OK, GOT IT
+    </button>
+    <button class="edit_button" [routerLink]='"/my-project"' (click)="Add(true)">GO TO MY PROJECTS</button>
+  </div>
+</div>

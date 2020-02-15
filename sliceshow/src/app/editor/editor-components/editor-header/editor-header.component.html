@@ -1,0 +1,76 @@
+
+<!--<div class='loader-container' *ngIf="!load">-->
+<!--  <img src="assets/images/logo.png" width="490px" height="350px">-->
+<!--  <mat-spinner mode="indeterminate" *ngIf="!load"></mat-spinner>-->
+<!--</div>-->
+
+<div class="editor-header" *ngIf = "hello" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <a [routerLink]="'/'" class="logo">
+          <img src="assets/images/logo.png" alt="Sliceshow logo">
+        </a>
+
+      </div>
+      <div class="col-md-7 vertical-padded d-flex justify-content-end buttonCtn">
+        <app-rounded-button
+          [label]="'Render.Render' | translate"
+          appAdminChange="Edit.Render"
+          [secondary]="true"
+          [mr]="true"
+          [disabled]="renderBtnValid()"
+          (click)="!renderBtnValid() ? editingStore.projectRender(editingStore.state):''"
+        ></app-rounded-button>
+        <!-- routerLink="/" -->
+        <!--<app-rounded-button-->
+        <!--appAdminChange="Edit.SaveProject"-->
+        <!--[label]="'Edit.SaveProject' | translate"-->
+        <!--[secondary]="true"-->
+        <!--[mr]="true"-->
+        <!--(click)="editingStore.storeProjectData()"-->
+        <!--&gt;</app-rounded-button>-->
+        <!-- [secondary]="this.editingStore.state.readyToMarge"
+            [disabled]="!this.editingStore.state.readyToMarge" -->
+        <app-rounded-button
+          appAdminChange="Edit.FreePreview"
+          [label]="'Edit.FreePreview' | translate"
+          [secondary]="true"
+          [disabled]="!readyToMerge()"
+          [mr]="true"
+          (click)="readyToMerge() ? renderActive():''"
+        ></app-rounded-button>
+        <app-rounded-button
+          appAdminChange="Edit.RemoveWatermark"
+          [label]="'Edit.RemoveWatermark' | translate"
+          [secondary]="true"
+          [disabled]="!editingStore.waterMarkValid()"
+          (click)="editingStore.waterMarkValid() ? openDialogError(): ''"
+        ></app-rounded-button>
+
+
+      </div>
+      <div class="col-md-2 vertical-padded">
+        <div class="total-duration-counter" appAdminChange="Edit.TotalVideoDuration">
+          {{'Edit.TotalVideoDuration' | translate}}:
+          <span *ngIf="this.editingStore.state.project && this.editingStore.state.project.total_video_duration  ">
+            {{this.editingStore.state.project.total_video_duration | minuteSeconds}}
+          </span>
+          <span
+            *ngIf="this.editingStore.state.project && !this.editingStore.state.project.total_video_duration || !this.editingStore.state.project">n/a</span>
+        </div>
+        <div class="total-duration-counter" appAdminChange="Edit.TotalAudioDuration" (click)="returnAudioDuration()">
+          {{'Edit.TotalAudioDuration' | translate}}:
+          <span *ngIf="this.editingStore.state.project && this.editingStore.state.project.total_audio_duration">
+            {{this.editingStore.state.project.total_audio_duration | minuteSeconds}}
+          </span>
+          <!--<span *ngIf="this.editingStore.state.project && this.editingStore.state.project.total_audio_duration">-->
+          <!--{{transform(this.editingStore.state.project.total_audio_duration)}}-->
+          <!--</span>-->
+          <span
+            *ngIf="this.editingStore.state.project && !this.editingStore.state.project.total_audio_duration || !this.editingStore.state.project">n/a</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

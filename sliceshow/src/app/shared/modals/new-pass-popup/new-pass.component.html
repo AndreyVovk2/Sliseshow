@@ -1,0 +1,18 @@
+<div class="forgotPass">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate}}</p>
+    </div>
+    <div class="rightContent">
+
+        <form [formGroup]="newPassForm" (submit)="onSubmit()">
+            <input placeholder="{{'Password' | translate}}" type="password" required formControlName="password">
+            <div id="verify">* {{'PasswordMustContainEigCharacters﻿﻿' | translate}}</div>
+            <input id="repass" placeholder="{{'ReTypePassword' | translate}}" type="password" required formControlName="password_confirmation">
+            <button id="sendBtn" type="submit">{{'SignIn' | translate}}</button>
+        </form>
+
+    </div>
+</div>

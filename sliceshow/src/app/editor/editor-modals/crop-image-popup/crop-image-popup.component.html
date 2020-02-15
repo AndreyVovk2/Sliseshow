@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="image_wrap">
+        <img (click)="closeModal()" class="circleButton" src="../../../assets/images/step-modal/close.png" alt="">
+        <!--<img *ngIf="this.editingStore.state.activeMediaParam.link" crossorigin id="image" src="{{this.editingStore.state.activeMediaParam.link}} ">-->
+        <!--<img *ngIf="data && data.link" crossorigin id="linkImage" [src]="data.link" alt="">-->
+        <img id="image" [src]="imageSrc"  (load)="afterImageLoaded()" alt="">
+        <!-- <img id="image" src="../../../assets//images/about-us/layer.png"> -->
+    </div>
+    <div class="subContent">
+        <div class="options">
+                    <i (click)="!disableButtons ? handleZoom(-0.1): ''" class="fas fa-search-minus" [ngClass]="{'disableButtons': disableButtons}"></i>
+                    <mat-slider
+                    (change)="onChange()"
+                    [min]="-1"
+                    [max]="1"
+                    [step]="0.01"
+                    [(ngModel)]="value"
+                    ></mat-slider>
+                    <i (click)="!disableButtons ? handleZoom(0.1): ''" class="fas fa-search-plus" [ngClass]="{'disableButtons': disableButtons}"></i>
+        </div>
+
+        <div class="rotate">
+                    <i class="fas fa-undo" (click)="!disableButtons ? rotate($event, -5): ''" [ngClass]="{'disableButtons': disableButtons}"></i>
+                    <span class="rotateBlock">{{rotateValue}} &#176;</span>
+                    <i id="selectRotate" (click)=" !disableButtons ? rotate($event, 5):''" class="fas fa-undo" [ngClass]="{'disableButtons': disableButtons}"></i>
+        </div>
+
+        <div class="buttonSave" >
+                    <app-rounded-button [label]="'Save and Upload'" [primary]="true" (click)="!disableButtons ? saveAndUpload($event): ''"></app-rounded-button>
+        </div>
+    </div>
+</div>

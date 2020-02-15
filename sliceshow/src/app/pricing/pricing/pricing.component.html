@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="pricing">
+  <div class="header_image">
+    <div class="header-banner"
+         appAdminChange="img_head"
+         [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+      <div id="header-arrow-left"></div>
+      <div id="header-arrow-right"></div>
+      <h2 class="title" appAdminChange="Pricing.Pricing">{{'Pricing.Pricing' | translate |uppercase}}</h2>
+    </div>
+  </div>
+
+  <div class="gray_background">
+
+    <div class="slices_columns" *ngFor="let slice of selectTariffs" appPricingChange="{{slice.id}}">
+
+      <div class="one_slice">
+
+        <div class="headSlice">
+          <h1 *ngIf="slice.slices === 1">{{'Pricing.OneSlice' | translate}}</h1>
+          <h1 *ngIf="slice.slices === 3">{{'Pricing.HalfTray' | translate}}</h1>
+          <h1 *ngIf="slice.slices > 3">{{'Pricing.LargeTray' | translate}}</h1>
+          <div class="circle_rope"><img src="assets/images/pricing/Ellipse.svg"></div>
+        </div>
+
+        <div class="main">
+          <div class="topSlice">
+            <div *ngIf="slice.slices <= 3" class="oneSl" [class.heOneSl]="this.adminStore.state.currentLang === 'he'">
+              <span>{{slice.slices}}</span> {{'Pricing.Slices' | translate}}</div>
+            <div class="selectSlice" [class.heSelectedSl]="this.adminStore.state.currentLang === 'he'"
+                 *ngIf="slice.slices > 3">
+              <div
+                class="multiSlice"
+                (click)="changePricing(allTariffs[2])">
+                <div [ngStyle]="{'opacity': allTariffs[2].slices === slice.slices ? '1' : '0.5'}">
+                  <span>{{allTariffs[2].slices}}</span>{{'Pricing.Slices' | translate}}
+                </div>
+              </div>
+
+              <div
+                class="multiSlice"
+                (click)="changePricing(allTariffs[3])">
+                <div [ngStyle]="{'opacity': allTariffs[3].slices === slice.slices ? '1' : '0.5'}">
+                  <span>{{allTariffs[3].slices}}</span>{{'Pricing.Slices' | translate}}
+                </div>
+
+              </div>
+
+              <div
+                class="multiSlice"
+                (click)="changePricing(allTariffs[4])">
+                <div [ngStyle]="{'opacity': allTariffs[4].slices === slice.slices ? '1' : '0.5'}">
+                  <span>{{allTariffs[4].slices}}</span>{{'Pricing.Slices' | translate}}
+                </div>
+              </div>
+
+              <div
+                class="multiSlice"
+                (click)="changePricing(allTariffs[5])">
+                <div [ngStyle]="{'opacity': allTariffs[5].slices === slice.slices ? '1' : '0.5'}">
+                  <span>{{allTariffs[5].slices}}</span>{{'Pricing.Slices' | translate}}
+                </div>
+              </div>
+            </div>
+            <div class="sliceImage"><img src="{{slice.pizza_image}}"></div>
+          </div>
+
+          <div class="prices_one_slice" [ngClass]="{'firstSlice': slice.id === 1}">
+            <span class="herbew"> {{slice.price}}</span>
+            <span class="english" *ngIf="slice.id > 1">$ {{slice.price * 1.3 | number: '.0-0' }}</span>
+          </div>
+
+          <div class="text_one_slice" [class.lastText]="slice.id >= 3" [class.green]="slice.slices === 1"
+               [class.yellow]="slice.slices === 3" [class.blue]="slice.slices > 3">
+
+            <div class="vertical">
+              <span class="property">{{'StepOne.DesignStyle' | translate}}</span>
+              <span class="value">{{slice.design_style}}</span>
+            </div>
+            <div class="vertical">
+              <span class="property">{{'StepOne.Pictures' | translate}}</span>
+              <span class="value">{{slice.min_pictures}}-{{slice.max_pictures}}</span>
+            </div>
+            <div class="vertical">
+              <span class="property">{{'StepOne.VideoClips' | translate}}</span>
+              <span class="value" *ngIf="slice.max_videos == 0">{{'StepOne.No' |translate |lowercase}}</span>
+              <span class="value"
+                    *ngIf="slice.max_videos == 1">{{'StepOne.UpTo' | translate}} {{slice.max_videos}}</span>
+              <span class="value" *ngIf="slice.max_videos > 1">{{slice.min_videos}} - {{slice.max_videos}}</span>
+            </div>
+            <div class="vertical">
+              <span class="property">{{'StepOne.AddingTexts' | translate}}</span>
+              <span class="value">{{'StepOne.Included' | translate}}</span>
+            </div>
+            <div class="vertical">
+              <span class="property">{{'StepOne.Music' | translate}}</span>
+              <span class="value" *ngIf="slice.max_songs == 1">{{slice.max_songs}} {{'StepOne.Song' | translate}}</span>
+              <span class="value" *ngIf="slice.max_songs == 2">{{slice.max_songs}} {{'StepOne.Song' | translate}}</span>
+              <span class="value" *ngIf="slice.max_songs > 2">{{slice.min_songs}}
+                - {{slice.max_songs}} {{'StepOne.Song' | translate}}</span>
+            </div>
+            <div class="vertical">
+              <span class="property">{{'StepOne.VideoLength' | translate}}</span>
+              <span class="value" *ngIf="slice.min_video_length == 0">1:30 {{'StepOne.Min' | translate}}</span>
+              <span class="value"
+                    *ngIf="slice.min_video_length > 0">{{getVideoDuration(slice)}} {{'StepOne.Min' | translate}}</span>
+              <!--<span class="value" *ngIf="slice.min_video_length > 0">{{slice.min_video_length/ 60}} - {{slice.max_video_length / 60}} {{'StepOne.Min' | translate}}</span>-->
+            </div>
+            <div class="vertical">
+              <span class="property">{{'StepOne.Quality' | translate}}</span>
+              <span class="value">720 p</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div (click)="goToStepTwo(slice)" class="fotPrice"
+             [ngStyle]="{'background-color': slice.slices === 1 ? '#2EA447' : slice.slices === 3 ? '#F7931E' : '#21A7EF'}">
+          <span>&#10003;{{'Pricing.LetsGo' | translate}}</span>
+          <span *ngIf="slice.slices !== 1"><img src="{{slice.save_image}}"></span>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

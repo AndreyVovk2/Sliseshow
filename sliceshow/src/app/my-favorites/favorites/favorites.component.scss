@@ -1,0 +1,24 @@
+@import "~variables.scss";
+
+.favorites {
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+
+  .main-part {
+    margin: 12px 0 0 0;
+    .image-box {
+      padding: 10px;
+    }
+  }
+  .empty{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+  }
+}
+
+
+
+

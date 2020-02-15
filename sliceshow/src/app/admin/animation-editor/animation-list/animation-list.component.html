@@ -1,0 +1,65 @@
+<div class="editor-title">
+    <mat-divider></mat-divider>
+    <span>Animation style list</span>
+
+</div>
+<div class="wrapp">
+  <div class="left_side">
+    <div class="left_styleList">
+        <!--<button (click)="openScreensModal()">OPEN MODAL</button>-->
+      <table class="table table-hover font">
+        <thead >
+            <tr class="tableHead">
+                <th>Name</th>
+                <th>Id</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <!--<button mat-stroked-button data-toggle="tooltip" html="true" title="Default <br> tooltip"  class="addStyle" (click)="createNewStyle()">-->
+                      <!--<i class="fas fa-plus-circle"></i>-->
+                      <!--<span>Add New Project</span>-->
+                <!--</button>-->
+                <button mat-stroked-button class="addStyle" (click)="createNewStyle()">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add New Project</span>
+                </button>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let style of allAnimations">
+                <td>{{style.name}}</td>
+                <td>{{style.id}}</td>
+                <td class="img_button">
+                    <span class="inner" (click)="generalSettings(style)">
+                        <img src="../../../../assets/images/profile/general_settings.png">
+                        <span>general settings</span>
+                    </span>
+                </td>
+                <td class="img_button">
+                    <span class="inner" (click)="changeStyle(style, $event);">
+                        <img src="../../../../assets/images/profile/edit.png">
+                        <span>edit format</span>
+                    </span>
+                </td>
+                <td class="img_button">
+                    <span class="inner" (click)="changeScreens(style , $event);">
+                        <img src="../../../../assets/images/profile/share.png">
+                        <span>edit screen</span>
+                    </span>
+                </td>
+                <td class="img_button">
+                    <!--<span class="inner" (click)="deleteStyle(style , $event);">-->
+                    <span class="inner" (click)="openDeletePopup(style , $event);">
+                        <img src="../../../../assets/images/profile/delete.png">
+                        <span>delete style</span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

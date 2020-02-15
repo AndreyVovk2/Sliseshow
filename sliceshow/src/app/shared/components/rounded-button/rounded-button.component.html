@@ -1,0 +1,15 @@
+<button  (click)="addModal($event)"
+        class="rounded-button
+ {{mr && 'margin-right'}}
+ {{secondary && 'secondary'}}
+ {{primary && 'primary'}}
+ {{default && 'default'}}
+<!-- {{disabled && 'disabled'}}-->
+ {{neutral && 'neutral'}}"
+
+>
+  <span class="label">{{label}}</span>
+
+</button>
+
+<!--disabled = {{disabled}}-->

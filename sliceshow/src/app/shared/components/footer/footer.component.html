@@ -1,0 +1,75 @@
+<div class="footer">
+  <img class="bottom-left-image" src="../../../assets/images/main-page.images/BottomLeft.svg" alt="">
+  <img class="bottom-right-image" src="../../../assets/images/main-page.images/BottomRight.svg" alt="">
+
+  <div class="back-form">
+    <div class="container">
+      <div class="row back-wrapper">
+        <div class="col-5 explanation">
+          <p appAdminChange="Footer.p1">{{'Footer.p1' | translate}}</p>
+          <p appAdminChange="Footer.p2">{{'Footer.p2' | translate}}</p>
+        </div>
+        <form class="row" [formGroup]="subscribersForm" (submit)="onSubmit()">
+        <div class="col-5 email-back">
+          <input type="email" formControlName="email" placeholder="{{'Footer.E-mail' | translate | uppercase}}">
+        </div>
+        <div class="col-2 button-back">
+            <!-- (click)="openConfirm()" -->
+          <button type="submit" appAdminChange="Footer.Subscribe">{{'Footer.Subscribe' | translate | uppercase}}</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-menu">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-block">
+          <p class="footer-heads" appAdminChange="Footer.Categories">{{'Footer.Categories' | translate}}</p>
+          <span *ngIf="currentLang === 'en'; else name_hreb">
+            <a [routerLink]="'/gallery'"   *ngFor="let cat of categoriesNames" [queryParams]="{ id: cat.id }">{{cat.name}}</a>
+            <!--<a [routerLink]="'/gallery'"  *ngFor="let cat of categoriesNames">{{cat.name}}</a>-->
+          </span>
+          <ng-template #name_hreb>
+            <a [routerLink]="'/gallery'" *ngFor="let cat of categoriesNames" [queryParams]="{ id: cat.id }">{{cat.name_hreb}}</a>
+          </ng-template>
+          <!--<a [routerLink]="'/gallery'" appAdminChange="Footer.Intro">{{'Footer.Intro' | translate}}</a>-->
+
+        </div>
+        <div class="footer-block">
+          <p class="footer-heads" appAdminChange="Footer.Info">{{'Footer.Info' | translate}}</p>
+            <a [routerLink]="'/about-us'" appAdminChange="Footer.AboutUs">{{'Footer.AboutUs' | translate}}</a>
+            <a [routerLink]="'/terms-and-conditions'" appAdminChange="Footer.TermsAndConditions">{{'Footer.TermsAndConditions' | translate}}</a>
+            <a [routerLink]="'/privacy-policy'" appAdminChange="Footer.PrivacyPolicy">{{'Footer.PrivacyPolicy' | translate}}</a>
+        </div>
+        <div class="footer-block">
+          <p class="footer-heads" appAdminChange="Footer.HelpAndSupport">{{'Footer.HelpAndSupport' | translate}}</p>
+            <a [routerLink]="'/contact-us'" appAdminChange="Footer.ContactUs">{{'Footer.ContactUs' | translate}}</a>
+            <a [routerLink]="'/my-profile'" appAdminChange="Footer.MyProfile">{{'Footer.MyProfile' | translate}}</a>
+            <a [routerLink]="'/faq'" appAdminChange="Footer.FAQ">{{'Footer.FAQ' | translate}}</a>
+        </div>
+        <div class="footer-block">
+          <p class="footer-heads" appAdminChange="Footer.Pricing">{{'Footer.Pricing' | translate}}</p>
+            <a [routerLink]="'/pricing'" appAdminChange="Footer.OneSlice">{{'Footer.OneSlice' | translate}}</a>
+            <a [routerLink]="'/pricing'" appAdminChange="Footer.HalfTray">{{'Footer.HalfTray' | translate}}</a>
+            <a [routerLink]="'/pricing'" appAdminChange="Footer.LargeTray">{{'Footer.LargeTray' | translate}}</a>
+        </div>
+        <div class="footer-block images">
+          <div class="row"
+          [ngStyle]="{'justify-content': this.adminStore.state.currentLang === 'he' ? 'flex-end' : 'flex-start'}">
+              <a target="_blank" href="https://www.instagram.com/sliceshow/" ><img src="../../../assets/images/main-page.images/icon5.png" alt=""></a>
+              <a target="_blank" href="https://www.youtube.com/channel/UCQLxc5CSGfaMtFfaEeEoxBQ" style="padding-left: 7px"><img src="../../../assets/images/main-page.images/icon3.png" alt=""></a>
+              <a target="_blank" href="https://www.facebook.com/sliceshows/" style="padding-left: 7px"><img src="../../../assets/images/main-page.images/icon1.png" alt=""></a>
+          </div>
+          <div class="row" style="padding-top: 5px"
+          [ngStyle]="{'justify-content': this.adminStore.state.currentLang === 'he' ? 'flex-end' : 'flex-start'}">
+<!--              <a target="_blank" href="https://www.linkedin.com/"><img src="../../../assets/images/main-page.images/icon6.png" alt="" ></a>-->
+              <!--<a href="#"><img src="../../../assets/images/main-page.images/icon4.png" alt=""></a>-->
+<!--              <a target="_blank" href="https://twitter.com/"><img src="../../../assets/images/main-page.images/icon2.png" alt="" style="padding-left: 7px"></a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

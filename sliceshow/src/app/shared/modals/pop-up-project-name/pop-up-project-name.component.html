@@ -1,0 +1,23 @@
+<div class="pop-up">
+  <div class="content">
+    <span>{{'Modal.GiveTheProjectName' | translate}}</span>
+    <div class="project-name">
+      <input type="text"
+      [ngStyle]="{'border': this.nameError ? '1px solid red' : '1px solid transparent'}"
+      [(ngModel)]="this.newProject.name"
+      (keyup.enter)="selectFunc()"
+      placeholder="{{'Modal.ProjectName' | translate}}">
+    </div>
+  </div>
+
+  <div class="footer">
+    <button class="button-yes" (click)="onClose()">{{'Modal.TakeMeBack' | translate | uppercase}}</button>
+    <button class="button-no" (click)="selectFunc()" *ngIf="!load">
+      <span>{{'Modal.Continue' | translate}}</span>
+    </button>
+    <button class="disabled" *ngIf="load">
+      <img src="../../../assets/images/spinner.gif">
+      <span>{{'Modal.CreatingProject' | translate}}</span>
+    </button>
+  </div>
+</div>

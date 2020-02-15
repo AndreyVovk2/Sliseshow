@@ -1,0 +1,59 @@
+.rounded-button {
+  display: inline-block;
+  min-width: 88px;
+  padding: 11px 93px;
+  border: 1px solid #180a21;
+  border-radius: 24px;
+  .label {
+    font-size: 16px;
+    color: #180a21;
+    text-transform: uppercase;
+    text-align: center;
+    user-select: none;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  &.secondary {
+    cursor: pointer;
+    background: #FEC968;
+    margin-right: 24px;
+    .label {
+      color: #180a21;
+    }
+  }
+  &.default {
+    cursor: pointer;
+    background: #fff;
+    border-color: #cc0033;
+    .label {
+      color: #cc0033;
+    }
+  }
+  &.primary {
+    cursor: pointer;
+    background: #C5002D;
+    border: 2px solid #c5002d;
+    .label {
+      color: #fff;
+    }
+  }
+  &.disabled {
+    cursor: default;
+    border-color: #c6bfca;
+    background: #ffffff;
+    .label {
+      color: #c6bfca;
+    }
+  }
+  &.neutral {
+    border-color: #180a21;
+    background: #ffffff;
+    .label {
+      color: #180a21;
+    }
+  }
+  &.margin-right {
+    margin-right: 24px;
+  }
+}

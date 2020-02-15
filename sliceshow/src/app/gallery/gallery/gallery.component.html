@@ -1,0 +1,154 @@
+<app-header></app-header>
+
+<div class="gallery">
+  <div class="header-banner"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + img.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <h2 class="title" appAdminChange="Gallery.Gallery">{{'Gallery.Gallery' | translate}}</h2>
+    <div class="button-wrapper">
+      <button id="creating" [routerLink]="'/create-project/step-one'" appAdminChange="Gallery.StartCreating">
+        {{'Gallery.StartCreating' | translate}}
+      </button>
+    </div>
+    <button id="learns" [routerLink]="'/how-it-works'" appAdminChange="Gallery.LearnMore">
+      {{'Gallery.LearnMore' | translate}}
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="menu">
+      <div class="app-dropdown"
+           (mouseleave)="closeAllDropdowns()"
+           (click)="[setActiveClass('All'), getAllAnimationStyles()]"
+           [ngClass]="{'active': activeClassSwitcher === 'All'}"
+      >
+        <div class="dropdown">
+          <p class="dropdown-toggle"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            {{'Categories.ALL' | translate}}
+          </p>
+          <div class="dropdown-menu"
+               aria-labelledby="dropdownMenuButton">
+          </div>
+        </div>
+      </div>
+      <div class="app-dropdown"
+           (mouseleave)="closeAllDropdowns()"
+           *ngFor="let dropdown of dropdowns | orderBy: 'name'"
+           (click)="setActiveClass(dropdown.name, dropdown)"
+           [ngClass]="{'active': activeClassSwitcher === dropdown.name}"
+      >
+        <div class="dropdown">
+          <p *ngIf="currentLang === 'en'"
+             class="dropdown-toggle"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            {{dropdown.name}}
+          </p>
+
+          <p *ngIf="currentLang === 'he'"
+             class="dropdown-toggle"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            {{dropdown.name_hreb}}
+          </p>
+
+          <div class="dropdown-menu"
+               [ngClass]="{'show': showSwitcher === dropdown.name,
+               'invisible': dropdown.subcategories === undefined || dropdown.subcategories.length === 0}"
+               aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item"
+               *ngFor="let item of dropdown.subcategories | orderBy: 'name'"
+               (click)="clickEnable ? geAnimationStylesByHash(item.id): ''"
+            >
+              <span *ngIf="currentLang === 'en'">{{item.name}}</span>
+              <span *ngIf="currentLang === 'he'">{{item.name_hreb}}</span>
+              </a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sorting">
+    <div class="container">
+      <div class="row sort-wrapper">
+        <div class="col-6 left">
+          <span class="sort-label" appAdminChange="Gallery.Sort">{{'Gallery.Sort' | translate}}:</span>
+          <app-button-sm
+            appAdminChange="Gallery.Trending"
+            [label]="'Gallery.Trending' | translate"
+            [default]="sortSwitcher !== 'trending'"
+            [secondary]="sortSwitcher === 'trending'"
+            [width]="'125px'"
+            [mr]="'11px'"
+            (click)="setSortParam('trending')"
+          ></app-button-sm>
+          <app-button-sm
+            appAdminChange="Gallery.Date"
+            [label]="'Gallery.Date' | translate"
+            [default]="sortSwitcher !== 'date'"
+            [secondary]="sortSwitcher === 'date'"
+            [width]="'125px'"
+            [mr]="'11px'"
+            (click)="setSortParam('date')"
+          ></app-button-sm>
+          <app-button-sm
+            appAdminChange="Gallery.MostPopular"
+            [label]="'Gallery.MostPopular' | translate"
+            [default]="sortSwitcher !== 'likes'"
+            [secondary]="sortSwitcher === 'likes'"
+            [width]="'125px'"
+            [mr]="'11px'"
+            (click)="setSortParam('likes')"
+          ></app-button-sm>
+        </div>
+        <div class="col-6 right">
+          <app-search [searchValue]="tag.name" (inputChange)="filterTagsByName($event)"></app-search>
+
+          <app-tags-list [tags]="tags" (tagSelected)="handleTagSelected($event)"></app-tags-list>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-main">
+    <div class="container">
+      <div class="row" *ngIf="!activeFilter">
+        <div class="image-box col-lg-4 col-md-6 col-sm-12"
+             *ngFor="let image of this.filteredAnimationStyles | orderBy: sortParam: true"
+        >
+          <app-image-wrapper-block [image]="image" (getData)="handleChosenPic($event)"></app-image-wrapper-block>
+        </div>
+        <div class="emptyMessage" *ngIf="store.state.animationStep3.length === 0">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Not found</span>
+        </div>
+      </div>
+      <div class="row" *ngIf="activeFilter">
+        <div class="image-box col-lg-4 col-md-6 col-sm-12"
+             *ngFor="let image of images | orderBy: sortParam: true"
+        >
+          <app-image-wrapper-block [image]="image" (getData)="handleChosenPic($event)"></app-image-wrapper-block>
+        </div>
+        <div class="emptyMessage" *ngIf="images.length === 0">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>this subcategory has no templates yet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>

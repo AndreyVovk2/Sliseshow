@@ -1,0 +1,295 @@
+@font-face {
+    font-family: midnight; /* Имя шрифта */
+    src: url('../../../../assets/fonts/Midnight_Bangkok.ttf');
+}
+::placeholder {
+    color: rgb(24, 10, 33);
+    opacity: 1;
+    text-transform: uppercase;
+}
+button:focus {
+    outline:0;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    user-select: none;
+}
+form{
+    width: 430px;
+}
+.forgotPass{
+    width: 800px;
+    height: 600px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(254, 252, 237);
+    box-shadow: 0px 0px 15.96px 5.04px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../../../assets/images/sign-up/backgroung.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: -24px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.leftContent {
+  display: flex;
+  width: 320px;
+    align-items: center;
+  background-color: rgba(24, 10, 33, 0.5);
+/*  margin: -50px 0px -50px -50px;*/
+}
+#verify{
+    padding-bottom: 10px;
+    font-size: 16px;
+    color: rgb(204, 0, 51);
+    line-height: 1.2;
+    text-align: left;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+    padding-right: 115px;
+}
+
+#cook {
+    width: 100px;
+    padding-top: 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+  -moz-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+  -webkit-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+  -ms-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+    opacity: 1;
+    font-weight: 300;
+   
+}
+#yourOwn {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 400;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    opacity: 1;
+}
+#sliceShow {
+    width: 100px;
+    text-align: center;
+    font-family: 'midnight';
+    font-weight: 200;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    -moz-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+  -webkit-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+  -ms-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+}
+
+#withUs {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+.forgotPass div{
+    display: flex;
+    flex-direction: column;
+}
+.rightContent{
+    display: flex;
+    justify-content: flex-end;
+}
+.rightContent form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 30px 0px 15px;
+}
+.rightContent input{
+    margin-bottom: 10px;
+    text-transform: none;
+    width: 430px;
+    height: 50px;
+    border: 0px solid #fff;
+    color: rgb(24, 10, 33);
+    padding-left: 15px;
+    font-size: 16px;  
+}
+#repass{
+        margin-bottom: 160px;
+}
+#sendBtn{
+    background-color: rgb(204, 0, 51);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+    border-radius: 30px;
+    border: 0px solid #fff;
+    width: 220px;
+    height: 45px;
+    font-weight: 200;
+    margin-bottom: 55px;
+}
+input.ng-touched.ng-invalid{
+  border: 2px solid red;
+}
+input.ng-untouched{
+  border: 0px solid #fff;
+}
+input.ng-touched.ng-valid{
+  border: 0px solid #fff;
+}
+
+
+// @import "~variables.scss";
+// @font-face {
+//     font-family: midnight; /* Имя шрифта */
+//     src: url('../../../assets/fonts/Midnight_Bangkok.ttf');
+// }
+// ::placeholder {
+//     color: rgb(24, 10, 33);
+//     opacity: 1;
+// }
+// button:focus {
+//     outline:0;
+// }
+// button:hover, input:focus{
+//     cursor: pointer;
+// }
+// input.ng-touched.ng-invalid{
+//   border: 2px solid $red;
+// }
+// input.ng-untouched{
+//   border: 0px solid $white;
+// }
+// input.ng-touched.ng-valid{
+//   border: 0px solid $white;
+// }
+// button{
+//     user-select: none;
+// }
+// .forgotPass{
+//     width: 800px;
+//     height: 600px;
+//     border-style: solid;
+//     border-width: 0px;
+//     border-color: rgb(254, 252, 237);
+//     box-shadow: 0px 0px 15.96px 5.04px rgba(0, 0, 0, 0.4);
+//     display: flex;
+//     flex-direction: row;
+//     background-image: url('../../../assets/images/sign-up/backgroung.png');
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     margin: -24px;
+//     font-family: 'Josefin Sans', sans-serif;
+// }
+
+// .leftContent {
+//   display: flex;
+//   width: 320px;
+//   align-items: center;
+//   background-color: rgba(24, 10, 33, 0.5);
+// /*  margin: -50px 0px -50px -50px;*/
+// }
+// #verify{
+//     padding-bottom: 10px;
+//     padding-right: 95px;
+//     font-size: 16px;
+//     color: rgb(204, 0, 51);
+//     line-height: 1.2;
+//     -moz-transform: scale(1.115, 1);
+//     -webkit-transform: scale(1.115, 1);
+//     -ms-transform: scale(1.115, 1);
+// //    margin-bottom: 80px;
+// //    padding-bottom: 200px;
+// }
+// 
+
+// #cook {
+//     width: 100px;
+//     padding-top: 20px;
+//     font-size: 16px;
+//     color: rgb(255, 255, 255);
+//     text-transform: uppercase;
+//     line-height: 1.2;
+//     text-align: center;
+//   -moz-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+//   -webkit-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+//   -ms-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+//     opacity: 1;
+//     font-weight: 300;
+   
+// }
+// #yourOwn {
+//     text-align: center;
+//     font-family: 'Amatic SC', cursive;
+//     font-weight: 400;
+//     font-size: 35px;
+//     text-transform: uppercase;
+//     color: white;
+//     opacity: 1;
+// }
+// #sliceShow {
+//     width: 100px;
+//     text-align: center;
+//     font-family: 'midnight';
+//     font-weight: 200;
+//     font-size: 16px;
+//     color: rgb(255, 255, 255);
+//     opacity: 1;
+//     -moz-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+//   -webkit-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+//   -ms-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+// }
+
+// #withUs {
+//     text-align: center;
+//     font-weight: 600;
+//     font-size: 25px;
+//     color: white;
+//     text-transform: uppercase;
+// }
+// .rightContent{
+//     display: flex;
+//     width: 480px;
+//     justify-content: flex-end;
+//     align-items: center;
+//     margin: 10px 30px 0px 15px;
+// }
+// form input{
+//     margin-bottom: 10px;
+//     text-transform: uppercase;
+//     width: 430px;
+//     height: 50px;
+//     color: rgb(24, 10, 33);
+//     padding-left: 15px;
+//     font-size: 16px;  
+// }
+// #sendBtn{
+//     background-color: rgb(204, 0, 51);
+//     font-size: 16px;
+//     color: rgb(255, 255, 255);
+//     text-transform: uppercase;
+//     line-height: 1.2;
+//     -moz-transform: scale(1.115, 1);
+//     -webkit-transform: scale(1.115, 1);
+//     -ms-transform: scale(1.115, 1);
+//     border-radius: 30px;
+//     border: 0px solid #fff;
+//     width: 220px;
+//     height: 45px;
+//     font-weight: 200;
+//     margin-bottom: 55px;
+// }

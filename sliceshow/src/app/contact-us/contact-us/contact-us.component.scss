@@ -1,0 +1,268 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+button:focus, input:focus, textarea:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+::placeholder {
+  color: rgb(24, 10, 33);
+  opacity: 1;
+  font-weight: 300;
+}
+
+button {
+  user-select: none;
+}
+
+.content {
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+//  ---------header
+.header-banner {
+  // background: url("/assets/images/about-us/ee.png") center no-repeat;
+  height: 323px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  #header-arrow-left, #header-arrow-right {
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    text-align: center;
+  }
+  #header-arrow-left {
+    top: -3px;
+    background: url("/assets/images/main-page.images/header-arrow-left.png") center no-repeat;
+  }
+  #header-arrow-right {
+    bottom: -3px;
+    background: url("/assets/images/main-page.images/header-arrow-right.png") center no-repeat;
+  }
+  .text-wrapper {
+    text-align: left;
+    h2 {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 250px;
+      font-size: 36px;
+    }
+  }
+}
+//.main_pic {
+//  img {
+//    width: 100%;
+//    min-height: 170px;
+//  }
+//}
+//
+//.header {
+//  img {
+//    width: 100%;
+//  }
+//  z-index: -2;
+//  position: relative;
+//}
+//
+//.header_line {
+//  img {
+//    margin-top: -4px;
+//    position: absolute;
+//  }
+//}
+
+//    --------headerEnd
+.main_page {
+  display: flex;
+  margin-top: 9px;
+  justify-content: center;
+}
+
+.main_left {
+  width: 575px;
+  margin-top: 45px;
+}
+
+.main_right {
+  width: 640px;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding: 45px 40px 45px 40px;
+  background-color: rgb(246, 244, 247);
+}
+
+#map {
+  width: 560px;
+  height: 480px;
+  // background-color: darkgrey;
+  agm-map {
+    width: 560px;
+    height: 480px;
+  }
+}
+
+.field input {
+  width: 100%;
+  margin-bottom: 25px;
+  height: 45px;
+  border-width: 2px;
+  padding-left: 45px;
+  font-size: 18px;
+  color: rgb(24, 10, 33);
+  line-height: 2.222;
+}
+
+.field textarea {
+  width: 100%;
+  height: 339px;
+  padding-left: 45px;
+  padding-top: 15px;
+  resize: none;
+  font-size: 18px;
+  color: rgb(24, 10, 33);
+  line-height: 2.222;
+}
+
+.inputs {
+  padding: 1px;
+}
+
+.name {
+  position: relative;
+}
+
+.name img {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+
+//.contact {
+//  position: absolute;
+//  user-select: none;
+//  z-index: 100;
+//  top: -170px;
+//  font-size: 36px;
+//  color: rgb(255, 255, 255);
+//  font-weight: 700;
+//  text-transform: uppercase;
+//  line-height: 4.19;
+//}
+
+.email {
+  position: relative;
+}
+
+.email img {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.text {
+  position: relative;
+}
+
+.text img {
+  position: absolute;
+  top: 23px;
+  left: 16px;
+}
+
+#sendBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+#sendBtn button {
+  background-color: rgb(204, 0, 51);
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.2;
+  -moz-transform: scale(1.115, 1);
+  -webkit-transform: scale(1.115, 1);
+  -ms-transform: scale(1.115, 1);
+  border-radius: 30px;
+  border: 0px solid #fff;
+  width: 220px;
+  height: 45px;
+  font-weight: 200;
+}
+
+.address {
+  -moz-transform: scale(1.115, 1);
+  -webkit-transform: scale(1.115, 1);
+  -ms-transform: scale(1.115, 1);
+  margin-left: 30px;
+  width: 480px;
+}
+
+.addressLine {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  font-size: 16px;
+  color: rgb(24, 10, 33);
+  text-transform: uppercase;
+  line-height: 1.2;
+  div {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(24, 10, 33);
+    line-height: 1.2;
+    text-transform: none;
+  }
+  .secondAddressLine{
+    padding-left: 25px;
+  }
+}
+
+.telLine {
+  font-weight: 600;
+  display: flex;
+  font-size: 16px;
+  color: rgb(24, 10, 33);
+  text-transform: uppercase;
+  line-height: 1.2;
+  div {
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: none;
+    color: rgb(24, 10, 33);
+    line-height: 1.2;
+  }
+  .secondTelLine{
+    padding-left: 60px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .header-banner {
+    background-position: center center;
+    -webkit-background-size: 100% auto !important;
+    background-size: 100% auto !important;
+    #header-arrow-left, #header-arrow-right {
+      background-position: center center;
+      -webkit-background-size: 100% auto;
+      background-size: 100% auto;
+    }
+    #header-arrow-left {
+      top: -2px;
+    }
+    #header-arrow-right {
+      bottom: -2px;
+    }
+  }
+}

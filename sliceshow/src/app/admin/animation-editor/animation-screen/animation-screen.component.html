@@ -1,0 +1,133 @@
+<div class="animation-wrap">
+        <div class="animation-header">
+            <div class="empty">
+                <button *ngIf="!returnScreensCount()"  mat-stroked-button (click)="addScreen()">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add New Screen</span>
+                </button>
+            </div>
+            <div class="animation-header__text">
+                <h3 *ngIf="currentScreenId">editing screen with # {{currentScreenId}} id</h3>
+                <h3 *ngIf="!currentScreenId">creating new screen</h3>
+            </div>
+            <div class="animation-header__select">
+                <div class="select">
+                    <span class="item_name">Template:</span>
+                    <mat-select [(value)]="currentTemplateId" (change)="changeTemplate()">
+                        <mat-option *ngFor="let template of templatesArr" [value]="template.id">
+                            {{template.id}
+                        </mat-option>}
+                    </mat-select>
+                </div>
+                <div class="select">
+                    <span class="item_name">Id:</span>
+                    <mat-select [(value)]="currentScreenId" (change)="changeScreen()">
+                        <mat-option *ngFor="let screen of allScreens" [value]="screen.id">
+                            {{screen.id}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+            </div>
+        </div>
+
+        <form [formGroup]="screenForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-item">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Name" type="text" formControlName="name">
+                </mat-form-field>
+            </div>
+
+            <!-- <div class="form-item">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Duration" type="number" formControlName="duration">
+                </mat-form-field>
+            </div> -->
+
+            <!-- <div class="form-item">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Start Frame" type="number" formControlName="startFrame">
+                    </mat-form-field>
+            </div> -->
+
+            <!-- <div class="form-item">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="End Frame" type="number" formControlName="endFrame">
+                    </mat-form-field>
+            </div> -->
+
+            <div class="form-item">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Position" type="number" formControlName="position">
+                    </mat-form-field>
+            </div>
+
+            <div class="form-item">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Time code" type="number" formControlName="time_code">
+                </mat-form-field>
+            </div>
+
+            <div class="form-item">
+                    <div class="inner-form-group" [ngClass]="{'invalid': inputFileValidate(image)}">
+                            <span class="labelForm">Preview image</span>
+                            <span *ngIf="!isString(image) && image">Image file is uploaded</span>
+                            <a *ngIf="isString(image) && image" href="{{image}}" target="_blank" rel="noopener noreferrer">Current image</a>
+                            <button type="button" class="formButton" mat-stroked-button (click)="fileInput2.click()">
+                                    <span>Edit Image</span>
+                                    <input #fileInput2 type="file" (change)="show($event)" style="display:none;" />
+                            </button>
+                    </div>
+            </div>
+
+            <div class="form-item">
+                    <div class="inner-form-group">
+                            <span class="labelForm">Add media:</span>
+                            <div class="icon-group">
+                                    <i class="fas fa-video point" (click)="addEmptyVideo()"></i>
+                                    <i class="far fa-image point" (click)="addEmptyImage()"></i>
+                                    <i class="fas fa-font point" (click)="addEmptyText()"></i>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="form-item" formArrayName="medias" *ngFor="let media of returnForm('medias'); let i = index">
+                    <div class="inner-multiline" [formGroupName]="i">
+                            <i class="fas fa-video" *ngIf="getType(i) === 'video'"></i>
+                            <i class="far fa-image" *ngIf="getType(i) === 'image'"></i>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Layer" type="text" formControlName="layer">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Composition" type="text" formControlName="composition">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width small" *ngIf="getType(i) === 'video'">
+                                    <input matInput placeholder="Duration (sec)" type="number" formControlName="duration">
+                            </mat-form-field>
+                            <div class="small" *ngIf="getType(i) === 'image'"></div>
+                            <i class="far fa-trash-alt point" (click)="deleteMedia(i, 'medias')"></i>
+                    </div>
+            </div>
+
+            <div class="form-item" formArrayName="text" *ngFor="let pic of returnForm('text'); let i = index">
+                    <div class="inner-multiline" [formGroupName]="i">
+                            <i class="fas fa-font"></i>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Layer" type="text" formControlName="layer">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Composition" type="text" formControlName="composition">
+                            </mat-form-field>
+                            <div class="small"></div>
+                            <i class="far fa-trash-alt point" (click)="deleteMedia(i, 'text')"></i>
+                    </div>
+            </div>
+
+            <button *ngIf="currentScreenId; else update" class="form-submit" type="submit">{{isNew()}}</button>
+            <ng-template #update>
+                <button class="form-submit" type="submit" [disabled]="returnScreensCount()">{{isNew()}}</button>
+            </ng-template>
+
+        </form>
+    <p class="screen-filled" *ngIf="returnScreensCount()">All screens are filled</p>
+    </div>

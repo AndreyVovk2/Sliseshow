@@ -1,0 +1,17 @@
+<div class="pop-up">
+  <div class="header">
+      <img src="assets/img/pop-up/two lines and a circle.svg">
+      <span>{{'Modal.WeAreAlmostDone' | translate | uppercase}}</span>
+  </div>
+  <div class="price">
+    <span id="style">{{this.editingStore.state.activeAnimationStyle.name}}</span>
+      <span id="cost">${{data.price}}</span>
+  </div>
+  <div class="paypal">
+    <div class="wrapper">
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    </div>
+    <!-- <img src="assets/img/pop-up/Paypal Iframe.png"> -->
+  </div>
+
+</div>

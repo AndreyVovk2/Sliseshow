@@ -1,0 +1,14 @@
+<div class="wrap--sci" appDraggable
+     dragTarget="app-scissors"
+     dragHandle=".topCouner"
+     (getData)="updatePosition($event)"
+     (mousemove)="updateUpdate()">
+  <div class="topCouner">{{timeCounter / 16 | number : '1.0-0' | minuteSeconds}}</div>
+  <div class="emptyTopLine"></div>
+  <div class="buttonSci" (click)="divideTrack()">
+    <div class="sciWrap">
+      <img src="../../../assets/images/editing-system/scissors.png" alt="">
+    </div>
+  </div>
+  <div class="emptyBotLine"></div>
+</div>

@@ -1,0 +1,53 @@
+<div class="profile">
+  <div class="main">
+    <div class="header-banner">
+      <div id="header-arrow-left"></div>
+      <div class="store">{{usedMb()}}{{'UserMenu.UsedMemoryOf' | translate}}</div>
+    </div>
+    <div class="percent">
+      <div class="wrapper">
+        <div class="perLeft">
+          <span class="percentage" id="percentage-left">{{percentUsed}}%</span>
+          <span class="using" id="using-left">{{'UserMenu.Used' | translate |lowercase}}</span>
+        </div>
+        <div id="pizza" class="pizza-bar">
+          <img src="../../../assets/images/pizza.svg" alt="">
+        </div>
+        <div class="image-border"></div>
+
+        <div class="canvas-wrapper">
+          <canvas height={{height}} width={{width}} #myCanvas></canvas>
+        </div>
+
+        <!--<div class="hide-pizza">-->
+
+        <!--</div>-->
+        <div class="perLeft">
+          <span class="percentage" id="percentage-right">{{percentLeft}}%</span>
+          <span class="using" id="using-right">{{'UserMenu.Left' | translate | lowercase}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="yellow-line">
+    </div>
+    <div class="menu">
+      <a
+        [ngStyle]="{'border-right': this.adminStore.state.currentLang === 'he' ? 'none' : '1px solid black'}"
+        routerLink="/my-project" routerLinkActive="active">{{'UserMenu.Projects' | translate}}
+        <div></div>
+      </a>
+      <a routerLink="/library" routerLinkActive="active" id="center_bottom1">{{'UserMenu.Library' | translate}}
+        <div></div>
+      </a>
+      <a routerLink="/favorites" routerLinkActive="active" id="center_bottom2">{{'UserMenu.Favorites' | translate}}
+        <div></div>
+      </a>
+      <a [ngStyle]="{'border-right': this.adminStore.state.currentLang === 'he' ? '1px solid black' : 'none'}"
+         routerLink="/my-profile" routerLinkActive="active">{{'UserMenu.Profile' | translate}}
+        <div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- id="lastMenu" -->

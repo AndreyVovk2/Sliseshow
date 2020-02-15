@@ -1,0 +1,23 @@
+<div class="video-player" id="video_test">
+
+  <!-- <video *ngIf="!!this.store.state.activeAnimationStyle" [src]="this.getVideoLink()" class="video" preload="auto" controls> -->
+  <video *ngIf="!!this.store.state.activeAnimationStyle"
+         id="video_load"
+         (loadedmetadata)="onMetadata($event)"
+         [src]="this.getVideoLink()"
+         preload="auto"
+         class="video"
+         controls
+         (timeupdate)="5">
+    <!-- <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4"> -->
+    <!-- <source  type="video/mp4"> -->
+  </video>
+
+
+  <!-- <div
+    *ngIf="!this.store.state.activeAnimationStyle && !this.isLoaded"
+    class="video-placeholder"
+  >
+    <app-spinner></app-spinner>
+  </div> -->
+</div>

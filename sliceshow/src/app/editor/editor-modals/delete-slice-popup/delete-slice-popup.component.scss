@@ -1,0 +1,71 @@
+@import "~variables.scss";
+.delete-slice-popup {
+  width: 560px;
+  height: 320px;
+  .delete-ctn {
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+    font-family: 'Josefin Sans';
+    &__header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .header-image {
+        width: 110px;
+        margin-left: 10px;
+      }
+      .header-text {
+        margin-left: 10%;
+        margin-bottom: 0;
+        font-size: 28px;
+        font-weight: 600;
+        color: rgb(204, 0, 51);
+      }
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 22px;
+      font-weight: 400;
+      p {
+        margin: 0;
+      }
+    }
+
+    &__buttons {
+      margin-top: 10px;
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+      .general-btn {
+        cursor: pointer;
+        text-transform: uppercase;
+        line-height: 1.2;
+        -moz-transform: scale(1.115, 1);
+        -webkit-transform: scale(1.115, 1);
+        -ms-transform: scale(1.115, 1);
+        border-radius: 30px;
+        width: 210px;
+        height: 40px;
+        font-size: 16px;
+      }
+      .cancel-btn {
+        background-color: rgb(204, 0, 51);
+        color: rgb(255, 255, 255);
+        border: 0 solid #fff;
+      }
+      .confirm-btn {
+        background-color: rgb(250, 255, 255);
+        border: 1px solid rgb(204, 0, 51);
+        color: rgb(204, 0, 51);
+      }
+
+    }
+  }
+}

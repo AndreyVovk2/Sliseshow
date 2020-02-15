@@ -1,0 +1,71 @@
+<div class="title">
+    <div class="toogle">
+        <mat-slide-toggle
+            (change)="slide($event)"
+            class="example-margin"
+            [checked]="toggleState.checked"
+            [labelPosition]="toggleState.labelPosition">
+          {{toggleState.label}}
+        </mat-slide-toggle>
+    </div>
+    <span *ngIf="!toggleState.checked">User list</span>
+    <span *ngIf="toggleState.checked">Subscriber list</span>
+    <div class="sendMail" (click)="openModalMail()">Send Mail</div>
+</div>
+
+<table class="table table-hover font" *ngIf="!toggleState.checked">
+  <thead >
+      <tr class="tableHead">
+          <th>User</th>
+          <th>Created</th>
+          <th>Status</th>
+          <th>Email</th>
+          <th>Admin Rights</th>
+          <th></th>
+          <th></th>
+          <div class="addUser" (click)="addUser()">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add New User</span>
+          </div>
+      </tr>
+      
+  </thead>
+  <tbody>
+      <tr *ngFor="let user of this.adminStore.state.userList">
+          <td>{{user.name}} {{user.last_name}}</td>
+          <td>{{user.created_at}}</td>
+          <td *ngIf="user.confirmed == 1" [ngStyle]="{backgroundColor: '#7EB155'}">active</td>
+          <td *ngIf="user.confirmed == 0" [ngStyle]="{backgroundColor: '#EE825E'}">inactive</td>
+          <td>{{user.email}}</td>
+          <td *ngIf="user.admin === 1" class="img_button"><img (click)="delAdmin(user)" src="../../../../assets/images/about-us/gemicon_name.png"></td>
+          <td *ngIf="user.admin === 0"class="img_button"><img [ngStyle]="{'opacity': 0.5}" (click)="addAdmin(user)" src="../../../../assets/images/about-us/gemicon_name.png"></td>
+          <td class="img_button"><img (click)="editUser(user)" src="../../../../assets/images/profile/edit.png"></td>
+          <td class="img_button"><img (click)="deleteUser(user)" src="../../../../assets/images/profile/delete.png"></td>
+      </tr>
+  </tbody>
+</table>
+
+<table class="table table-hover font" *ngIf="toggleState.checked">
+        <thead >
+            <tr class="tableHead">
+                <th>Subcriber email</th>
+                <th>Created</th>
+                <th>Status</th>
+                <th></th>
+                <div class="addUser addSub" (click)="openAddSubscriberPopup()">
+                      <i class="fas fa-plus-circle"></i>
+                      <span>Add New Subscriber</span>
+                </div>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let subscriber of allSubscribers">
+                <td>{{subscriber.email}}</td>
+                <td>{{subscriber.created_at}}</td>
+                <td *ngIf="subscriber.confirmed == 1" [ngStyle]="{backgroundColor: '#7EB155'}">active</td>
+                <td *ngIf="subscriber.confirmed == 0" [ngStyle]="{backgroundColor: '#EE825E'}">inactive</td>
+                <td class="sub_button"><img (click)="deleteSubscriber(subscriber)" src="../../../../assets/images/profile/delete.png"></td>
+            </tr>
+        </tbody>
+      </table>

@@ -1,0 +1,10 @@
+<div
+  class="button-sm
+ {{secondary && 'secondary'}}
+ {{primary && 'primary'}}
+ {{default && 'default'}}
+ {{disabled && 'disabled'}}"
+ [ngStyle]="{ width: width, marginRight: mr }"
+>
+  <div class="label">{{label}}</div>
+</div>

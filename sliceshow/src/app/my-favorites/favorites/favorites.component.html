@@ -1,0 +1,23 @@
+<div class="favorites">
+  <app-header></app-header>
+  <app-profile-header></app-profile-header>
+
+  <div class="main-part">
+    <div class="container">
+      <div class="row" *ngIf="images.length > 0">
+        <div class="image-box col-lg-4 col-md-6 col-sm-12"
+             *ngFor="let image of images | orderBy: sortParam: true"
+        >
+          <app-image-wrapper-block [image]="image" (getData)="handleChosenPic($event)"
+           ></app-image-wrapper-block>
+        </div>
+      </div>
+      <div
+           *ngIf="images.length === 0" 
+           class="empty">
+          <h2>You have no favorites yet</h2>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

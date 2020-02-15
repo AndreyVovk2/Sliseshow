@@ -1,0 +1,14 @@
+<div
+    class="screen-preview
+    {{active && 'active'}}
+    {{rendering && 'rendering'}}"
+    [ngStyle]="{'background': 'url(' + image + ')', 'background-size': 'cover' }"
+>
+    <div
+        *ngIf="checked"
+        class="checked"
+    >
+        <img class="icon" src="assets/images/editing-system/check-icon.png">
+    </div>
+    <div class="counter">{{count}}</div>
+</div>

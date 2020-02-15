@@ -1,0 +1,63 @@
+.pop-up {
+  padding: 10px 0 0 0px;
+  width: 690px;
+  height: 400px;
+  font-size: 32px;
+  line-height: 1.2;
+  background-color: #F7F4F7;
+
+  .header {
+    color: #EE0031;
+    .pop-up-img {
+      float: left;
+      margin-left: 30px;
+    }
+    .pop-up-header {
+      float: left;
+      padding: 40px 100px 40px 40px;
+      span {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .content {
+    margin: 70px 50px 0px 50px;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 100;
+  }
+
+  .footer {
+    font-size: 16px;
+    margin-top: 60px;
+    margin-left: 90px;
+      .button-no {
+        border: 1px solid #EE0031;
+        width: 200px;
+        height: 48px;
+        margin-right: 60px;
+        border-radius: 24px;
+        background-color: #EE0031;
+        color: #ffffff;
+        cursor: pointer;
+        outline: 0 !important;
+      }
+      .button-yes {
+        border: 1px solid #EE0031;
+        width: 200px;
+        height: 48px;
+        margin-right: 60px;
+        border-radius: 24px;
+        background-color: #F7F4F7;
+        color: #EE0031;
+        cursor: pointer;
+        outline: 0 !important;
+      }
+
+
+  }
+
+}
+
+

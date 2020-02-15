@@ -1,0 +1,86 @@
+@import "~variables.scss";
+
+.pop-up {
+  margin: -24px;
+  font-family: $font;
+  padding: 5px 30px 10px 30px;
+  width: 690px;
+  height: 600px;
+  line-height: 1.2;
+  background-color: #f6f4f7;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fefced;
+  box-shadow: 0px 0px 15.96px 5.04px rgba(0, 0, 0, 0.4);
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    img {
+      position: relative;
+      top: 15px;
+      left: -40px;
+      height: 80px;
+    }
+    span {
+        font-size: 32px;
+        // font-family: "Josefin Sans";
+        color: $red;
+        padding-right: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.2;
+        -moz-transform: scale(1.115, 1);
+        -webkit-transform: scale(1.115, 1);
+        -ms-transform: scale(1.115, 1);
+    }
+  }
+
+  .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #style {
+      font-size: 16px;
+      // font-family: "JosefinSans";
+      color: $black;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    #cost {
+        font-size: 24px;
+        color: $red;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-left: 20px;
+        line-height: 1.2;
+        -moz-transform: scale(1.115, 1);
+        -webkit-transform: scale(1.115, 1);
+        -ms-transform: scale(1.115, 1);
+      } 
+    }
+
+    .paypal{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .wrapper{
+        width: 450px;
+        height: 200px;
+        background-color: white;
+        border-color: #e2e1e3;
+        border-style: solid;
+        border-width: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+    }
+    
+
+  }

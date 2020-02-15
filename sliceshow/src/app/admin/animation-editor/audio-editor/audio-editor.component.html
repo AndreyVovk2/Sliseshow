@@ -1,0 +1,24 @@
+<div class="audio-editor-page">
+  <div class="audio-editor__header">
+    <mat-divider></mat-divider>
+    <span>
+      Recommended Audio Editor
+    </span>
+  </div>
+  <mat-form-field>
+    <mat-label>Select audio style</mat-label>
+    <mat-select formControlName="style">
+      <mat-option *ngFor="let style of audioStyles" [value]="style" (click) = 'addAudio(style)'>{{style}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="audio-ctn">
+    <app-library-audio
+     *ngFor="let track of recommendingSongs; let i = index"
+    [trackData]="track"
+    (delete)="deleteRecSong(track.id, i)"
+    >  </app-library-audio>
+    <!--<app-pending-song [full]="true" [name]="track.name" *ngFor="let track of recommendingSongs"></app-pending-song>-->
+    <app-spinner *ngIf="spinnerStatus"></app-spinner>
+  </div>
+  <button class="upload" (click)="openDialogUploadFiles()">{{'Library.UploadFiles' | translate}}</button>
+</div>

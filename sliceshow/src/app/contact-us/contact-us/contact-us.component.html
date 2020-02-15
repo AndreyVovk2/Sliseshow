@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="content">
+  <div class="header-banner"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 class="title" appAdminChange="ContactUs.ContactUs">{{'ContactUs.ContactUs' | translate}}</h2>
+    </div>
+  </div>
+
+  <div class="main_page">
+    <div class="main_left">
+      <div class="inputs">
+        <form [formGroup]="contactUsForm" (submit)="contactUsSubmit()">
+          <div class="name field">
+            <input placeholder="{{'ContactUs.Name' | translate}}" formControlName="name">
+            <img src="../../../assets/images/about-us/gemicon_name.png">
+          </div>
+          <div class="email field">
+            <input placeholder="{{'ContactUs.Email' | translate}}" formControlName="email">
+            <img src="../../../assets/images/about-us/gemicon_email.png">
+          </div>
+          <div class="text field">
+            <textarea placeholder="{{'ContactUs.Message' | translate}}" formControlName="message"></textarea>
+            <img src="../../../assets/images/about-us/gemicon_message.png">
+          </div>
+          <div id="sendBtn">
+            <button [routerLink]="'/'" appAdminChange="ContactUs.Send" [disabled]="!contactUsForm.valid">{{'ContactUs.Send' | translate}}</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+    <div class="main_right">
+      <div id="map">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+      </div>
+      <div class="address">
+        <div class="addressLine">
+            <div appAdminChange="ContactUs.Address">{{'ContactUs.Address' | translate}}</div>
+            <div appAdminChange="ContactUs.YourAddress" class="secondAddressLine">{{translateEn}}</div>
+        </div>
+        <div class="telLine">
+            <div appAdminChange="ContactUs.Tel">{{'ContactUs.Tel' | translate}}:</div>
+            <div appAdminChange="ContactUs.YourTel" class="secondTelLine">{{translateTelEn}}</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

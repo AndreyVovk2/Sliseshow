@@ -1,0 +1,46 @@
+.button-sm {
+    padding: 3px 0;
+    border: 1px solid #180a21;
+    border-radius: 16px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    .label {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Josefin Sans';
+    }
+    &.secondary {
+      cursor: pointer;
+      background: #FEC968;
+      .label {
+        color: #180a21;
+      }
+    }
+
+    &.default {
+      cursor: pointer;
+      background: #fff;
+      border-color: #180a21;
+      .label {
+        color: #180a21;
+      }
+    }
+
+    &.primary {
+      cursor: pointer;
+      background: #C5002D;
+      .label {
+        color: #fff;
+      }
+    }
+
+    &.disabled {
+      border-color: #c6bfca;
+      background: #ffffff;
+      .label {
+        color: #c6bfca;
+      }
+    }
+}

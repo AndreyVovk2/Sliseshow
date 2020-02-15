@@ -1,0 +1,27 @@
+
+<div class="forgotPass">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate}}</p>
+    </div>
+
+    <div *ngIf="data && data.subscription; else standartContent" class="thanksForSb">
+        <div class="longRead">{{'Modal.ThanksForSign' | translate}}</div>
+        <button class="sendBtn" mat-dialog-close>{{'Modal.ConfirmOk' | translate}}</button>
+    </div>
+
+    <ng-template #standartContent>
+        <div class="rightContent">
+        <div><img id="mail" src="../../../assets/images/sign-up/mail.png"></div>
+        <div class="longRead">{{'Modal.ConfirmText' | translate}}</div>
+        <div><img id="zig" src="../../../assets/images/sign-up/zigzag.png"></div>
+        <div id="pls">{{'Modal.ConfirmReceived' | translate}}</div>
+        <button id="resend" (click)='resend()'>{{'Modal.ConfirmResend' | translate}}</button>
+        <button class="sendBtn" mat-dialog-close>{{'Modal.ConfirmOk' | translate}}</button>
+        </div>
+    </ng-template>
+
+</div>
+

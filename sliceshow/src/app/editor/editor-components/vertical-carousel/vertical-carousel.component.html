@@ -1,0 +1,21 @@
+<div class="vertical-carousel" id="carousel">
+  <div class="row slides-container" id="carousel-container">
+    <div class="col-md-6" *ngFor="let animationStyle of this.editingStore.getTemplates(); let counter = index">
+      <app-screen-preview
+        [count]="returnCounter(counter)"
+        [checked]="animationStyle.completed"
+        [image]="animationStyle.preview_img"
+        [rendering]="animationStyle.is_rendering"
+        (click)="selectTemplate(animationStyle)"
+        [active]="animationStyle.id === this.editingStore.state.activeTemplate.id"
+      ></app-screen-preview>
+    </div>
+  </div>
+</div>
+<img
+  *ngIf="this.editingStore.getTemplates().length > 8"
+  (click)="handleScrollDown()"
+  src="assets/images/editing-system/arrow-down.png"
+  class="arrow-down"
+  [ngClass]="rotate === true ? 'rotate-arrow': 'another-rotate'"
+>

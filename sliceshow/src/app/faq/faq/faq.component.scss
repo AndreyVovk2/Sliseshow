@@ -1,0 +1,130 @@
+$red: #cc0033;
+$white: #ffffff;
+$yellow: #fcca5f;
+
+.faq {
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+
+  #image{
+      max-width: 100%;
+  }
+
+  .header-banner {
+    // background: url("/assets/images/faq/header-banner.png") center no-repeat;
+    height: 323px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    #header-arrow-left, #header-arrow-right {
+      position: absolute;
+      height: 9px;
+      width: 100%;
+      text-align: center;
+    }
+    #header-arrow-left {
+      top: -3px;
+      background: url("/assets/images/main-page.images/header-arrow-left.png") center no-repeat;
+    }
+    #header-arrow-right {
+      bottom: -3px;
+      background: url("/assets/images/main-page.images/header-arrow-right.png") center no-repeat;
+    }
+    .text-wrapper {
+      text-align: left;
+      h2 {
+        color: #2A3956;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 250px;
+        font-size: 36px;
+      }
+    }
+  }
+  .list-wrapper {
+    margin-top: 50px;
+    margin-bottom: 75px;
+    a {
+      font-size: 24px;
+      font-family: "Josefin Sans", sans-serif;
+      color: rgb(204, 0, 51);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: left;
+      -moz-transform: scale(1.115, 1);
+      -webkit-transform: scale(1.115, 1);
+      -ms-transform: scale(1.115, 1);
+      margin-left: 0px;
+      img {
+        margin-left: 30px;
+      }
+    }
+
+    ul {
+      list-style-image: url("/assets/images/faq/arrow.png");
+      padding-left: 24px;
+    }
+    ul li {
+      font-size: 24px;
+      font-family: "Josefin Sans", sans-serif;
+      color: rgb(24, 10, 33);
+      font-weight: bold;
+      line-height: 2;
+      text-align: justifyLeft;
+      cursor: pointer;
+      .submenu ul li {
+        display: none;
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1.25;
+        margin-left: -40px;
+      }
+    }
+    ul :hover {
+      list-style-image: url("/assets/images/faq/red-arrow.png");
+
+    }
+    .custom-mat-header {
+      &__title {
+        margin: 0 16px !important;
+      }
+      .open-arrow {
+        height: 18px;
+      }
+    }
+    .content-ctn {
+      font-weight: normal;
+      font-style: italic;
+      line-height: 1.25;
+      font-size: 24px;
+      font-family: "Josefin Sans", sans-serif;
+    }
+  }
+
+  .visibleMenu ul li {
+    display: block !important;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    .header-banner {
+      background-position: center center;
+      -webkit-background-size: 100% auto !important;
+      background-size: 100% auto !important;
+      #header-arrow-left, #header-arrow-right {
+        background-position: center center;
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+      }
+      #header-arrow-left {
+        top: -2px;
+      }
+      #header-arrow-right {
+        bottom: -2px;
+      }
+    }
+  }
+}
+
+
+

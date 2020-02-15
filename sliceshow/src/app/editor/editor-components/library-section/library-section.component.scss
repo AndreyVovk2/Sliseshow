@@ -1,0 +1,90 @@
+.library-section {
+    width: 100%;
+    height: 0;
+    transition: all .2s;
+    overflow: hidden;
+    &.opened {
+        height: 448px;
+        border-bottom: 1px solid #c6bfca;
+    }
+    .library-header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //padding: 8px 0 8px 248px;
+        height: 48px;
+        border: 1px solid #c6bfca;
+    }
+    .library-body {
+        .content {
+            width: calc(100% - 336px);
+            float: left;
+            display: flex;
+            margin-top: 5px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+            height: 400px;
+            overflow-y: auto;
+            app-library-audio-sm {
+                width: 48%;
+            }
+
+
+            &::-webkit-scrollbar {
+                border: 1px solid #c6bfca;
+                border-right-width: 0;
+                border-top: 16px solid #c6bfca;
+                border-bottom: 16px solid #c6bfca;
+                width: 16px;
+                background-color: #a59fa8;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #f6f4f7;
+                border-left: 1px solid #c6bfca;
+                border-top: 1px solid #c6bfca;
+                border-bottom: 1px solid #c6bfca;
+            }
+        }
+        .sidebar {
+            height: 400px;
+            width: 336px;
+            background: #ffffff;
+            float: right;
+            border: 3px dashed transparent;
+            border-left: 1px solid #c6bfca;
+            &.dragover {
+                border: 3px dashed rgb(156, 146, 146);
+            }
+            img {
+                width: 56px;
+                height: 64px;
+                display: block;
+                margin: 110px auto 29px auto;
+            }
+            .description {
+                text-align: center;
+                padding: 0 35px;
+                text-transform: uppercase;
+                font-size: 23px;
+                font-weight: 500;
+                font-family: 'Josefin Sans';
+                color: #c6bfca;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+    app-library-audio-sm {
+        width: 100% !important;
+    }
+}

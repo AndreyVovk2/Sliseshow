@@ -1,0 +1,218 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+@import url('https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800&subset=hebrew');
+@import url('https://fonts.googleapis.com/css?family=David+Libre:400,500,700&subset=hebrew');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~angular-notifier/styles.scss";
+
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.faq {
+  .mat-expansion-panel {
+    box-shadow: none !important;
+  }
+
+  .mat-expansion-panel-header {
+    padding: 0 !important;
+  }
+
+  .mat-expansion-panel-header-title {
+    font-size: 24px;
+    font-family: "Josefin Sans", sans-serif;
+    color: #180a21;
+    font-weight: bold;
+  }
+
+  .mat-expansion-indicator::after {
+    display: none !important;
+  }
+
+  .mat-content {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    flex: none !important;
+    align-items: center;
+  }
+
+  .mat-expansion-panel-header-description {
+    margin-right: 0 !important;
+  }
+}
+
+@font-face {
+  font-family: 'Krinkes-Regular';
+  src: url('assets/fonts/krinkes/KrinkesRegularPERSONAL.ttf');
+}
+
+@font-face {
+  font-family: 'Krinkes-Decor';
+  src: url('assets/fonts/krinkes/KrinkesDecorPERSONAL.ttf');
+}
+
+@font-face {
+  font-family: 'Bellerose';
+  src: url('assets/fonts/Bellerose.ttf');
+}
+
+@font-face {
+  font-family: 'Geometric';
+  src: url('assets/fonts/geometric706bt-black.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('assets/fonts/HelveticaNeueCyr.ttf');
+}
+
+* {
+  outline: none;
+  user-select: none;
+}
+
+.modal-padding {
+  mat-dialog-container {
+    padding: 0;
+  }
+}
+
+
+body::-webkit-scrollbar {
+  width: 5px;
+  // background-image: url('./assets/images/blog/23.png');
+  // background-repeat: repeat-x;
+  // background-repeat: repeat-y;
+}
+
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #aaa;
+  border: 1px solid #aaa;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+//media queries
+
+@media all and (max-width: 1750px) {
+  .editor-header .rounded-button {
+    padding: 11px 60px !important;
+  }
+  .editing-system .rounded-button {
+    padding: 11px 60px !important;
+  }
+}
+
+@media all and (max-width: 1550px) {
+  .editor-header .rounded-button {
+    padding: 11px 36px !important;
+  }
+
+  .editing-system .rounded-button {
+    padding: 11px 36px !important;
+  }
+}
+
+@media all and (max-width: 1380px) {
+  .media-button .button-container {
+    padding-right: 7px !important;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  .media-button .button-container span {
+    font-size: 14px !important;
+  }
+
+  .editor-header .rounded-button {
+    padding: 11px 25px !important;
+  }
+  .editing-system .rounded-button {
+    padding: 11px 25px !important;
+  }
+  .editor-header .rounded-button span {
+    font-size: 14px !important;
+  }
+  .editor-header .total-duration-counter {
+    font-size: 14px !important;
+  }
+  .search input {
+    width: 300px !important;
+  }
+
+
+}
+
+.body_modal {
+  width: 600px;
+  height: 300px;
+
+  .text_body {
+    padding-top: 30px;
+    font-size: 18px;
+  }
+
+  .continue_button {
+    padding-top: 25px;
+  }
+
+}
+
+.loader-container {
+  text-align: center;
+  padding-top: 10%;
+
+  .editing-spinner {
+    display: flex;
+    justify-content: center;
+    paddin-top: 50px;
+  }
+}
+
+.video-player {
+  .video-placeholder {
+    height: 554px;
+    width: 100%;
+    padding: 240px;
+  }
+
+  .video {
+    // height: 600px;
+    height: auto;
+    max-width: 870px;
+    width: 100%;
+    margin: auto;
+    display: block;
+  }
+}
+
+.videoScreen {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+
+  .video {
+    max-height: 100vh;
+    max-width: 1200px !important;
+  }
+}
+
+//.video-player {
+//width: 600px;
+//height: 700px}
+
+//.loader-container{
+//  padding-top: 50%;
+//}

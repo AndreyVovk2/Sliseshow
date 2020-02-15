@@ -1,0 +1,195 @@
+<app-header></app-header>
+<div class="faq">
+
+  <div class="header-banner"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 class="title" appAdminChange="Faq.FAQ">{{'Faq.FAQ' | translate}}</h2>
+    </div>
+  </div>
+
+  <!--<div class="container list-wrapper">-->
+    <!--<a href="#" appAdminChange="Faq.CreateYourVideo">-->
+      <!--{{'Faq.CreateYourVideo' | translate}}-->
+      <!--<img src="/assets/images/faq/three-arrows.png">-->
+    <!--</a>-->
+    <!--<ul class="list">-->
+      <!--<li appAdminChange="Faq.Item1">{{'Faq.Item1' | translate}}-->
+      <!--</li>-->
+      <!--<li appAdminChange="Faq.Item2">{{'Faq.Item2' | translate}}</li>-->
+      <!--<li appAdminChange="Faq.Item3">{{'Faq.Item3' | translate}}</li>-->
+      <!--<li (click)="openSubMenu('submenu')" appAdminChange="Faq.Item4">{{'Faq.Item4' | translate}}-->
+        <!--<div class="submenu">-->
+          <!--<ul>-->
+            <!--<li appAdminChange="Faq.Item4-1">{{'Faq.Item4-1' | translate}}</li>-->
+            <!--<li appAdminChange="Faq.Item4-2">{{'Faq.Item4-2' | translate}}</li>-->
+            <!--<li appAdminChange="Faq.Item4-3">{{'Faq.Item4-3' | translate}}</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li appAdminChange="Faq.Item5">{{'Faq.Item5' | translate}}</li>-->
+      <!--<li appAdminChange="Faq.Item6">{{'Faq.Item6' | translate}}</li>-->
+      <!--<li appAdminChange="Faq.Item7">{{'Faq.Item7' | translate}}</li>-->
+      <!--<li appAdminChange="Faq.Item8">{{'Faq.Item8' | translate}}</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+
+  <div class="list-wrapper container ">
+    <a appAdminChange="Faq.CreateYourVideo">
+      {{'Faq.CreateYourVideo' | translate}}
+      <img src="/assets/images/faq/three-arrows.png">
+    </a>
+    <mat-accordion>
+      <mat-expansion-panel #question1>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question1.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question1.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <span appAdminChange="Faq.Item1">{{'Faq.Item1' | translate}}</span>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <div appAdminChange="Faq.Item1-1">{{'Faq.Item1-1' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question2>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question2.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question2.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <span appAdminChange="Faq.Item2">{{'Faq.Item2' | translate}}</span>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <div appAdminChange="Faq.Item2-1">{{'Faq.Item2-1' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question3>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question3.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question3.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <span appAdminChange="Faq.Item3">{{'Faq.Item3' | translate}}</span>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <div appAdminChange="Faq.Item3-1">{{'Faq.Item3-1' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question4>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question4.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question4.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <span appAdminChange="Faq.Item4">{{'Faq.Item4' | translate}}</span>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+              <div appAdminChange="Faq.Item4-1">{{'Faq.Item4-1' | translate}}</div>
+              <div appAdminChange="Faq.Item4-2">{{'Faq.Item4-2' | translate}}</div>
+              <div appAdminChange="Faq.Item4-3">{{'Faq.Item4-3' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question5>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question5.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question5.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <div appAdminChange="Faq.Item5">{{'Faq.Item5' | translate}}</div>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <div appAdminChange="Faq.Item5-1">{{'Faq.Item5-1' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question6>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question6.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question6.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <div appAdminChange="Faq.Item6">{{'Faq.Item6' | translate}}</div>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <div appAdminChange="Faq.Item6-1">{{'Faq.Item6-1' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question7>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question7.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question7.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <div appAdminChange="Faq.Item7">{{'Faq.Item7' | translate}}</div>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <span appAdminChange="Faq.Item7-1">{{'Faq.Item7-1' | translate}}</span>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel #question8>
+        <mat-expansion-panel-header class="custom-mat-header">
+          <mat-panel-description>
+            <img *ngIf="!question8.expanded" class="open-arrow" src="/assets/images/faq/arrow.png" alt="">
+            <img *ngIf="question8.expanded" class="open-arrow" src="/assets/images/faq/red-arrow.png" alt="">
+          </mat-panel-description>
+          <mat-panel-title class="custom-mat-header__title">
+            <span appAdminChange="Faq.Item8">{{'Faq.Item8' | translate}}</span>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="content-ctn">
+          <div appAdminChange="Faq.Item8-1">{{'Faq.Item8-1' | translate}}</div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+
+
+  <app-footer></app-footer>
+</div>

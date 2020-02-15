@@ -1,0 +1,282 @@
+@import "~variables.scss";
+
+.fixed {
+    position: fixed !important;
+    top: 50px;
+  }
+
+  .basket {
+    text-align: center;
+    border: 1px solid;
+    border-radius: 27px;
+    height: 15%;
+    background: #f6f4f7;
+    width: 125px;
+    height: 300px;
+    position: absolute;
+    right: 36px;
+    z-index: 70;
+    img {
+      margin-top: 10%;
+    }
+    p {
+      margin-bottom: 0rem;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+
+    .basketModal{
+      position: absolute;
+      z-index: 100;
+      width: 704px;
+      // height: 1008px;
+      right: -5px;
+      //top: 0;
+      bottom: -160px;
+      z-index: 188;
+      border: 1px solid rgb(24, 10, 33);
+      border-radius: 24px;
+      background-color: rgb(246, 244, 247);
+      box-shadow: 0px 2px 7.36px 0.64px rgba(24, 10, 33, 0.22);
+      // flex: 10.08;
+      .modal-top{
+        display: flex;
+        justify-content: space-between;
+        margin: 0.8em 2em;
+        align-items: center;
+        height: 48px;
+        // flex: 0.62;
+        .top-cart{
+            font-size: 32px;
+            font-family: "Josefin Sans";
+            color: rgb(24, 10, 33);
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.2;
+            -moz-transform: scale(1.115, 1);
+            -webkit-transform: scale(1.115, 1);
+            -ms-transform: scale(1.115, 1);
+        }
+      }
+      .modal-main{
+        // flex: 5.76;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        .main-line{
+          img{
+            padding: 0;
+            margin: 0;
+          }
+        }
+        .main-top{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 0em 2em;
+          .main-top-left{
+            display: flex;
+            align-items: center;
+            .left-icon{
+              margin-bottom: 2em;
+            }
+            .left-content{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              margin-left: 1em;
+                img{
+                  padding: 0;
+                  margin: 0;
+                }
+                  .left-content-pizza{
+                    font-size: 32px;
+                    font-family: "Josefin Sans";
+                    color: rgb(24, 10, 33);
+                    line-height: 1.2;
+                    -moz-transform: scale(1.115, 1);
+                    -webkit-transform: scale(1.115, 1);
+                    -ms-transform: scale(1.115, 1);
+                }
+                .left-content-slice{
+                    font-size: 24px;
+                    font-family: "Josefin Sans";
+                    color: rgb(24, 10, 33);
+                    line-height: 2.133;
+                    -moz-transform: matrix( 1.00106947422428,0,0,0.99445061043285,0,0);
+                    -webkit-transform: matrix( 1.00106947422428,0,0,0.99445061043285,0,0);
+                    -ms-transform: matrix( 1.00106947422428,0,0,0.99445061043285,0,0);
+                }
+            }
+          }
+          .main-top-right{
+            display: flex;
+            align-items: center;
+            margin-right: 1em;
+            span{
+                font-size: 15px;
+                font-family: "Josefin Sans";
+                color: rgb(204, 0, 51);
+                font-weight: bold;
+                text-transform: uppercase;
+                line-height: 1.2;
+                -moz-transform: matrix( 3.0846810688586,0,0,2.76653010659964,0,0);
+                -webkit-transform: matrix( 3.0846810688586,0,0,2.76653010659964,0,0);
+                -ms-transform: matrix( 3.0846810688586,0,0,2.76653010659964,0,0);
+            }
+          }
+        }
+        .card-scroll{
+          margin-right: 5px;
+          max-height: 345px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          .card-component{
+            .card-extra{
+                font-size: 32px;
+                font-family: $font;
+                color: $black;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 1.2;
+                -moz-transform: scale(1.115, 1);
+                -webkit-transform: scale(1.115, 1);
+                -ms-transform: scale(1.115, 1);
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                margin-top: 20px;
+                img{
+                  position: absolute;
+                  margin: 0;
+                  left: 123px;
+                }
+            }
+            .card-wrapper{
+              display: flex;
+              justify-content: space-between;
+              margin: 0em 1em;
+              align-items: center;
+              .card-left{
+                display: flex;
+                align-items: center;
+                .card-pic {
+                  img {
+                    width: 200px;
+                  }
+                }
+                .card-content{
+                  width: 331px;
+                  margin-left: 20px;
+                  .top-content{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    .top-content-style{
+                        font-size: 24px;
+                        font-family: "Josefin Sans";
+                        color: rgb(24, 10, 33);
+                        line-height: 1.2;
+                        -moz-transform: scale(1.115, 1);
+                        -webkit-transform: scale(1.115, 1);
+                        -ms-transform: scale(1.115, 1);
+                    }
+                    .top-content-time{
+                        font-size: 24px;
+                        font-family: "Josefin Sans";
+                        color: rgb(24, 10, 33);
+                        text-transform: uppercase;
+                        line-height: 2;
+                    }
+                  }
+                  .bot-content{
+                    display: flex;
+                    justify-content: space-between;
+                    .card-button{
+                      background-color: transparent;
+                      border: 1px solid black;
+                      border-radius: 22px;
+                      width: 94px;
+                      padding: 0px;
+                      outline: 0;
+                    }
+                    .active {
+                      background-color: $yellow;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .modal-bot{
+        // flex: 3.7;
+        display: flex;
+        height: 281px;
+        flex-direction: column;
+        .bot-content{
+          padding: 0em 1em;
+          .bot-options{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+            align-items: center;
+            span{
+                font-size: 24px;
+                font-family: "Josefin Sans";
+                color: rgb(24, 10, 33);
+                line-height: 1.2;
+                -moz-transform: scale(1.115, 1);
+                -webkit-transform: scale(1.115, 1);
+                -ms-transform: scale(1.115, 1);
+              img{
+                margin: 0em 1em 0.3em 0em;
+              }
+            }
+          }
+          .price{
+            span{
+              font-size: 32px;
+              font-family: "Josefin Sans";
+              color: rgb(24, 10, 33);
+              line-height: 1.2;
+              -moz-transform: scale(1.115, 1);
+              -webkit-transform: scale(1.115, 1);
+              -ms-transform: scale(1.115, 1);
+            }
+              .total-price{
+                  font-size: 48px;
+                  font-family: "Josefin Sans";
+                  color: rgb(204, 0, 51);
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  line-height: 1.2;
+              }
+          }
+        }
+        .bot-button{
+          margin-bottom: 0.8em;
+          button{
+            background-color: #cc0033;
+            border: 1px solid #cc0033;
+            border-radius: 22px;
+            width: 318px;
+            height: 46px;
+            padding: 3px;
+            font-size: 16px;
+            font-family: "Josefin Sans";
+            text-transform: uppercase;
+            font-weight: 300;
+            color: rgb(255, 255, 255);
+            line-height: 1.2;
+            -moz-transform: scale(1.115, 1);
+            -webkit-transform: scale(1.115, 1);
+            -ms-transform: scale(1.115, 1);
+          }
+        }
+      }
+    }
+  }

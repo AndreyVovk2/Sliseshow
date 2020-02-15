@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="create-project-step-two">
+
+  <div class="header-banner">
+    <div id="header-arrow-left"></div>
+  </div>
+
+  <div class="header_create">
+    <div class="content_elements">
+    </div>
+    <h1 appAdminChange="StepOne.CreateYourVideo">{{'StepOne.CreateYourVideo' | translate}} <img src="assets/images/create-project-steps/zig_zagg.png"></h1>
+  </div>
+
+  <div class="tray_background">
+    <div class="tray_one">
+      <h1 routerLink="/create-project/step-one"><img src="assets/images/create-project-steps/ponch_one.png">&nbsp;&nbsp;<span class="title" appAdminChange="StepOne.ChooseYourTray">{{'StepOne.ChooseYourTray' |translate}}</span>
+      </h1>
+      <div class="triangle"></div>
+    </div>
+  </div>
+  <div class="tray_two">
+    <!-- <p><a (click)="toNextStep()" appAdminChange="StepTwo.ContinueWithoutSelecting">{{'StepTwo.ContinueWithoutSelecting' | translate}}
+      <i>&#9658;</i></a></p> -->
+    <span id="withoutSel" (click)="continueWithoutSelecting()" appAdminChange="StepTwo.ContinueWithoutSelecting">{{'StepTwo.ContinueWithoutSelecting' | translate}} <i>&#9658;</i></span>
+    <h1 routerLink="/create-project/step-two"><img
+      src="assets/images/create-project-steps/ponch_two.png">&nbsp;&nbsp;<span class="title" appAdminChange="StepOne.SelYouCategoryAndStyle">{{'StepOne.SelYouCategoryAndStyle' | translate}}</span>
+    </h1>
+    <div class="triangle"></div>
+  </div>
+
+  <div class="container">
+    <div class="menu">
+      <div class="app-dropdown"
+           (mouseleave)="closeAllDropdowns()"
+           (click)="[setActiveClass('All'), getAllSubcat()]"
+           [ngClass]="{'activated': activeClassSwitcher === 'All'}"
+      >
+        <div class="dropdown">
+          <p class="dropdown-toggle"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            All
+          </p>
+          <div class="dropdown-menu"
+               aria-labelledby="dropdownMenuButton">
+          </div>
+        </div>
+      </div>
+      <div class="app-dropdown"
+           (mouseleave)="closeAllDropdowns()"
+           *ngFor="let dropdown of categories | orderBy: 'name'"
+           (click)="[setActiveClass(dropdown.name), this.getSelectSubcat(dropdown.id)]"
+           [ngClass]="{'activated': activeClassSwitcher === dropdown.name}"
+      >
+        <div class="dropdown">
+          <p class="dropdown-toggle"
+             appAdminChange="{{dropdown.name}}"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">{{dropdown.name | translate}}</p>
+          <!-- <div class="dropdown-menu"
+               [ngClass]="{'show': showSwitcher === dropdown.name,
+               'invisible': dropdown.subcategories === undefined || dropdown.subcategories.length === 0}"
+               aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item"
+               *ngFor="let item of dropdown.subcategories | orderBy: 'name'"
+               (click)="geAnimationStylesByHash(item.id)"
+               appAdminChange="{{item.name}}">{{item.name | translate}}</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-cart
+    *ngIf="this.store.state.basket.length > 0"
+    [cards]="this.store.state.basket"
+    [fixed]="fixed"
+  ></app-cart>
+
+  <div class="gallery-main">
+    <div class="container">
+      <app-spinner *ngIf="!this.isLoaded"></app-spinner>
+      <div class="row">
+        <div class="image-box col-lg-4 col-md-6 col-sm-12"
+             *ngFor="let category of subcat | slice:0:this.amount;"
+        >
+          <app-category-wrapper-block
+                                      [category]="category"
+                                      [width]="'380px'"
+                                      [height]="'305px'"
+                                      [border]="'true'"
+                                      [canBeSelected]="true"
+          ></app-category-wrapper-block>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="continue_button">
+    <app-rounded-button
+      (click)="toNextStep()"
+      [label]="'StepTwo.Continue' | translate"
+      [neutral]="this.store.state.listOfCategory.length === 0"
+      [primary]="this.store.state.listOfCategory.length > 0"
+    ></app-rounded-button>
+  </div>
+
+  <div class="tray_three">
+    <h1><b><img src="assets/images/create-project-steps/ponch_three.png"></b>&nbsp;&nbsp;<span appAdminChange="StepOne.ChooseYourTemp">{{'StepOne.ChooseYourTemp' | translate}}</span>
+    </h1>
+    <div class="triangle">
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+

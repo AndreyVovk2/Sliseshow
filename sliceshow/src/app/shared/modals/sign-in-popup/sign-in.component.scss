@@ -1,0 +1,235 @@
+@import "~variables.scss";
+@font-face {
+    font-family: midnight; /* Имя шрифта */
+    src: url('../../../../assets/fonts/Midnight_Bangkok.ttf');
+}
+::placeholder {
+    color: rgb(24, 10, 33);
+    opacity: 1;
+    text-transform: uppercase;
+}
+button:focus, input:focus {
+    outline:0;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    user-select: none;
+}
+form{
+    width: 430px;
+}
+.signIn{
+    width: 800px;
+    height: 600px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: rgb(254, 252, 237);
+    box-shadow: 0px 0px 15.96px 5.04px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: row;
+    background-image: url('/assets/images/sign-up/backgroung.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: -24px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.leftContent {
+  display: flex;
+  width: 320px;
+    align-items: center;
+  background-color: rgba(24, 10, 33, 0.5);
+/*  margin: -50px 0px -50px -50px;*/
+}
+#verify{
+    padding-bottom: 10px;
+    font-size: 16px;
+    color: rgb(204, 0, 51);
+    line-height: 1.2;
+    text-align: left;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+}
+
+#cook {
+    width: 100px;
+    padding-top: 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+  -moz-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+  -webkit-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+  -ms-transform: matrix( 2.42502013394014,0,0,2.1749059497221,0,0);
+    opacity: 1;
+    font-weight: 300;
+}
+#yourOwn {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 400;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: white;
+    opacity: 1;
+}
+#sliceShow {
+    width: 100px;
+    text-align: center;
+    font-family: 'midnight';
+    font-weight: 200;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    -moz-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+  -webkit-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+  -ms-transform: matrix( 3.7813952135028,0,0,3.39138584170655,0,0);
+}
+
+#withUs {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+#dontAcc {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 9.88px rgba(0, 0, 0, 0.62);
+      -moz-transform: scale(1.115, 1);
+      -webkit-transform: scale(1.115, 1);
+      -ms-transform: scale(1.115, 1);
+}
+#register{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  font-size: 16px;
+  color: rgb(255, 202, 95);
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0px 0px 7.6px rgba(0, 0, 0, 0.004);
+  -moz-transform: scale(1.115, 1);
+  -webkit-transform: scale(1.115, 1);
+  -ms-transform: scale(1.115, 1);
+  margin-bottom: 220px;
+}
+#forgPass{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  font-size: 16px;
+  color: rgb(24, 10, 33);
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0px 0px 7.6px rgba(0, 0, 0, 0.004);
+  -moz-transform: scale(1.115, 1);
+  -webkit-transform: scale(1.115, 1);
+  -ms-transform: scale(1.115, 1);
+  margin-bottom: 115px;
+
+}
+.signIn div{
+    display: flex;
+    flex-direction: column;
+}
+.rightContent{
+    display: flex;
+    justify-content: flex-end;
+}
+.rightContent form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 30px 0px 15px;
+}
+.rightContent input{
+    margin-bottom: 30px;
+//    text-transform: uppercase;
+    width: 430px;
+    height: 50px;
+    border: 0px solid #fff;
+    color: rgb(24, 10, 33);
+    padding-left: 15px;
+    font-size: 16px;  
+}
+#createBtn{
+    background-color: rgb(204, 0, 51);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+    border-radius: 30px;
+    border: 0px solid #fff;
+    width: 220px;
+    height: 45px;
+    // font-weight: 200;
+    margin-bottom: 55px;
+    transition: 0.5s;
+    &:active {
+      background-color: $yellow;
+      transition: 0.5s;
+    }
+
+}
+#fb{
+    background-color: rgb(59, 89, 152);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+    border-radius: 30px;
+    border: 0px solid #fff;
+    width: 260px;
+    height: 45px;
+    font-weight: 200; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 25px;
+}
+input.ng-touched.ng-invalid{
+  border: 2px solid red;
+}
+input.ng-untouched{
+  border: 0px solid #fff;
+}
+input.ng-touched.ng-valid{
+  border: 0px solid #fff;
+}
+.error{
+    padding-bottom: 10px;
+    font-size: 16px;
+    color: rgb(204, 0, 51);
+    line-height: 1.2;
+    -moz-transform: scale(1.115, 1);
+    -webkit-transform: scale(1.115, 1);
+    -ms-transform: scale(1.115, 1);
+}
+.invalidus{
+    input{
+        border: 2px solid red !important;
+    }
+}

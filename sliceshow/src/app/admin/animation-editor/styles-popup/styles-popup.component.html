@@ -1,0 +1,19 @@
+<div class="subcat" style="margin-top: 30px">
+  <div class="main" *ngIf="allSubCat">
+    <div class="list" *ngFor="let cat of allSubCat">
+      <!-- <span [style.color]="cat.checked ? 'red' : 'black'">{{cat.name}}</span> -->
+      <!-- <span>{{cat.id}}</span> -->
+      <!-- <input type="checkbox" [(ngModel)]="cat.checked"> -->
+      <mat-checkbox
+        [(ngModel)]="cat.selected"
+        [style.color]="cat.selected ? 'red' : 'black'"
+        [labelPosition]="'before'">
+        {{cat.id}} || {{cat.name}}
+      </mat-checkbox>
+    </div>
+    <!-- <input type="number" [(ngModel)]="data.list[0]"> -->
+  </div>
+  <span class="confButton">
+    <button mat-stroked-button (click)="saveSelectedCat()">Save subcategories</button>
+  </span>
+</div>

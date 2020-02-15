@@ -1,0 +1,85 @@
+<div class="editing_load">
+<div class='loader-container' *ngIf="!load">
+  <img src="assets/images/logo.png" width="490px" height="350px">
+  <div class="editing-spinner" >
+  <mat-spinner mode="indeterminate" *ngIf="!load"></mat-spinner></div>
+</div></div>
+<div class="editing-system" style="opacity: 0" [ngStyle]="{'opacity': setColor()}">
+    <app-editor-header></app-editor-header>
+
+    <div class="container-fluid main-content">
+        <div class="row">
+            <div class="col-md-3"
+            [ngStyle]="{'filter': this.editingStore.state.activeAnimationStyle && this.editingStore.state.activeAnimationStyle.is_rendering ? 'opacity(0.3)' : 'opacity(1)'}">
+                <!-- <div class="blur" *ngIf="tadd-mediahis.editingStore.state.activeAnimationStyle && this.editingStore.state.activeAnimationStyle.is_rendering"></div> -->
+
+                <div class="block-label">{{'Edit.MediaUsed' | translate}}: <span>{{this.editingStore.state.usedMedia}}/{{this.editingStore.state.allMedia}}</span></div>
+                <app-media-button
+                    *ngFor= "let media of this.editingStore.getMedias()"
+                    [isPhoto]="media.type == 'image'"
+                    [isVideo]="media.type == 'video'"
+                    [isUploaded]="!!media.link"
+                    [image]="media.link"
+                    (getData)="handlePic($event, media)"
+                ></app-media-button>
+                <input (change)="handleFileUpload($event.target.files)"  type="file" hidden #fileInput />
+                <div class="textField" *ngFor= "let text of this.editingStore.getText(), let i = index">
+                    <span (click)="getColor()">T</span>
+                    <input [style.color]="text.color" type="text" [(ngModel)]="text.value" placeholder="{{text.layer}}" (focus)="showText($event)" (focusout)="hideText($event, text, i)" maxlength="23">
+                    <div class="color">
+                        <i class="fas fa-palette" #ignoredButton (click)="text.toggle=!text.toggle"></i>
+                        <input
+                        id="colorInput"
+                        #ignoredInput
+                        [cpDisableInput]
+                        [cpIgnoredElements]="[ignoredButton, ignoredInput]"
+                        [(cpToggle)]="text.toggle"
+                        [(colorPicker)]="text.color"
+                        [cpOutputFormat]="'rgba'"
+                        [style.background]="color"/>
+                    </div>
+
+                </div>
+
+            </div>
+
+<!--          <mat-progress-bar class="example-margin"-->
+<!--                            [color]="color"-->
+<!--                            [mode]="mode"-->
+<!--                            [value]="value"-->
+<!--                            [bufferValue]="bufferVlue">Loading-->
+<!--          </mat-progress-bar>-->
+            <div class="col-md-6">
+                <div class="block-label with-margin">
+                    <span *ngIf="editingStore.state.project">{{editingStore.state.project.name}}</span>
+                    <!--<span (click)="sendMessage('asnoteh')">{{'Edit.ProjectName' | translate}}</span>-->
+                    <img (click)="openDialogProjectName()" class="edit-icon" src="assets/images/editing-system/edit-icon.png">
+                    <!--<img (click)="this.openDialogProjectName()" class="edit-icon" src="assets/images/editing-system/edit-icon.png">-->
+                </div>
+
+                    <app-video-player id = 'video1' #video></app-video-player>
+
+                <div class="col-auto">
+                    <div class="row mt-2 w-50 align-items-center justify-content-between">
+
+                    </div>
+                </div>
+              <!--<button (click)="test123()">test for counting</button>-->
+
+
+            </div>
+
+            <div class="col-md-3"
+            [ngStyle]="{'filter': this.editingStore.state.activeAnimationStyle && this.editingStore.state.activeAnimationStyle.is_rendering ? 'opacity(0.3)' : 'opacity(1)'}">
+                <!-- <div class="blur" *ngIf="this.editingStore.state.activeAnimationStyle && this.editingStore.state.activeAnimationStyle.is_rendering"></div> -->
+
+                <div (click)="this.editingStore.fullTemplateForTesting()" class="block-label with-margin">{{'Edit.ScreensUsed' | translate}}: <span>{{this.editingStore.state.usedScreens}}/{{this.editingStore.state.allScreens}}</span></div>
+                <app-vertical-carousel></app-vertical-carousel>
+            </div>
+
+        </div>
+    </div>
+    <app-timeline [ngStyle]="{'position': 'relative'}" [projectId]="projectID" [totalDuration]="editingStore.state.project ? editingStore.state.project.total_video_duration : ''"></app-timeline>
+
+
+</div>

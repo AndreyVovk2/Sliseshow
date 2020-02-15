@@ -1,0 +1,41 @@
+<div class="adminChange">
+  <div class="leftContent">
+    <p id="cook">{{'Cook' | translate}}</p>
+    <p id="yourOwn">{{'YourOwn' | translate}}</p>
+    <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+    <p id="withUs">{{'WithUs' | translate}}</p>
+  </div>
+
+  <div class="content" *ngIf="lang && this.adminStore.state.elementText">
+    <!-- this.adminStore.state.elementText.nativeElement.innerText -->
+    <textarea class="textarea" placeholder="English translate" [(ngModel)]="this.updateCred.values.en "></textarea>
+    <textarea class="textarea" placeholder="Hebrew translate" [(ngModel)]="this.updateCred.values.he"></textarea>
+    <app-rounded-button (click)="updateTranslate()"
+                        [label]="'Update'"
+                        [primary]="true"
+    ></app-rounded-button>
+  </div>
+
+  <div class="content" *ngIf="!lang && this.adminStore.state.elementText">
+    <!-- this.adminStore.state.elementText.nativeElement.innerText -->
+    <textarea class="textarea" placeholder="Hebrew translate" [(ngModel)]="this.updateCred.values.he"></textarea>
+    <textarea class="textarea" placeholder="English translate" [(ngModel)]="this.updateCred.values.en"></textarea>
+    <app-rounded-button (click)="updateTranslate()"
+                        [label]="'Update'"
+                        [primary]="true"
+    ></app-rounded-button>
+  </div>
+
+  <div class="upload" *ngIf="this.adminStore.state.elementImg">
+    <p>Click for upload new image file</p>
+    <!-- <input type="image" (change)="uploadImage($event)"> -->
+    <app-upload-button (change)="uploadImage($event)"></app-upload-button>
+  </div>
+
+  <div class="upload" *ngIf="this.adminStore.state.elementBackground">
+    <p>Click for upload new background image file</p>
+    <!-- <input type="image" (change)="uploadBackgroundImage($event)"> -->
+    <app-upload-button (change)="uploadBackgroundImage($event)"></app-upload-button>
+  </div>
+
+</div>

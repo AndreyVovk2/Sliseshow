@@ -1,0 +1,67 @@
+<div class="main">
+
+    <div class="head">
+        <span (click)="log()">tags editor</span>
+        <button *ngIf="halfState" mat-stroked-button (click)="closeEditor()">Close editor</button>
+    </div>
+
+    <div class="category">
+      <div class="wrap" [ngStyle]="{'width': halfState ? '50%' : '100%'}">
+        <table class="table table-hover font">
+          <thead>
+            <tr class="tableHead">
+              <th>Name</th>
+              <th>Id</th>
+              <th></th>
+              <th>
+                <div class="addStyle">
+                  <button mat-stroked-button (click)="openNewTag()">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add New Tag</span>
+                  </button>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tag of tags">
+              <td>{{tag.name}}</td>
+              <td>{{tag.id}}</td>
+              <td class="img_button">
+                <span class="inner" (click)="changeTag(tag, $event);">
+                  <img src="../../../../assets/images/profile/edit.png">
+                  <span>edit tag</span>
+                </span>
+              </td>
+              <td class="img_button">
+                <span class="inner" (click)="deleteTag(tag.id , $event);">
+                  <img src="../../../../assets/images/profile/delete.png">
+                  <span>delete tag</span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="editor" *ngIf="halfState">
+        <mat-divider></mat-divider>
+        <div class="ed_item">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Tag name" type="text" [(ngModel)]="selectedTag.name">
+          </mat-form-field>
+        </div>
+
+        <!--<div class="ed_item">-->
+          <!--<span class="ed_name">Animation styles</span>-->
+          <!--<div class="middle"><button mat-stroked-button (click)="openStylesPopup()">Change animation list</button></div>-->
+        <!--</div>-->
+        <!--<mat-divider></mat-divider>-->
+        <div class="submit">
+            <button *ngIf="!selectedTag.id" mat-stroked-button color="primary" (click)="createNewTag()">Create tag</button>
+            <button *ngIf="selectedTag.id" mat-stroked-button color="primary" (click)="updateTag()">Update tag</button>
+        </div>
+      </div>
+    </div>
+
+</div>

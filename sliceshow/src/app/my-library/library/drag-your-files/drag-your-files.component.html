@@ -1,0 +1,47 @@
+<div class="pop-up" appDnd>
+  <div class="dnd">
+    <img src="/assets/img/pop-up/drag.png">
+  </div>
+  <!-- <button>
+    <span>{{'SelectFiles' | translate | uppercase}}</span>
+  </button> -->
+  <!-- <input type="file" name="select" id="select">
+  <label for="select">{{'SelectFiles' | translate | uppercase}}</label> -->
+
+
+  <!-- <label for="select">{{'SelectFiles' | translate | uppercase}}</label>
+  <input type="file" name="photo" id="select" accept="image/*" (change)="show($event)"/> -->
+  <!-- <app-spinner *ngIf="loading"></app-spinner> -->
+  <app-load-progress
+    *ngIf="loading"
+    [progress]="progress"
+  ></app-load-progress>
+
+  <app-upload-button accept=".png, .jpg, .jped" (change)="show($event.target.files)"></app-upload-button>
+  <video *ngIf="!!this.store.state.activeAnimationStyle"
+         id="video_load"
+         (loadedmetadata)="onMetadata($event)"
+         [src]="this.getVideoLink()"
+         class="video"
+         preload="auto"
+
+         controls
+         (timeupdate)="5">
+    <!-- <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4"> -->
+    <!-- <source  type="video/mp4"> -->
+  </video>
+<!--  <label for="file">File progress:</label>-->
+
+<!--  <progress id="file" [max]="progres" [value]="valueProgres"> 70%</progress>-->
+
+<!--  <mat-progress-bar class="example-margin"-->
+<!--                    [color]="color"-->
+<!--                    [mode]="mode"-->
+<!--                    [value]="Secondvalue"-->
+<!--                    [bufferValue]="bufferVlue">Loading-->
+<!--  </mat-progress-bar>-->
+  <!-- accept="image/*"
+  multiple
+accept="video/mp4,video/x-m4v,video/*"
+accept=".mp3,audio/*" -->
+</div>

@@ -1,0 +1,170 @@
+<div class="header">
+  <img class="top-left-image" src="/assets/images/main-page.images/TopLeft.svg" alt="">
+  <img *ngIf="!this.store.state.authCredentials || (this.store.state.authCredentials && this.store.state.authCredentials.admin ===0) " class="top-right-image" src="/assets/images/main-page.images/TopRightAll.svg" alt="">
+  <div class="container">
+    <div class="grid-container" [ngClass]="{'adminGrid': this.store.state.authCredentials && this.store.state.authCredentials.admin === 1}">
+      <div class="logo">
+        <img src="/assets/images/main-page.images/SliceShowLogo.svg" alt="Logo" [routerLink]="'/'">
+      </div>
+      <nav class="header-menu"
+           [ngClass]="{'header-menu-active': isOpenMainMenu}"
+      >
+        <a [routerLink]="'/gallery'">{{'Header.Gallery' | translate}}</a>
+        <a [routerLink]="'/how-it-works'">{{'Header.HowItWorks' | translate}}</a>
+        <a [routerLink]="'/about-us'">{{'Header.AboutUs' | translate}}</a>
+        <a [routerLink]="'/pricing'">{{'Header.Pricing' | translate}}</a>
+        <a [routerLink]="'/blog'">{{'Header.Blog' | translate}}</a>
+      
+      </nav>
+
+      <div class="user-menu">
+
+        <div class="pseudo-dropdown"
+             *ngIf="!store.state.isAuthorized"
+             (click)="openPopup()">
+          <p>{{'Header.SignIn' | translate | uppercase}}</p>
+        </div>
+
+        <div class="dropdown"
+             *ngIf="store.state.isAuthorized">
+          <p class="dropdown-toggle"
+             (click)="toggleClassUserMenu()"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            {{'Header.Hello' | translate}} {{store.state.authCredentials.name | uppercase}}
+          </p>
+          <div class="dropdown-menu"
+               [ngClass]="{'show': isOpenUserMenu}"
+               (mouseleave)="closeAllPopovers()"
+               aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" [routerLink]="'/my-project'">{{'Header.MyProjects' | translate}}</a>
+            <a class="dropdown-item" [routerLink]="'/library'">{{'Header.MediaLibrary' | translate}}</a>
+            <a class="dropdown-item" [routerLink]="'/favorites'">{{'Header.Favorites' | translate}}</a>
+            <a class="dropdown-item" [routerLink]="'/my-profile'">{{'Header.MyProfile' | translate}}</a>
+
+            <a class="dropdown-item logout" (click)="logOut()">{{'Header.LogOut' | translate}}</a>
+          </div>
+        </div>
+
+        <div class="dropdown" *ngIf="this.store.state.authCredentials && this.store.state.authCredentials.admin === 1">
+          <p class="dropdown-toggle thin"
+             (click)="toggleClassAdminMenu()"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            ADMIN
+          </p>
+
+          <div class="dropdown-menu"
+               [ngClass]="{'show': isOpenAdminMenu}"
+               (mouseleave)="closeAllPopovers()"
+               aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item" [routerLink]="'/admin/animations'">Animation editor</a>
+               <a class="dropdown-item" [routerLink]="'/admin/categories'">Category editor</a>
+               <a class="dropdown-item" [routerLink]="'/admin/tags'">Tags editor</a>
+               <a class="dropdown-item" [routerLink]="'/admin/audio'">Audio editor</a>
+               <a class="dropdown-item" [routerLink]="'/admin/users'">User list</a>
+               <a class="dropdown-item" *ngIf="this.adminStore.state.metaKey !== 'withoutMeta'" (click)="openModalMeta()">Meta</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+            <p class="dropdown-toggle thin"
+               (click)="toggleClassLanguage()"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">
+              {{'Header.EN' | translate}}
+            </p>
+            <div class="dropdown-menu"
+                 [ngClass]="{'show': isOpenLanguage}"
+                 (mouseleave)="closeAllPopovers()"
+                 aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" (click)="onChangeEn()">{{'Header.English' | translate | uppercase}}</a>
+              <a class="dropdown-item" (click)="onChangeHe()">{{'Header.Hebrew' | translate | uppercase}}</a>
+            </div>
+        </div>
+
+      </div>
+      <div class="mobile-menu">
+        <div class="burger"
+             [ngClass]="{'burger-active': isOpenMainMenu}"
+             (click)="toggleClassMainMenu()">
+          <div class="line first"></div>
+          <div class="line second"></div>
+          <div class="line third"></div>
+          <div class="line forth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="header">-->
+<!--<img class="top-left-image" src="/assets/images/main-page.images/TopLeft.svg" alt="">-->
+<!--<img class="top-right-image" src="/assets/images/main-page.images/TopRightAll.svg" alt="">-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-2 logo">-->
+<!--<img src="/assets/images/main-page.images/SliceShowLogo.svg" alt="Logo" [routerLink]="'/'">-->
+<!--</div>-->
+<!--<nav class="col-7 header-menu">-->
+<!--<ul>-->
+<!--<li><a [routerLink]="'/gallery'">{{'Gallery' | translate}}</a></li>-->
+<!--<li><a [routerLink]="'/how-it-works'">{{'HowItWorks' | translate}}</a></li>-->
+<!--<li><a [routerLink]="'/about-us'">{{'AboutUs' | translate}}</a></li>-->
+<!--<li><a [routerLink]="'/pricing'">{{'PrIcIng' | translate}}</a></li>-->
+<!--<li><a [routerLink]="'/blog'">{{'Blog' | translate}}</a></li>-->
+<!--</ul>-->
+<!--</nav>-->
+
+<!--<div class="col-3 user-menu">-->
+
+<!--<div class="pseudo-dropdown"-->
+<!--*ngIf="!store.state.isAuthorized"-->
+<!--(click)="openPopup()">-->
+<!--<p>{{'SignIn﻿' | translate | uppercase}}</p>-->
+<!--</div>-->
+
+<!--<div class="dropdown"-->
+<!--*ngIf="store.state.isAuthorized">-->
+<!--<p class="dropdown-toggle"-->
+<!--(click)="toggleClassUserMenu()"-->
+<!--data-toggle="dropdown"-->
+<!--aria-haspopup="true"-->
+<!--aria-expanded="false">-->
+<!--{{'Hello' | translate}} {{store.state.authCredentials.name | uppercase}}-->
+<!--</p>-->
+<!--<div class="dropdown-menu"-->
+<!--[ngClass]="{'show': isOpenUserMenu}"-->
+<!--(mouseleave)="closeAllPopovers()"-->
+<!--aria-labelledby="dropdownMenuButton">-->
+<!--<a class="dropdown-item" [routerLink]="'/my-project'">{{'MyProjects' | translate}}</a>-->
+<!--<a class="dropdown-item" [routerLink]="'/library'">{{'MediaLibrary' | translate}}</a>-->
+<!--<a class="dropdown-item" [routerLink]="'/favorites'">{{'Favorites' | translate}}</a>-->
+<!--<a class="dropdown-item" [routerLink]="'/my-profile'">{{'MyProfile' | translate}}</a>-->
+<!--<a class="dropdown-item logout" (click)="logOut()" >{{'LogOut' | translate}}</a>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="dropdown">-->
+<!--<p class="dropdown-toggle thin"-->
+<!--(click)="toggleClassLanguage()"-->
+<!--data-toggle="dropdown"-->
+<!--aria-haspopup="true"-->
+<!--aria-expanded="false">-->
+<!--{{'EN' | translate}}-->
+<!--</p>-->
+<!--<div class="dropdown-menu"-->
+<!--[ngClass]="{'show': isOpenLanguage}"-->
+<!--(mouseleave)="closeAllPopovers()"-->
+<!--aria-labelledby="dropdownMenuButton">-->
+<!--<a class="dropdown-item" (click)="onChangeEn()">{{'English' | translate |  uppercase}}</a>-->
+<!--<a class="dropdown-item" (click)="onChangeHe()">{{'Hebrew' | translate |  uppercase}}</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

@@ -1,0 +1,139 @@
+@font-face {
+    font-family: Bellerose; /* Имя шрифта */
+    src: url('../../../assets/fonts/Bellerose.ttf');
+}
+@font-face {
+    font-family: Krinkes; /* Имя шрифта */
+    src: url('../../../assets/fonts/Krinkes.ttf');
+}
+@import "~variables.scss";
+// $color: rgb(204, 0, 51);
+// $font: 'Josefin Sans';
+
+  
+::placeholder {
+    color: rgb(24, 10, 33);
+    opacity: 0.8;
+}
+button:focus, input:focus {
+    outline:0;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    user-select: none;
+}
+/*-------------*/
+.profile{
+    font-family: $font;
+    margin-top: 15px;
+    .input{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .lines{
+            display: flex;
+            width: 980px;
+            justify-content: space-between;
+            .line{
+                display: flex;
+                flex-direction: column;
+                width: 450px;
+                height: 200px;
+                justify-content: flex-start;
+                position: relative;
+                .warn{
+                    position: absolute;
+                    top: 38px;
+                    color: $red;
+                }
+                input{
+                    width: 450px;
+                    height: 40px;
+                    margin-bottom: 20px;
+                    padding-left: 5px;
+                }
+            }
+        }
+        .saveBtn{
+            display: flex;
+            justify-content: center;
+            div button{
+                background-color: $red;
+                font-size: 16px;
+                color: $white;
+                text-transform: uppercase;
+                line-height: 1.2;
+                -moz-transform: scale(1.115, 1);
+                -webkit-transform: scale(1.115, 1);
+                -ms-transform: scale(1.115, 1);
+                border-radius: 30px;
+                border: 0px solid $white;
+                width: 220px;
+                height: 45px;
+                margin-top: 30px;
+                font-weight: 200;
+            }
+        }
+}
+}
+
+
+input.ng-touched.ng-invalid{
+  border: 2px solid $red;
+}
+input.ng-untouched{
+  border: 1px solid $black;
+}
+input.ng-touched.ng-valid{
+  border: 1px solid $black;
+}
+
+
+.radioButtons{
+    display: flex;
+    margin-right: 0px;
+    margin-left: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .num1{
+        margin-left: 0px !important;
+    }
+    .radioCheck{
+        display: flex;
+        margin-left: 20px;
+        .cusRadio{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 1px solid $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .selected{
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: $black;
+            }
+        }
+        .label{
+            font-size: 24px;
+            margin-left: 13px;
+            margin-bottom: 0;
+            color: rgb(24, 10, 33);
+            line-height: 1.2;
+            -moz-transform: scale(1.115, 1);
+            -webkit-transform: scale(1.115, 1);
+            -ms-transform: scale(1.115, 1);
+        }
+    }
+}
+
+
+
+
+

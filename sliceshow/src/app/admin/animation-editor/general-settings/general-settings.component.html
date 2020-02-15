@@ -1,0 +1,98 @@
+<div class="general-wrap">
+    <div class="general-header">
+        <h3 *ngIf="this.styleId">General settings for style id #{{this.styleId}}</h3>
+        <h3 *ngIf="!this.styleId">Creating new animation style</h3>
+    </div>
+
+    <form [formGroup]="animationForm" (ngSubmit)="onSubmit()">
+        <div class="form-item">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name" type="text" formControlName="name">
+                <!--<input matInput placeholder="Name" type="text" formControlName="name">-->
+            </mat-form-field>
+        </div>
+
+        <div class="form-item">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Trendings" type="number" formControlName="trending">
+                <!--<input matInput placeholder="Trendings" type="number">-->
+            </mat-form-field>
+        </div>
+
+
+        <div class="form-item">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Likes" type="number" formControlName="likes">
+                <!--<input matInput placeholder="Likes" type="number">-->
+            </mat-form-field>
+        </div>
+
+        <div class="form-item">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Description" type="text" formControlName="description">
+                <!--< placeholder="Description" formControlName="description">-->
+                <!--<input matInput placeholder="Likes" type="number">-->
+            </mat-form-field>
+        </div>
+
+        <div class="form-item">
+            <div class="inner-form-group">
+                <span>Including Video</span>
+                <mat-checkbox formControlName="including_video"></mat-checkbox>
+                <!--<mat-checkbox></mat-checkbox>-->
+            </div>
+        </div>
+
+        <!--<div class="form-item">-->
+            <!--<div class="inner-form-group" [ngClass]="{'invalid': inputFileValidate(uploadFiles.project)}">-->
+                <!--<span class="labelForm">Project files</span>-->
+                <!--<span *ngIf="!isString(uploadFiles.project) && uploadFiles.project">Project file is uploaded</span>-->
+                <!--<button type="button" class="formButton" mat-stroked-button (click)="fileInput1.click()">-->
+                    <!--<span>Edit files</span>-->
+                    <!--<input #fileInput1 type="file" (change)="show($event, 1)" style="display:none;" />-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="form-item">
+            <div class="inner-form-group" [ngClass]="{'invalid': subcategoryValidate()}">
+                <span class="labelForm">Subcategories</span>
+                <button type="button" class="formButton" mat-stroked-button (click)="openSubCatPopup()">Edit subcategories</button>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="inner-form-group" [ngClass]="{'invalid': subcategoryValidate()}">
+                <span class="labelForm">Tags</span>
+                <button type="button" class="formButton" mat-stroked-button (click)="openTags()">Edit tags</button>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="inner-form-group" [ngClass]="{'invalid': inputFileValidate(uploadFiles.image)}">
+                <span class="labelForm">Preview image</span>
+                <span *ngIf="!isString(uploadFiles.image) && uploadFiles.image">Image file is uploaded</span>
+                <a *ngIf="isString(uploadFiles.image) && uploadFiles.image" href="{{uploadFiles.image}}" target="_blank" rel="noopener noreferrer">Current image</a>
+                <button type="button" class="formButton" mat-stroked-button (click)="fileInput2.click()">
+                    <span>Edit Image</span>
+                    <input #fileInput2 type="file" (change)="show($event, 2)" style="display:none;" />
+                </button>
+            </div>
+        </div>
+
+        <!--<div class="form-item">-->
+            <!--<div class="inner-form-group" [ngClass]="{'invalid': inputFileValidate(uploadFiles.video)}">-->
+                <!--<span class="labelForm">Preview video</span>-->
+                <!--<span *ngIf="!isString(uploadFiles.video) && uploadFiles.video">Video file is uploaded</span>-->
+                <!--<a *ngIf="isString(uploadFiles.video) && uploadFiles.video" href="{{uploadFiles.video}}" target="_blank" rel="noopener noreferrer">Current video</a>-->
+                <!--<button type="button" class="formButton" mat-stroked-button (click)="fileInput3.click()">-->
+                    <!--<span>Edit Video</span>-->
+                    <!--<input #fileInput3 type="file" (change)="show($event, 3)" style="display:none;" />-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <button class="form-submit" type="submit">{{isNew()}}</button>
+    </form>
+</div>
+

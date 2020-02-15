@@ -1,0 +1,119 @@
+<div class="animation-wrap">
+        <div class="animation-header">
+            <h3 *ngIf="newTemplatesCheck">creating templates for animation style #{{animationId}}</h3>
+            <h3 *ngIf="!newTemplatesCheck">editing templates for animation style #{{animationId}}</h3>
+        </div>
+
+
+        <!--<div class="templateCont" *ngFor="let template of templatesCount, let templateNumber = index">-->
+
+            <div class="templateCont-form">
+                <div class="addFormItem">
+                    <button mat-stroked-button (click)="allButtonsValid()? '' : addFormItem()">Add form template</button>
+                </div>
+
+
+                <div  *ngFor="let form of formArr, let q = index">
+                    <div class="templateCont-header">
+                        <div class="templateCont-header__ctn">
+                            <h3 *ngIf="newTemplatesCheck">Create template</h3>
+                            <h3 *ngIf="!newTemplatesCheck">Edit template</h3>
+                        </div>
+                    </div>
+                    <form [formGroup] = "form">
+                        <div class="form-item">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Duration" class="example-full-width" type="number"
+                                       formControlName="duration">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-item">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Pics" class="example-full-width" type="number"
+                                       formControlName="pics">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="inner-form-group" [ngClass]="{'invalid': inputFileValidate(uploadFiles.project)}">
+                                <span class="labelForm">Template files</span>
+                                <span *ngIf="!isString(uploadFiles.project) && uploadFiles.project">Project file is uploaded</span>
+                                <button type="button" class="formButton" mat-stroked-button (click)="allButtonsValid()? '' : fileInput1.click()">
+                                    <span>Edit files</span>
+                                    <input #fileInput1 type="file" (change)="show($event, 1)" style="display:none;" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="inner-form-group" [ngClass]="{'invalid': inputFileValidate(uploadFiles.video)}">
+                                <span class="labelForm">Preview video</span>
+                                <span *ngIf="!isString(uploadFiles.video) && uploadFiles.video">Video file is uploaded</span>
+                                <a *ngIf="templatesArr[q] && templatesArr[q].preview_video"  [href]="templatesArr[q].preview_video" target="_blank" rel="noopener noreferrer">Current video</a>
+                                <!--<a *ngIf="previewVideos[q]"  [href]="previewVideos[q].preview_video" target="_blank" rel="noopener noreferrer">Current video</a>-->
+                                <!--<p *ngIf=" && previewVideos[q].preview_video">LAL</p>-->
+                                <!--<button type="button" class="formButton" mat-stroked-button (click)="fileInput3.click()">-->
+                                <button type="button" class="formButton" mat-stroked-button (click)="allButtonsValid()? '' : fileInput3.click()">
+                                    <span>Edit Video</span>
+                                    <input #fileInput3 type="file" (change)="show($event, 3)" style="display:none;" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-item" formArrayName="format"
+                             *ngFor="let format of returnFormatForm(); let i = index">
+                            <div class="inner-multiline" [formGroupName]="i">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Composition" class="example-full-width" type="text"
+                                           formControlName="composition">
+                                    <!--formControlName="composition"-->
+                                </mat-form-field>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Quality" class="example-full-width " type="text"
+                                           [readonly]="true" formControlName="quality">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="form-btn-ctn">
+                            <div class="checkTemplate" *ngIf ="checkTemplate(q); else update">
+                                <button class="form-submit" (click)="allButtonsValid()? '' : deleteTemplate(q)" [disabled]="!checkValidation(q)">Delete</button>
+                                <button class="form-submit" *ngIf="!this.templatesArr[q].created" (click)=" allButtonsValid()? '' : updateTemplate(q)" [disabled]="!checkValidation(q)">Update</button>
+                                <button class="form-submit" *ngIf="this.templatesArr[q].created" (click)="allButtonsValid()? '' : createSingleTemplate(q)" [disabled]="!checkValidation(q)">Create</button>
+                            </div>
+
+                            <ng-template #update>
+                                <div class="checkTemplate">
+                                    <button class="form-submit" (click)="allButtonsValid()? '' : createSingleTemplate(q)"  [disabled]="!checkValidation(q)">Create</button>
+                                </div>
+                            </ng-template>
+
+                        </div>
+
+                    </form>
+
+
+
+
+                </div>
+                <div class="progressBar" *ngIf="adminStore.state.uploadProgress != 0">
+                    <div class="progressBar--text">
+                        <span>{{adminStore.state.uploadProgress}} %</span>
+                    </div>
+                    <div class="progressBar--slide">
+                        <mat-progress-bar  mode="determinate" [value]="adminStore.state.uploadProgress"></mat-progress-bar>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+<!-- 
+    <div class="auditBlock">
+            <div class="buttonBlock">
+                <button mat-stroked-button (click)="initSocket()">audit</button>
+                <span>Audit status: {{auditStatus}}</span>
+                <button (click)="showLog()">t</button>
+            </div>
+            <div class="auditLog" *ngIf="toggleLog">{{log}}</div>
+        </div> -->

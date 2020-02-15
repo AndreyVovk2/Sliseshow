@@ -1,0 +1,91 @@
+<div class="adminChange">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate}}</p>
+
+        <div class="buttons">
+            <button class="selButton" mat-raised-button (click)="fileInput1.click()">
+                <span>Select new main tariff image</span>
+                <input 
+                #fileInput1 
+                type="file" 
+                (change)="show($event, 1)" 
+                style="display:none;" />
+            </button>
+            <button class="selButton" mat-raised-button (click)="fileInput2.click()">
+                <span>Select new sale tariff image</span>
+                <input 
+                #fileInput2 
+                type="file"
+                (change)="show($event, 2)"  
+                style="display:none;" />
+            </button>
+        </div>
+
+        
+
+
+    </div>
+
+    <div class="content">
+      <div class="item">
+          <span>{{'Cart.TotalPrice' | translate }}:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.price">
+      </div>
+      <div class="item">
+          <span>{{'StepOne.Slice' |translate }}:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.slices">
+      </div>
+      <div class="item">
+          <span>{{'StepOne.DesignStyle' | translate}}:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.design_style">
+      </div>
+      <div class="item">
+          <span>Max pictures:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.max_pictures">
+      </div>
+      <div class="item">
+          <span>Min pictures:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.min_pictures">
+      </div>
+      <div class="item">
+          <span>Max video:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.max_videos">
+      </div>
+      <div class="item">
+          <span>Min video:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.min_videos">
+      </div>
+      <div class="item">
+          <span>Max song:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.max_songs">
+      </div>
+      <div class="item">
+          <span>Min song:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.min_songs">
+      </div>
+      <div class="item">
+          <span>Max video length:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.max_video_length">
+      </div>
+      <div class="item">
+          <span>Min video length:</span>
+          <input type="number" [(ngModel)]="this.adminStore.state.editSlice.min_video_length">
+      </div>
+      <div class="item">
+          <span>{{'StepOne.Quality' | translate}}:</span>
+          <input type="text" [(ngModel)]="this.adminStore.state.editSlice.video_quality">
+      </div>
+      
+
+      <app-rounded-button (click)="updateSlice()"
+        [label]="'Update'"
+        [primary]="true"
+      ></app-rounded-button>
+    </div>
+
+    
+    
+</div>

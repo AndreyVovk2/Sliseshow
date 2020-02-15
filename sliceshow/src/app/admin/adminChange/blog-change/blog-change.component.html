@@ -1,0 +1,126 @@
+<div class="adminChange">
+
+    <div class="content" *ngIf="!this.adminStore.state.blogAddState">
+      <div class="top_input">
+          <div class="item">
+              <span>Title:</span>
+              <input type="text" [(ngModel)]="this.adminStore.state.editBlog.title">
+          </div>
+          <div class="item">
+              <span>Creator:</span>
+              <input type="text" [(ngModel)]="this.adminStore.state.editBlog.creator">
+          </div>
+          <div class="item">
+              <span>Created date:</span>
+              <input type="text" [(ngModel)]="this.adminStore.state.editBlog.created_at">
+          </div>
+      </div>
+
+      <!-- <div class="area_blog">
+          <div class="area">
+              <span>Paragraph #1:</span>
+              <textarea type="text" [(ngModel)]="this.adminStore.state.editBlog.text_blog.p1"></textarea>
+          </div>
+          <div class="area">
+              <span>Paragraph #2:</span>
+              <textarea type="text" [(ngModel)]="this.adminStore.state.editBlog.text_blog.p2"></textarea>
+          </div>
+          <div class="area">
+              <span>Paragraph #3:</span>
+              <textarea type="text" [(ngModel)]="this.adminStore.state.editBlog.text_blog.p3"></textarea>
+          </div>
+          <div class="area">
+              <span>Paragraph #4:</span>
+              <textarea type="text" [(ngModel)]="this.adminStore.state.editBlog.text_blog.p4"></textarea>
+          </div>
+      </div> -->
+
+      <div class="area_blog">
+        <div class="area">
+            <div>
+                <span (click)="changeParagraph(1)">Paragraph #1:</span>
+                <span (click)="changeParagraph(2)">Paragraph #2:</span>
+                <span (click)="changeParagraph(3)">Paragraph #3:</span>
+                <span (click)="changeParagraph(4)">Paragraph #4:</span>
+            </div>
+            <angular-editor *ngIf="this.currentLink === 1" [(ngModel)]="this.newBlog.text_blog.p1" [config]="config"></angular-editor>
+            <angular-editor *ngIf="this.currentLink === 2" [(ngModel)]="this.newBlog.text_blog.p2" [config]="config"></angular-editor>
+            <angular-editor *ngIf="this.currentLink === 3" [(ngModel)]="this.newBlog.text_blog.p3" [config]="config"></angular-editor>
+            <angular-editor *ngIf="this.currentLink === 4" [(ngModel)]="this.newBlog.text_blog.p4" [config]="config"></angular-editor>
+        </div>
+    </div>
+      
+      <div class="group-button">
+          <div class="upload">
+              <span>Click for upload new image file</span>
+              <input type="file" (change)="uploadImage($event)">
+              <!-- <app-upload-button ></app-upload-button> -->
+          </div>
+          <div class="edit-block">
+              <div class="butn update" (click)="updateBlog()">
+                  <span>Update <i class="fas fa-sync"></i></span>
+              </div>
+              <div class="butn delete" (click)="deleteBlog()">
+                  <span>Delete <i class="fas fa-trash-alt"></i></span>
+              </div>
+              <div class="butn cancel" (click)="closeBlogEditor()">
+                  <span>Cancel <i class="fas fa-ban"></i></span>
+              </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="content" *ngIf="this.adminStore.state.blogAddState">
+            <div class="top_input">
+                    <div class="item">
+                        <span>Title:</span>
+                        <input type="text" [(ngModel)]="newBlog.title">
+                    </div>
+                    <div class="item">
+                        <span>Creator:</span>
+                        <input type="text" [(ngModel)]="newBlog.creator">
+                    </div>
+                    <div class="item">
+                        <span>Created date:</span>
+                        <input type="text" [(ngModel)]="newBlog.created_at">
+                    </div>
+                </div>
+          
+                <div class="area_blog">
+                    <div class="area">
+                        <span>Paragraph #1:</span>
+                        <textarea type="text" [(ngModel)]="newBlog.text_blog.p1"></textarea>
+                    </div>
+                    <div class="area">
+                        <span>Paragraph #2:</span>
+                        <textarea type="text" [(ngModel)]="newBlog.text_blog.p2"></textarea>
+                    </div>
+                    <div class="area">
+                        <span>Paragraph #3:</span>
+                        <textarea type="text" [(ngModel)]="newBlog.text_blog.p3"></textarea>
+                    </div>
+                    <div class="area">
+                        <span>Paragraph #4:</span>
+                        <textarea type="text" [(ngModel)]="newBlog.text_blog.p4"></textarea>
+                    </div>
+                </div>
+                
+                <div class="group-button">
+                    <div class="upload">
+                        <span>Click for upload new image file</span>
+                        <input type="file" (change)="uploadNewImage($event)">
+                        <!-- <app-upload-button ></app-upload-button> -->
+                    </div>
+                    <div class="edit-block">
+                        <div class="butn update" (click)="createNewBlog()">
+                            <span>Create <i class="fas fa-plus-circle"></i></span>
+                        </div>
+                        <div class="butn cancel" (click)="closeBlogEditor()">
+                            <span>Cancel <i class="fas fa-ban"></i></span>
+                        </div>
+                    </div>
+                  </div>
+
+    </div>
+</div>

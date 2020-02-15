@@ -1,0 +1,27 @@
+<div class="signIn">
+    <div class="leftContent">
+        <p id="cook">{{'Cook' | translate | uppercase}}</p>
+        <p id="yourOwn">{{'YourOwn' | translate}}</p>
+        <p id="sliceShow">{{'Sliceshow' | translate}}</p>
+        <p id="withUs">{{'WithUs' | translate |uppercase}}</p>
+        <p id="dontAcc">{{"Modal.DontHaveAnAccount" | translate}}?</p>
+        <button id="register" (click)='openSignUp()' mat-dialog-close>{{'Modal.Registration' | translate}}</button>
+        <button mat-dialog-close (click)='logFB()' id="fb"><img src="../../../assets/images/sign-up/fb.png">{{'Modal.JoinWithFacebook' | translate}}</button>
+    </div>
+    <div class="rightContent">
+        <form [formGroup]="signInForm" (submit)="onSubmit()" [ngClass]="{'invalidus': this.errorVar}">
+            <div class="error" *ngIf="errorVar"> {{'Modal.EmailOrPasswordInvalid' | translate}}</div>
+            <div id="verify"  *ngIf="!errorVar"> {{'Modal.PleaseVerifyYourEmail' | translate}}</div>
+            <input placeholder="{{'Modal.E-mail' | translate | uppercase}}" type="email" required formControlName="email">
+            <input id="password" placeholder="{{'Modal.Password' | translate}}" type="password" required  formControlName="password">
+            <button id="forgPass" (click)='forgotPass()' mat-dialog-close>{{'Modal.ForgotPassword' | translate}}</button>
+            <button
+                [disabled]="signInForm.invalid || pending"
+                [style.font-weight]="signInForm.valid ? 400 : 200" 
+                id="createBtn" 
+                type="submit"
+                >{{'Modal.SignIn' | translate}}
+            </button>
+        </form>
+    </div>
+</div>

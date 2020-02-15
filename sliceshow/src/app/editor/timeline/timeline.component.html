@@ -1,0 +1,332 @@
+
+<div class="main-line" id="timeline" >
+  <!-- (click)="handleTimelineClick($event)" -->
+  <div
+    class="timeline-grid"
+    #timeline
+    [style.backgroundSize]="80 * store.state.zoomValue + 'px'"
+    [style.background]="'url(/assets/images/editing-system/timeline-grid-sm.png)'"
+    [style.backgroundRepeat]="'repeat-x'"
+    [style.width]="generateTimelineWidth()"
+  >
+    <ng-container *ngFor="let unit of timeArray; let i = index">
+      <!-- {{timePlacement + 160}} -->
+      <div
+        *ngIf="this.editingStore.state.project"
+        [style.position]="'absolute'"
+        [style.top]="'-25px'"
+        [style.left]="this.getUnitPosition(i)"
+        class="time-unit"
+      >
+        {{unit}}
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!--<app-scissors *ngIf="this.editingStore.state.timelineState.audioTracks.length > 0"-->
+
+<app-scissors *ngIf="this.editingStore.state.timelineState.audioTracks.length > 0"
+
+              [ngStyle]="{'left': '211px'}"
+>
+</app-scissors>
+
+<div class="timeline">
+  <div class="sidebar">
+    <div
+      class="add-media"
+      (click)="handleAddMediaClick()"
+      [ngClass]="{'active' : store.state.isMediaOpened}"
+    >
+      <img
+        src="{{ store.state.isMediaOpened ? 'assets/images/editing-system/add-music-white.png' : 'assets/images/editing-system/add-music.png' }}">
+    </div>
+    <div class="audio-track">
+      <img src="assets/images/editing-system/note.png" class="note">
+      <span>{{'Edit.Audio' | translate | uppercase}} #1</span>
+    </div>
+    <div class="audio-track last">
+      <img src="assets/images/editing-system/note.png" class="note">
+      <span>{{'Edit.Audio' | translate | uppercase}} #2</span>
+    </div>
+    <div class="slidecontainer">
+      <img
+        src="assets/images/editing-system/zoom-out-icon.png"
+        class="zoom-out zoom"
+        (click)="handleZoomOut()"
+      >
+      <input
+        [ngModel]="store.state.zoomValue"
+        (ngModelChange)="handleZoomChange($event)"
+        type="range"
+        min="1"
+        max="2"
+        value="1"
+        class="slider"
+        id="myRange"
+        step="0.1"
+      >
+      <img
+        src="assets/images/editing-system/zoom-in-icon.png"
+        class="zoom-in zoom"
+        (click)="handleZoomIn()"
+      >
+    </div>
+  </div>
+  <div class="content" id="content" (scroll)="test1Scroll($event)">
+
+    <!-- <div
+      #timepicker
+      class="time-picker"
+      (mousedown)="toggleTimepicker()"
+      (mouseup)="toggleTimepicker()"
+      (click)="toggleTimepicker()"
+    ></div> -->
+    <div
+      class="screens-container"
+      #screenContainer
+      [style.width]="generateTimelineWidth()"
+    >
+      <div *ngFor="let template of this.editingStore.getStyles(); let i = index">
+        <!-- <div
+          class="video-sector"
+          id="screen-{{template.id}}"
+          [ngClass]="{ 'active': this.editingStore.state.activeTemplate.id === template.id }"
+          [ngStyle]="{ 'width': this.generateWidth(template.duration) + 'px' }"
+          (click)="handleClickScreen(template)"
+        >
+          <div class="timecode">{{template.duration}}</div>
+          <img [src]="template.preview_img" class="thumbnail">
+          <div class="name">{{template.name}}</div>
+        </div> -->
+        <!-- [progress]="progress" -->
+        <app-timeline-screen [template]="template" [position]="i"></app-timeline-screen>
+        <!-- <div
+          (dragstart)="handleScreenDragStart(video)"
+          class="video-sector"
+          draggable="true"
+          id="screen-{{video.id}}"
+          [ngStyle]="{
+            'left': video.startPosition + 'px',
+            'width': video.width + 'px'
+          }"
+        >
+          <div class="timecode">{{video.timecode}}</div>
+          <img [src]="video.img" class="thumbnail">
+          <div class="name">{{video.name}}</div>
+        </div> -->
+      </div>
+      <div class="add-as-button" (click)="addMoreSlice()">
+        <div class="icon-btn">
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="btn-text">
+          {{'Edit.AddMoreSlices' | translate | uppercase}}
+        </div>
+      </div>
+
+    </div>
+    <div
+      (dragover)="handleDragoverTrack($event)"
+      (drop)="handleDropTrack($event)"
+      id="audio-container-first"
+      class="audio-container first holder"
+      [style.width]="countAudioWidth()"
+      #audiofirst
+    >
+      <!--countAudioWidth-->
+      <!--[style.width]="generateTimelineWidth()"-->
+      <!-- (this.editingStore.f.zoomValue) -->
+      <ng-container *ngFor="let track of store.state.audioTracks; let i = index">
+        <ng-container *ngIf="track.container === 1;">
+          <div id="{{track.id}}"
+               [ngStyle]="{
+              'left': (track.startPosition * this.store.state.zoomValue) + 'px',
+              'right': (track.endPosition * this.store.state.zoomValue) + 'px',
+              'width': (track.width * this.store.state.zoomValue) + 'px'
+            }"
+               (dragstart)="handleDragStartTrack($event)"
+               (dragend)="handleDragEndTrack($event)"
+               (mousedown)="handleMouseDownTrack($event)"
+               (mouseup)="handleMouseUpTrack($event)"
+               (click)="handleMouseoverTrack($event)"
+               [ngClass]="{ 'active-track': store.state.activeTrackId === track.id }"
+               class="audio-sector"
+               [draggable]="draggable"
+          >
+            <!-- (mouseleave)="handleMouseleaveTrack()" -->
+            <div
+              class="delete-btn"
+              *ngIf="store.state.activeTrackId === track.id"
+              (click)="handleDeleteClick(track.id, track.path, track.width)"
+            >
+              <img src="assets/images/editing-system/delete-icon.png">
+            </div>
+            <div
+              (click)="handleVolumeClick($event)"
+              class="volume-btn"
+              *ngIf="store.state.activeTrackId === track.id"
+            >
+              <img src="assets/images/editing-system/volume-icon.png">
+            </div>
+
+            <div
+              class="volume-container"
+              *ngIf="store.state.activeTrackId === track.id"
+              [ngClass]="{ 'active': store.state.isVolumePopupOpened }"
+            >
+              <div
+                *ngIf="store.state.isVolumeContentOpened"
+                class="volume-content"
+              >
+                <div class="flex-grid">
+                  <div class="col">
+                    <div>{{'Edit.FadeIn' | translate}}</div>
+                    <div>
+                      <input
+                        class="toggl-btn"
+                        type="checkbox"
+                        [checked]="!track.fadeIn"
+                        (click)="handleFadeInClick(track.id)"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div>{{'Edit.FadeOut' | translate}}</div>
+                    <div>
+                      <input
+                        class="toggl-btn"
+                        type="checkbox"
+                        [checked]="!track.fadeOut"
+                        (click)="handleFadeOutClick(track.id)"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="volume-slider-container">
+                  <div class="volume-percentage">{{track.volume}}%</div>
+                  <!--(ngModelChange)="handleVolumeChange(track.id, $event)"-->
+                  <input
+                    [ngModel]="track.volume"
+                    class="volume-slider song-volume"
+                    [style.backgroundImage]="getSliderImage(track.volume)"
+                    (change)="handleVolumeChange(track.id, $event.target.value)"
+                    type="range"
+                    min="0"
+                    max="100"
+                    #volumeLine
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div
+      (dragover)="handleDragoverTrack($event)"
+      (drop)="handleDropTrack($event)"
+      id="audio-container-last"
+      class="audio-container last holder"
+      [style.width]="countAudioWidth()"
+      #audiolast
+    >
+      <!--countAudioWidth-->
+      <!--[style.width]="generateTimelineWidth()"-->
+      <ng-container *ngFor="let track of store.state.audioTracks; let i = index">
+        <ng-container *ngIf="track.container === 2;">
+          <!-- 'width': (track.width * this.editingStore.state.zoomValue) + 'px' -->
+          <div
+            id="{{track.id}}"
+            [ngStyle]="{
+              'left': track.startPosition + 'px',
+              'right': track.endPosition + 'px',
+              'width': (track.width * this.store.state.zoomValue) + 'px'
+            }"
+            (dragstart)="handleDragStartTrack($event)"
+            (dragend)="handleDragEndTrack($event)"
+            (mousedown)="handleMouseDownTrack($event)"
+            (mouseup)="handleMouseUpTrack($event)"
+            (click)="handleMouseoverTrack($event)"
+            [ngClass]="{ 'active-track': store.state.activeTrackId === track.id }"
+            class="audio-sector"
+            draggable="true"
+          >
+            <div
+              class="delete-btn"
+              *ngIf="store.state.activeTrackId === track.id"
+              (click)="handleDeleteClick(track.id, track.path, track.width)"
+            >
+              <img src="assets/images/editing-system/delete-icon.png">
+            </div>
+            <div
+              (click)="handleVolumeClick($event)"
+              class="volume-btn"
+              *ngIf="store.state.activeTrackId === track.id"
+            >
+              <img src="assets/images/editing-system/volume-icon.png">
+            </div>
+            <div
+              class="volume-container"
+              *ngIf="store.state.activeTrackId === track.id"
+              [ngClass]="{ 'active': store.state.isVolumePopupOpened }"
+            >
+              <div
+                *ngIf="store.state.isVolumeContentOpened"
+                class="volume-content"
+              >
+                <div class="flex-grid">
+                  <div class="col">
+                    <div>{{'Edit.FadeIn' | translate}}</div>
+                    <div>
+                      <input
+                        class="toggl-btn"
+                        type="checkbox"
+                        [checked]="track.fadeIn"
+                        (click)="handleFadeInClick(track.id)"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div>{{'Edit.FadeOut' | translate}}</div>
+                    <div>
+                      <input
+                        class="toggl-btn"
+                        type="checkbox"
+                        [checked]="track.fadeIn"
+                        (click)="handleFadeOutClick(track.id)"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="volume-slider-container">
+                  <div class="volume-percentage">{{track.volume}}%</div>
+                  <input
+                    [ngModel]="track.volume"
+                    [style.backgroundImage]="getSliderImage(track.volume)"
+                    (ngModelChange)="handleVolumeChange(track.id, $event)"
+                    type="range"
+                    min="0"
+                    max="100"
+                    class="volume-slider"
+                  >
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div
+    class="scroll-bg"
+    [style.width]="generateTimelineWidth()"
+  >
+  </div>
+</div>
+
+
+<app-library-section
+  [store]="store"
+></app-library-section>

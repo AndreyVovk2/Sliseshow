@@ -1,0 +1,51 @@
+<div class="adminChange">
+  <div class="content" *ngIf="this.store.state.animationStyle">
+
+    <div class="main-frame">
+      <img (click)="closeModal()" class="circleButton" src="../../../assets/images/step-modal/close.png" alt="">
+      <div class="video-player">
+        <video #videoTag id="myVideo" controls>
+          <source [src]="video_src" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+
+    <div class="subContent">
+      <div class="aStyle">
+        <div class="aStyleName">
+          {{store.state.animationStyle.name}}
+        </div>
+
+        <div class="aStylePics">
+          <!--<span *ngFor="let pic of this.store.state.animationStyle.pics" [ngClass]="{'selectedPic': pic.amount === this.store.state.animationStyle.select_pic}">{{pic.amount}} {{'Cart.Pics' | translate}}</span>-->
+          <span *ngFor="let template of this.store.state.animationStyle.templates" (click)="changedSelectId(template)"
+                [ngClass]="{'selectedPic': template.pics === this.store.state.animationStyle.select_pic}">{{template.pics}} {{'Cart.Pics' | translate}}</span>
+    </div>
+  </div>
+
+      <div class="aDisc">
+        <!--<span appAdminChange="Modal.PerfectSliceShow">{{'Modal.PerfectSliceShow' | translate}}{{'Modal.PerfectSliceShow' | translate}}</span>-->
+        <span>{{store.state.animationStyle.description}}</span>
+        <!--<span appAdminChange="Modal.PerfectSliceShow">{{'Modal.PerfectSliceShow' | translate}}{{'Modal.PerfectSliceShow' | translate}}</span>-->
+      </div>
+
+      <app-rounded-button
+        *ngIf="!store.state.animationStyleState"
+        (click)="startCreating()"
+        [label]="'Start Creating'"
+        [primary]="true"
+      ></app-rounded-button>
+
+      <app-rounded-button
+        *ngIf="store.state.animationStyleState"
+        (click)="add()"
+        [label]="'Add'"
+        [primary]="true"
+      ></app-rounded-button>
+    </div>
+
+  </div>
+
+
+</div>

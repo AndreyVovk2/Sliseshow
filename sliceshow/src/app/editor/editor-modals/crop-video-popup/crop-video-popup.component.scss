@@ -1,0 +1,186 @@
+@import "~variables.scss";
+@font-face {
+    font-family: midnight; /* Имя шрифта */
+    src: url('../../../../assets/fonts/Midnight_Bangkok.ttf');
+}
+::placeholder {
+    color: rgb(24, 10, 33);
+    opacity: 1;
+    text-transform: uppercase;
+}
+button:focus {
+    outline:0;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    user-select: none;
+}
+form{
+    width: 430px;
+}
+.adminChange{
+    // overflow: hidden;
+    width: 960px;
+    height: 800px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 15.96px 5.04px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(237, 242, 250);
+    margin: -24px;
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+
+    .content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        #image{
+            max-width: 100%;
+        }
+        .main-frame{
+            height: 540px;
+            .circleButton{
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                right: 20px;
+                opacity: 0.8;
+                top: 10px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                z-index: 500;
+            }
+            .circleButton:hover{
+                cursor: pointer;
+                opacity: 1;
+            }
+            .video-player{
+              overflow: hidden;
+              max-height: 508px;
+                video{
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    max-width: 960px;
+                    max-height: 508px;
+                }
+            }
+        }
+        .subContent{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 270px;
+            .aStyle{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .aStyleName{
+                    font-size: 32px;
+                    font-family: "Josefin Sans";
+                    color: $red;
+                    font-weight: 700;
+                    line-height: 1.2;
+                }
+                .aStylePics{
+                    width: 300px;
+                    display: flex;
+                    justify-content: space-between;
+                    span{
+                        font-size: 16px;
+                        font-family: "Josefin Sans";
+                        color: $black;
+                        text-transform: uppercase;
+                        line-height: 1.2;
+                        // -moz-transform: scale(1.115, 1);
+                        // -webkit-transform: scale(1.115, 1);
+                        // -ms-transform: scale(1.115, 1);
+                        border: 1px solid $black;
+                        padding: 5px;
+                        border-radius: 15px;
+                        width: 80px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .selectedPic{
+                        background-color: $yellow;
+                    }
+
+                }
+
+            }
+            .aDisc{
+                    font-size: 32px;
+                    font-family: "Josefin Sans";
+                    color: $black;
+                    line-height: 1.125;
+                    font-weight: 300;
+                    text-align: justify;
+            }
+            app-rounded-button{
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+
+    .short_error{
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-family: "Josefin Sans";
+        color: $red;
+        text-transform: uppercase;
+    }
+
+    .radioWrap{
+            display: flex;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+        .radioButtons{
+            width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .coll{
+                .radioCheck{
+                    display: flex;
+                    .cusRadio{
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        border: 1px solid $black;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .selected{
+                            height: 10px;
+                            width: 10px;
+                            border-radius: 50%;
+                            background-color: $black;
+                        }
+                    }
+                    .label{
+                        font-size: 24px;
+                        margin-left: 20px;
+                        margin-bottom: 0;
+                        color: rgb(24, 10, 33);
+                        line-height: 1.2;
+                        -moz-transform: scale(1.115, 1);
+                        -webkit-transform: scale(1.115, 1);
+                        -ms-transform: scale(1.115, 1);
+                    }
+                }
+            }
+        }
+    }
+
+}

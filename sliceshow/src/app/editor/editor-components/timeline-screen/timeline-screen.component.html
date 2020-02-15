@@ -1,0 +1,41 @@
+<div
+  class="video-sector"
+  id="screen-{{template.id}}"
+  [ngClass]="{ 'active': this.editingStore.state.activeAnimationStyle.id === template.id }"
+  [ngStyle]="{ 'width': this.generateWidth(duration) + 'px', 'filter': template.is_rendering ? 'blur(3px)' : 'none' }"
+  #scren01
+  (click)="handleClickScreen(template)">
+
+  <div class="timecode">
+    <div class="timecode--value">
+      {{duration / 30 | number : '1.0-0' | minuteSeconds}}
+    </div>
+    <div class="timecode--buttons" *ngIf="checkAnimationLength()">
+      <div class="arrows-ctn">
+        <img (click)="changePosition('left')" src="../../../../assets/images/editing-system/arrow_left.png" alt="left">
+        <img (click)="changePosition('right')" src="../../../../assets/images/editing-system/arrow_right.png" alt="right">
+      </div>
+      <div class="delete-btn delete-btn--template" (click)="openDeletePopup()" >
+        <img src="../../../../assets/images/editing-system/delete-icon.png">
+      </div>
+    </div>
+  </div>
+  <img [src]="template.preview_image" class="thumbnail">
+  <div class="name">{{template.name}}</div>
+
+</div>
+
+<div
+    *ngIf="template.is_rendering"
+    class="oven-wrap"
+    [ngStyle]="{'width': this.generateWidth(template.duration) + 'px', 'left': this.ovenLeft + 'px'}">
+    <oven-clock
+        *ngIf="template.is_rendering"
+        [height]="175"
+        [width]="175"
+        [progress]="progressBar"
+    ></oven-clock>
+</div>
+
+
+

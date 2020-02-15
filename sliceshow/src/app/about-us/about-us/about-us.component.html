@@ -1,0 +1,41 @@
+<div class="content">
+  <app-header></app-header>
+  <div class="header-banner" appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 class="title" appAdminChange="AboutUs.AboutUs">{{'AboutUs.AboutUs' | translate | uppercase}}</h2>
+    </div>
+  </div>
+
+  <div class="main_page">
+    <div class="main_top">
+      <div class="top_left">
+        <div class="left_title">
+          <div class="left_title_im"><img appAdminChange="img_body3" src="{{images.img_body3}}"></div>
+          <div class="left_title_in" appAdminChange="AboutUs.OurTeam">{{'AboutUs.OurTeam' | translate}}</div>
+        </div>
+        <div class="left_body">
+          <p appAdminChange="AboutUs.OurTeam-p1">{{'AboutUs.OurTeam-p1' | translate}}</p>
+          <p appAdminChange="AboutUs.OurTeam-p2">{{'AboutUs.OurTeam-p2' | translate}}</p>
+        </div>
+      </div>
+      <div class="top_right">
+        <img appAdminChange="img_body1" src="{{images.img_body1}}">
+      </div>
+    </div>
+    <div class="main_bott">
+      <div class="bott_top">
+        <div class="bott_title" appAdminChange="AboutUs.OurMission">{{'AboutUs.OurMission' | translate}}</div>
+        <div class="bott_img"><img appAdminChange="img_body2" src="{{images.img_body2}}"></div>
+      </div>
+      <div class="bott_body">
+        <p appAdminChange="AboutUs.OurMission-p1">{{'AboutUs.OurMission-p1' | translate}}</p>
+        <p appAdminChange="AboutUs.OurMission-p2">{{'AboutUs.OurMission-p2' | translate}}</p>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

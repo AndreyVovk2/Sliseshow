@@ -1,0 +1,45 @@
+.dropdown-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &:after {
+        content: '';
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        right: 0;
+        top: 8px;
+        background-image: url('/assets/images/editing-system/arrow-down-filled.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .label {
+        margin: 5px 25px 5px 5px;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Josefin Sans';
+    }
+    .dropdown {
+        background: #fff;
+        z-index: 20;
+        position: absolute;
+        left: 0;
+        top: 37px;
+        border: 1px solid #180a21;
+        .item {
+            text-transform: uppercase;
+            height: 36px;
+            width: 160px;
+            padding: 9px 13px;
+            font-size: 16px;
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            cursor: pointer;
+            transition: all .2s;
+            &:hover {
+                background: #ffca5f;
+            }
+        }
+    }
+}

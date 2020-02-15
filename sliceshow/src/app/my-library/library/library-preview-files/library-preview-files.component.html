@@ -1,0 +1,5 @@
+<div class="content">
+    <img class="circleButton" (click)="closeModal()" src="../../../assets/images/step-modal/close.png" alt="">
+    <img *ngIf="imageCheck" src="{{data.file}}" alt="" class="content--image">
+    <video *ngIf="videoCheck" src="{{data.file}}" class="content--video" controls></video>
+</div>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="16.9332mm" height="33.8666mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1693 3387"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str5 {stroke:#2B2A29;stroke-width:8.46}
+    .str2 {stroke:black;stroke-width:8.46}
+    .str8 {stroke:#EAA639;stroke-width:8.46}
+    .str4 {stroke:#FFCA5F;stroke-width:8.46}
+    .str7 {stroke:#FFCA5F;stroke-width:8.46}
+    .str0 {stroke:black;stroke-width:16.93}
+    .str1 {stroke:black;stroke-width:20}
+    .str6 {stroke:black;stroke-width:25.39}
+    .str3 {stroke:black;stroke-width:7.62}
+    .fil0 {fill:none}
+    .fil3 {fill:#FEFEFE}
+    .fil5 {fill:#EAA639}
+    .fil1 {fill:#FEFEFE}
+    .fil2 {fill:#FFCA5F}
+    .fil4 {fill:#FFCA5F}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <line class="fil0 str0" x1="-3333" y1="-38" x2="-3020" y2= "264" />
+  <line class="fil0 str1" x1="-3177" y1="240" x2="-2880" y2= "536" />
+  <path class="fil1 str0" d="M-3223 549c14,0 25,11 25,25 0,14 -11,26 -25,26 -14,0 -26,-12 -26,-26 0,-14 12,-25 26,-25z"/>
+  <circle class="fil0 str1" cx="-2677" cy="20" r="35"/>
+  <path class="fil0 str2" d="M-2800 295c0,21 0,34 0,34"/>
+  <line class="fil0 str2" x1="-2783" y1="312" x2="-2817" y2= "312" />
+  <polyline class="fil0 str3" points="-2271,225 -2271,231 -2271,238 -2271,231 -2277,231 -2264,231 "/>
+  <polyline class="fil0 str2" points="-2279,-6 -2245,32 -2207,-6 -2169,32 -2135,-6 -2102,32 -2063,-6 -2025,32 -1991,-6 -1958,32 -1919,-6 -1881,32 -1848,-6 -1814,32 -1776,-6 -1737,32 -1704,-6 "/>
+  <polyline class="fil0 str2" points="-1822,-90 -1776,-56 -1733,-90 -1687,-56 -1640,-90 -1598,-56 -1551,-90 -1505,-56 -1458,-90 "/>
+  <ellipse class="fil2 str4" cx="-2584" cy="464" rx="138" ry="135"/>
+  <polyline class="fil0 str5" points="1493,3241 1460,3203 1493,3157 1460,3110 1493,3068 1460,3021 1493,2974 1460,2932 1493,2886 "/>
+  <polyline class="fil0 str2" points="1409,3004 1375,2966 1409,2932 1375,2898 1409,2860 1375,2822 1409,2788 1375,2754 1409,2716 1375,2678 1409,2644 1375,2610 1409,2572 1375,2534 1409,2500 1375,2466 1409,2428 "/>
+  <line class="fil0 str2" x1="1170" y1="2425" x2="1170" y2= "2442" />
+  <line class="fil0 str2" x1="1161" y1="2433" x2="1178" y2= "2433" />
+  <circle class="fil3 str6" cx="1383" cy="2035" r="34"/>
+  <path class="fil0 str2" d="M1091 1891c0,8 0,34 0,34"/>
+  <line class="fil0 str2" x1="1108" y1="1908" x2="1074" y2= "1908" />
+  <line class="fil0 str2" x1="1015" y1="202" x2="1015" y2= "236" />
+  <line class="fil0 str2" x1="1032" y1="219" x2="998" y2= "219" />
+  <path class="fil0 str0" d="M291 684c0,4 0,51 0,51"/>
+  <line class="fil0 str0" x1="317" y1="710" x2="266" y2= "710" />
+  <line class="fil0 str0" x1="1333" y1="786" x2="1333" y2= "837" />
+  <line class="fil0 str0" x1="1358" y1="811" x2="1307" y2= "811" />
+  <line class="fil0 str6" x1="1184" y1="553" x2="1184" y2= "655" />
+  <line class="fil0 str6" x1="1235" y1="604" x2="1134" y2= "604" />
+  <circle class="fil3 str0" cx="827" cy="1486" r="25"/>
+  <circle class="fil3 str0" cx="1422" cy="363" r="25"/>
+  <path class="fil0 str0" d="M1163 1531c-173,173 -296,296 -296,296"/>
+  <line class="fil0 str0" x1="1146" y1="1675" x2="1443" y2= "1379" />
+  <line class="fil0 str0" x1="774" y1="879" x2="1316" y2= "117" />
+  <polyline class="fil0 str2" points="393,363 389,307 329,303 325,244 262,240 262,180 198,176 198,117 147,109 "/>
+  <polygon class="fil2 str4" points="1228,1141 1147,1075 1066,1009 1002,1088 938,1167 1019,1233 1100,1300 1164,1221 "/>
+  <circle class="fil4 str7" cx="939" cy="2124" r="135"/>
+  <polygon class="fil5 str8" points="665,177 689,247 712,317 635,296 557,276 611,227 "/>
+  <polygon class="fil5 str8" points="885,373 908,443 932,513 854,493 777,472 831,423 "/>
+  <polygon class="fil5 str8" points="775,275 799,345 822,415 744,394 667,374 721,325 "/>
+ </g>
+</svg>

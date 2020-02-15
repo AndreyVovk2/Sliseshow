@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="privacy-policy">
+
+  <div class="header-banner"
+       appAdminChange="img_head"
+       [ngStyle]="{'background':'url(' + images.img_head + ') center no-repeat'}">
+    <div id="header-arrow-left"></div>
+    <div id="header-arrow-right"></div>
+    <div class="container text-wrapper">
+      <h2 class="title" appAdminChange="PrivacyPolicy.PrivacyPolicy">{{'PrivacyPolicy.PrivacyPolicy' | translate}}</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="line"
+    appAdminChange="img_body1"
+    [ngStyle]="{'background': 'url(' + images.img_body1 + ') left no-repeat'}">
+    </div>
+    <div class="text">
+      <p appAdminChange="PrivacyPolicy.p1">
+        {{'PrivacyPolicy.p1' | translate}}
+      </p>
+      <p appAdminChange="PrivacyPolicy.p2">
+        {{'PrivacyPolicy.p2' | translate}}
+      </p>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
